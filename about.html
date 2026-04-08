@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Kiana Prema Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brick:   #BF5454;
+  --berry:   #8C0343;
+  --amber:   #D98859;
+  --sand:    #BFAF80;
+  --patina:  #4E7B72;
+  --blush:   #F2AB9B;
+  --cream:   #F2DCC9;
+  --dark:    #2C1810;
+  --mid:     #7A4A3A;
+  --muted:   #B09A8C;
+  --border:  #E8DAD0;
+  --bg:      #FAF6F1;
+  --white:   #FFFFFF;
+  --font-display: 'Cormorant', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════ NAV ══════════ */
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  background: rgba(250,246,241,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 500;
+  color: var(--dark); text-decoration: none;
+}
+.nav-logo span { color: var(--amber); font-style: italic; font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--mid); text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-links a.active { color: var(--brick); }
+.nav-cta {
+  font-size: 12px !important; font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: var(--white) !important; background: var(--brick);
+  padding: 10px 24px; border-radius: 4px; transition: all 0.3s !important;
+}
+.nav-cta:hover { background: var(--berry) !important; }
+
+/* ══════════ PAGE HERO — Cream, warm, inviting ══════════ */
+.page-hero {
+  padding: 140px 48px 80px;
+  text-align: center;
+  background: var(--bg);
+  position: relative;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--amber);
+}
+.page-hero .section-eyebrow {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 20px;
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: 48px; font-weight: 300;
+  color: var(--dark); line-height: 1.15;
+  margin-bottom: 20px;
+}
+.page-hero h1 em { color: var(--brick); font-style: italic; font-weight: 400; }
+.page-hero p {
+  font-size: 17px; color: var(--mid);
+  max-width: 560px; margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Color strip ── */
+.color-strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 6px;
+}
+
+/* ══════════ STORY — Split layout ══════════ */
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.story-left {
+  background: var(--cream);
+  padding: 80px 60px;
+  display: flex; align-items: center;
+}
+.story-left-content { max-width: 440px; margin-left: auto; }
+.story-left h2 {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 400;
+  color: var(--dark); margin-bottom: 24px; line-height: 1.2;
+}
+.story-left h2 em { color: var(--brick); font-style: italic; }
+.story-left p {
+  font-size: 15px; line-height: 1.85; color: var(--mid);
+  margin-bottom: 16px;
+}
+
+.story-right {
+  background: linear-gradient(170deg, var(--patina) 0%, #3a5f58 100%);
+  padding: 80px 60px;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.story-right::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px);
+  pointer-events: none;
+}
+.story-right-content { position: relative; z-index: 2; max-width: 400px; }
+.story-right h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 400;
+  color: var(--cream); margin-bottom: 20px; line-height: 1.3;
+}
+.story-right h3 em { color: var(--blush); font-style: italic; }
+.story-right p {
+  font-size: 14px; line-height: 1.85;
+  color: rgba(242,220,201,0.7);
+  margin-bottom: 14px;
+}
+
+/* ══════════ ORIGIN — Full-width warm band ══════════ */
+.origin {
+  background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 50%, var(--sand) 100%);
+  padding: 80px 48px;
+  position: relative;
+}
+.origin::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--amber);
+}
+.origin-inner {
+  max-width: 700px; margin: 0 auto;
+  text-align: center;
+}
+.origin h2 {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 400;
+  color: var(--dark); margin-bottom: 28px; line-height: 1.25;
+}
+.origin h2 em { color: var(--berry); font-style: italic; }
+.origin p {
+  font-size: 15px; line-height: 1.85; color: var(--mid);
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* ══════════ VALUES — Berry band ══════════ */
+.values {
+  background: linear-gradient(160deg, var(--berry) 0%, #5c0230 50%, var(--brick) 100%);
+  color: var(--cream);
+  padding: 80px 48px;
+  position: relative; overflow: hidden;
+}
+.values::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px);
+  pointer-events: none;
+}
+.values-inner {
+  position: relative; z-index: 2;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+}
+.values h2 {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 400;
+  margin-bottom: 48px; line-height: 1.25;
+}
+.values h2 em { color: var(--blush); font-style: italic; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+.value-item h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 500;
+  color: var(--cream); margin-bottom: 10px;
+}
+.value-num {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+.value-item p {
+  font-size: 14px; line-height: 1.75;
+  color: rgba(242,220,201,0.65);
+}
+
+/* ══════════ CASE STUDY / FULL TESTIMONIAL ══════════ */
+.case-study {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+.case-left {
+  background: var(--cream);
+  padding: 72px 60px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.case-left-content { max-width: 360px; text-align: right; }
+.case-left h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 400;
+  color: var(--dark); margin-bottom: 16px; line-height: 1.25;
+}
+.case-left h3 em { color: var(--brick); font-style: italic; }
+.case-left p {
+  font-size: 14px; line-height: 1.75; color: var(--mid);
+}
+.case-left .case-link {
+  display: inline-block; margin-top: 16px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--brick); text-decoration: none;
+  border-bottom: 1px solid rgba(191,84,84,0.3);
+  transition: all 0.3s;
+}
+.case-left .case-link:hover { color: var(--berry); border-color: var(--berry); }
+
+.case-right {
+  background: linear-gradient(170deg, var(--patina) 0%, #3a5f58 60%, var(--dark) 100%);
+  padding: 72px 60px;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.case-right::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px);
+  pointer-events: none;
+}
+.case-right-content { position: relative; z-index: 2; max-width: 420px; }
+.case-right blockquote {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 400;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.case-right blockquote strong {
+  color: var(--blush); font-style: italic; font-weight: 400;
+}
+.case-right cite {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--amber);
+  font-style: normal;
+  display: block;
+}
+.case-right cite a {
+  color: var(--amber); text-decoration: none;
+  border-bottom: 1px solid rgba(217,136,89,0.3);
+  transition: border-color 0.3s;
+}
+.case-right cite a:hover { border-color: var(--amber); }
+.case-right .cite-role {
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(242,220,201,0.5);
+  margin-top: 4px;
+}
+.amber-rule { height: 2px; background: var(--amber); max-width: 80px; margin: 0 auto; }
+
+/* ══════════ CTA — Split ══════════ */
+.cta-band { display: grid; grid-template-columns: 1fr 1fr; }
+.cta-left {
+  background: linear-gradient(160deg, var(--berry) 0%, #5c0230 100%);
+  padding: 80px 60px;
+  display: flex; align-items: center; justify-content: flex-end;
+  position: relative; overflow: hidden;
+}
+.cta-left::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px);
+  pointer-events: none;
+}
+.cta-left-content { position: relative; z-index: 2; max-width: 400px; text-align: right; }
+.cta-left h2 {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 400;
+  color: var(--cream); line-height: 1.2; margin-bottom: 16px;
+}
+.cta-left h2 em { color: var(--blush); font-style: italic; }
+.cta-left p { font-size: 15px; line-height: 1.75; color: rgba(242,220,201,0.6); }
+
+.cta-right {
+  background: var(--cream);
+  padding: 80px 60px;
+  display: flex; align-items: center;
+}
+.cta-right-content { max-width: 400px; }
+.cta-right .section-eyebrow {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--brick); margin-bottom: 20px;
+}
+.cta-right p {
+  font-size: 15px; line-height: 1.8;
+  color: var(--mid); margin-bottom: 32px;
+}
+.hero-cta {
+  display: inline-block;
+  background: var(--brick); color: var(--white);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 16px 36px; text-decoration: none;
+  border-radius: 4px; transition: all 0.3s;
+}
+.hero-cta:hover { background: var(--berry); }
+.cta-sub { margin-top: 14px; font-size: 12px; color: var(--muted); }
+
+/* ══════════ FOOTER ══════════ */
+.site-footer {
+  background: var(--dark);
+  color: rgba(242,220,201,0.4);
+  padding: 48px; text-align: center;
+  font-size: 12px; letter-spacing: 0.04em;
+}
+.footer-links { margin-bottom: 16px; }
+.footer-links a {
+  color: rgba(242,220,201,0.5); text-decoration: none;
+  margin: 0 16px; font-size: 12px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--amber); }
+.footer-rule { width: 40px; height: 1px; background: var(--amber); margin: 16px auto; opacity: 0.4; }
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width: 900px) {
+  .story-section { grid-template-columns: 1fr; }
+  .story-left, .story-right { padding: 60px 32px; }
+  .story-left-content { margin-left: 0; }
+  .values-grid { grid-template-columns: 1fr; }
+  .case-study { grid-template-columns: 1fr; }
+  .case-left { padding: 60px 32px; justify-content: flex-start; }
+  .case-left-content { text-align: left; }
+  .case-right { padding: 60px 32px; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-left { justify-content: flex-start; }
+  .cta-left-content { text-align: left; }
+  .cta-left, .cta-right { padding: 60px 32px; }
+}
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 24px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .page-hero { padding: 120px 24px 60px; }
+  .page-hero h1 { font-size: 32px; }
+  .origin { padding: 60px 24px; }
+  .values { padding: 60px 24px; }
+  .quote-break { padding: 48px 24px; }
+  .quote-break blockquote { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAVIGATION ══════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kiana Prema <span>Consulting</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#book" class="nav-cta">Book a Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ PAGE HERO ══════════ -->
+<section class="page-hero">
+  <div class="section-eyebrow">About</div>
+  <h1>Where the engineer meets <em>the priestess.</em></h1>
+  <p>Chemical engineer by training. Systems thinker by nature. Intuitive by practice. The intersection of those things is where the best brands get built.</p>
+</section>
+
+<!-- ── Color strip ── -->
+<div class="color-strip">
+  <div style="background: var(--brick);"></div>
+  <div style="background: var(--berry);"></div>
+  <div style="background: var(--amber);"></div>
+  <div style="background: var(--sand);"></div>
+  <div style="background: var(--patina);"></div>
+  <div style="background: var(--blush);"></div>
+  <div style="background: var(--cream);"></div>
+</div>
+
+<!-- ══════════ STORY — The duality ══════════ -->
+<section class="story-section">
+  <div class="story-left">
+    <div class="story-left-content">
+      <h2>I didn't come to branding <em>the traditional way.</em></h2>
+      <p>I came through chemical engineering — through systems thinking, process optimization, the discipline of understanding how complex things work at a molecular level.</p>
+      <p>That mind didn't go away when I pivoted into brand strategy. It became the foundation of everything I build. I see patterns other strategists miss. I think in architectures. I approach brand as a system, not a surface.</p>
+      <p>But systems alone don't create brands that move people. For that, you need something else entirely.</p>
+    </div>
+  </div>
+  <div class="story-right">
+    <div class="story-right-content">
+      <h3>You need <em>intuition.</em></h3>
+      <p>The ability to listen beneath the words. To sense what a founder is actually trying to say — the thing they haven't found language for yet.</p>
+      <p>I hold space for both: the precise and the felt. The architectural and the alchemical. The spreadsheet and the ceremony.</p>
+      <p>That duality is not a contradiction. It's my superpower. And it's what makes the brands I build feel both strategically airtight and deeply, unmistakably alive.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ORIGIN ══════════ -->
+<section class="origin">
+  <div class="origin-inner">
+    <h2>This work is <em>personal.</em></h2>
+    <p>I've spent years working with founders, healers, coaches, and visionary leaders across health, wellness, and consciousness. I've seen brilliant people do extraordinary work while their brand tells a story that's three versions behind who they actually are.</p>
+    <p>I know what it feels like to evolve faster than the thing that represents you. To carry something powerful inside and watch the external expression of it fall flat. To know you're undercharging, under-seen, under-valued — not because you lack talent, but because your brand hasn't caught up.</p>
+    <p>That gap — between who you are and how the world experiences you — is where I work. I close it. Permanently.</p>
+  </div>
+</section>
+
+<!-- ══════════ VALUES ══════════ -->
+<section class="values">
+  <div class="values-inner">
+    <h2>What I believe about <em>brand.</em></h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-num">01</div>
+        <h3>Identity First</h3>
+        <p>A brand built on identity lasts. A brand built on trends expires. I will always start with who you are before I touch a single visual element.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-num">02</div>
+        <h3>Precision Is Care</h3>
+        <p>Obsessing over details isn't perfectionism — it's devotion. When I'm holding someone's identity in my hands, every choice deserves reverence.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-num">03</div>
+        <h3>Brand Is Ceremony</h3>
+        <p>The act of taking something invisible — your purpose, your gifts — and giving it a form the world can witness. I don't take that lightly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CASE STUDY — FULL CORIN TESTIMONIAL ══════════ -->
+<section class="case-study">
+  <div class="case-left">
+    <div class="case-left-content">
+      <div class="section-eyebrow" style="text-align: right;">Case Study</div>
+      <h3>The <em>StarHouse</em></h3>
+      <p>Brand strategy and identity work for a sacred land-based organization in Boulder, Colorado — a gathering place for ceremony, community, and conscious leadership.</p>
+      <a href="https://www.thestarhouse.org" target="_blank" rel="noopener" class="case-link">Visit The StarHouse &rarr;</a>
+    </div>
+  </div>
+  <div class="case-right">
+    <div class="case-right-content">
+      <blockquote>"The CORE strategy provided a grounded, simple and strategic framework that empowered a <strong>critical breakthrough</strong> in terms of identity and brand. She was present, focused, clear, candid, professional and patient. Kiana listens deeply for essence and has a knack for <strong>sensing and reflecting the wild truth</strong> with ease and grace."</blockquote>
+      <cite><a href="https://www.thestarhouse.org" target="_blank" rel="noopener">Corin Blanchard</a></cite>
+      <div class="cite-role">Board Member — All Seasons Chalice · The StarHouse</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA — Split ══════════ -->
+<section class="cta-band" id="book">
+  <div class="cta-left">
+    <div class="cta-left-content">
+      <h2>Curious what this looks like <em>for you?</em></h2>
+      <p>Every engagement starts with a conversation — not a sales pitch. Let's talk about where you are, where you're going, and whether this is the right fit.</p>
+    </div>
+  </div>
+  <div class="cta-right">
+    <div class="cta-right-content">
+      <div class="section-eyebrow">Let's Talk</div>
+      <p>Book a Brand Clarity Conversation — a complimentary 30-minute call. No obligation. Just real talk about your brand and what's possible.</p>
+      <a href="YOUR_CALENDLY_OR_GCAL_LINK" class="hero-cta">Schedule a Conversation</a>
+      <p class="cta-sub">30 minutes · Complimentary · By application</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+  </div>
+  <div class="footer-rule"></div>
+  <p>&copy; 2026 Kiana Prema Consulting. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiana Prema Consulting — Intuitive Brand Strategy for Visionary Founders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brick:   #BF5454;
+  --berry:   #8C0343;
+  --amber:   #D98859;
+  --sand:    #BFAF80;
+  --patina:  #4E7B72;
+  --blush:   #F2AB9B;
+  --cream:   #F2DCC9;
+  --dark:    #2C1810;
+  --mid:     #7A4A3A;
+  --muted:   #B09A8C;
+  --border:  #E8DAD0;
+  --bg:      #FAF6F1;
+  --white:   #FFFFFF;
+  --font-display: 'Cormorant', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════ NAV ══════════ */
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  background: rgba(250,246,241,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--amber); font-style: italic; font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-links a.active { color: var(--brick); }
+.nav-cta {
+  font-size: 12px !important; font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: var(--white) !important;
+  background: var(--brick);
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: all 0.3s !important;
+}
+.nav-cta:hover { background: var(--berry) !important; color: var(--white) !important; }
+
+/* ══════════ HERO — Split Composition ══════════ */
+.hero {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 100vh;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--amber);
+  z-index: 10;
+}
+/* Amber split line */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 55%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 10%, var(--amber) 30%, var(--amber) 70%, transparent 90%);
+  opacity: 0.5;
+  z-index: 5;
+}
+
+.hero-left {
+  background: var(--bg);
+  padding: 160px 72px 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+/* Architectural grid on light side */
+.hero-left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(44,24,16,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44,24,16,0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.hero-left-content { position: relative; z-index: 2; max-width: 520px; }
+
+.hero-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 52px; font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--dark);
+}
+.hero h1 em { font-weight: 400; color: var(--brick); font-style: italic; }
+.hero-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+.hero-cta {
+  display: inline-block;
+  background: var(--brick);
+  color: var(--white);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 16px 36px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.hero-cta:hover { background: var(--berry); }
+.hero-cta-sub {
+  display: block;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.hero-right {
+  background: linear-gradient(170deg, var(--berry) 0%, #4a0228 60%, var(--dark) 100%);
+  padding: 160px 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  position: relative;
+  overflow: hidden;
+}
+/* Linen texture on dark side */
+.hero-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(242,220,201,0.012) 3px, rgba(242,220,201,0.012) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(242,220,201,0.012) 3px, rgba(242,220,201,0.012) 4px);
+  pointer-events: none;
+}
+/* Sacred glow */
+.hero-glow {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,136,89,0.1) 0%, transparent 70%);
+  top: 30%; right: 15%;
+}
+.hero-glow-ring {
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(217,136,89,0.1);
+  top: 35%; right: 20%;
+}
+.hero-right-content {
+  position: relative; z-index: 2;
+  max-width: 340px;
+}
+.hero-quote {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 400;
+  font-style: italic;
+  color: rgba(242,220,201,0.7);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+.hero-quote-cite {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* ── Color strip below hero ── */
+.color-strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 6px;
+}
+
+/* ══════════ PHILOSOPHY ══════════ */
+.philosophy {
+  padding: 100px 48px;
+  background: var(--bg);
+  text-align: center;
+}
+.philosophy-inner { max-width: 680px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+.philosophy h2 {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+.philosophy h2 em { color: var(--brick); font-style: italic; }
+.philosophy p {
+  font-size: 16px; line-height: 1.85;
+  color: var(--mid);
+  margin-bottom: 20px;
+}
+.amber-rule { height: 2px; background: var(--amber); max-width: 80px; margin: 0 auto; }
+
+/* ══════════ WHAT I BUILD — Warm Split ══════════ */
+.what-i-build {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wib-left {
+  background: linear-gradient(160deg, var(--patina) 0%, #3a5f58 100%);
+  color: var(--cream);
+  padding: 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle texture on patina */
+.wib-left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px);
+  pointer-events: none;
+}
+.wib-left-content { position: relative; z-index: 2; }
+.wib-left h2 {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.wib-left h2 em { color: var(--cream); font-style: italic; }
+.wib-left p {
+  font-size: 15px; line-height: 1.8;
+  color: rgba(242,220,201,0.7);
+  margin-bottom: 16px;
+}
+.wib-right {
+  background: var(--cream);
+  padding: 80px 60px;
+}
+.wib-right h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.wib-right h3 .num {
+  color: var(--amber);
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 4px;
+}
+.wib-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(44,24,16,0.08);
+}
+.wib-item:last-child { border-bottom: none; }
+.wib-item p {
+  font-size: 14px; line-height: 1.75;
+  color: var(--mid);
+  margin-top: 8px;
+}
+
+/* ══════════ TESTIMONIAL — Berry band ══════════ */
+.testimonial {
+  background: linear-gradient(160deg, var(--berry) 0%, #6a0238 50%, var(--brick) 100%);
+  color: var(--cream);
+  padding: 100px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.testimonial::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px);
+  pointer-events: none;
+}
+.testimonial-content { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+.testimonial blockquote {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  color: var(--cream);
+}
+.testimonial cite {
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--amber);
+  font-style: normal;
+}
+.quote-accent-left, .quote-accent-right {
+  position: absolute;
+  width: 40px; height: 80px;
+  border: 1px solid rgba(217,136,89,0.25);
+  z-index: 2;
+}
+.quote-accent-left {
+  left: calc(50% - 360px); top: 50%;
+  transform: translateY(-50%);
+  border-right: none;
+}
+.quote-accent-right {
+  right: calc(50% - 360px); top: 50%;
+  transform: translateY(-50%);
+  border-left: none;
+}
+
+/* ══════════ WHO THIS IS FOR ══════════ */
+.who-for {
+  padding: 100px 48px;
+  background: var(--bg);
+  text-align: center;
+}
+.who-for-inner { max-width: 960px; margin: 0 auto; }
+.who-for h2 {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.who-for h2 em { color: var(--brick); font-style: italic; }
+.who-for .subtitle {
+  font-size: 15px; color: var(--mid);
+  max-width: 520px; margin: 0 auto 48px;
+  line-height: 1.75;
+}
+.who-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.who-card {
+  border-radius: 8px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.who-card:nth-child(1) {
+  background: linear-gradient(170deg, rgba(78,123,114,0.08) 0%, rgba(78,123,114,0.02) 100%);
+  border: 1px solid rgba(78,123,114,0.15);
+}
+.who-card:nth-child(2) {
+  background: linear-gradient(170deg, rgba(191,84,84,0.08) 0%, rgba(191,84,84,0.02) 100%);
+  border: 1px solid rgba(191,84,84,0.15);
+}
+.who-card:nth-child(3) {
+  background: linear-gradient(170deg, rgba(217,136,89,0.08) 0%, rgba(217,136,89,0.02) 100%);
+  border: 1px solid rgba(217,136,89,0.15);
+}
+.who-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.who-card:nth-child(1)::before { background: var(--patina); }
+.who-card:nth-child(2)::before { background: var(--brick); }
+.who-card:nth-child(3)::before { background: var(--amber); }
+.who-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.who-card p {
+  font-size: 14px; line-height: 1.75;
+  color: var(--mid);
+}
+
+/* ══════════ APPROACH STRIP — Blush/Sand warm band ══════════ */
+.approach-strip {
+  background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 40%, var(--sand) 100%);
+  padding: 80px 48px;
+  text-align: center;
+  position: relative;
+}
+.approach-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--amber);
+}
+.approach-inner { max-width: 800px; margin: 0 auto; }
+.approach-strip h2 {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+.approach-strip h2 em { color: var(--berry); font-style: italic; }
+.approach-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+.approach-col h3 {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.approach-col-num {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--berry);
+  margin-bottom: 8px;
+}
+.approach-col p {
+  font-size: 14px; line-height: 1.75;
+  color: var(--mid);
+}
+
+/* ══════════ CTA BAND — Berry+Dark half/half ══════════ */
+.cta-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cta-left {
+  background: linear-gradient(160deg, var(--berry) 0%, #5c0230 100%);
+  padding: 80px 60px;
+  display: flex; align-items: center; justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+.cta-left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(242,220,201,0.01) 3px, rgba(242,220,201,0.01) 4px);
+  pointer-events: none;
+}
+.cta-left-content { position: relative; z-index: 2; max-width: 400px; text-align: right; }
+.cta-left h2 {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.cta-left h2 em { color: var(--blush); font-style: italic; }
+.cta-left p {
+  font-size: 15px; line-height: 1.75;
+  color: rgba(242,220,201,0.6);
+}
+
+.cta-right {
+  background: var(--cream);
+  padding: 80px 60px;
+  display: flex; align-items: center;
+}
+.cta-right-content { max-width: 400px; }
+.cta-right .section-eyebrow { color: var(--brick); margin-bottom: 20px; }
+.cta-right p {
+  font-size: 15px; line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 32px;
+}
+.cta-right .hero-cta { display: inline-block; }
+.cta-sub {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ══════════ FOOTER ══════════ */
+.site-footer {
+  background: var(--dark);
+  color: rgba(242,220,201,0.4);
+  padding: 48px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.footer-links { margin-bottom: 16px; }
+.footer-links a {
+  color: rgba(242,220,201,0.5);
+  text-decoration: none;
+  margin: 0 16px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--amber); }
+.footer-rule {
+  width: 40px; height: 1px;
+  background: var(--amber);
+  margin: 16px auto;
+  opacity: 0.4;
+}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero::after { display: none; }
+  .hero-left { padding: 120px 32px 60px; }
+  .hero h1 { font-size: 36px; }
+  .hero-right { padding: 60px 32px; align-items: flex-start; text-align: left; }
+  .what-i-build { grid-template-columns: 1fr; }
+  .wib-left, .wib-right { padding: 60px 32px; }
+  .who-cards { grid-template-columns: 1fr; }
+  .approach-cols { grid-template-columns: 1fr; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-left { justify-content: flex-start; }
+  .cta-left-content { text-align: left; }
+  .cta-left, .cta-right { padding: 60px 32px; }
+}
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 24px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .philosophy { padding: 72px 24px; }
+  .philosophy h2 { font-size: 28px; }
+  .who-for { padding: 72px 24px; }
+  .who-for h2 { font-size: 28px; }
+  .testimonial { padding: 72px 24px; }
+  .testimonial blockquote { font-size: 24px; }
+  .quote-accent-left, .quote-accent-right { display: none; }
+  .approach-strip { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAVIGATION ══════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kiana Prema <span>Consulting</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="#book" class="nav-cta">Book a Conversation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO — Split Composition ══════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-left-content">
+      <div class="hero-eyebrow">Intuitive Brand Engineer &amp; Business Growth Strategist</div>
+      <h1>Your brand should feel as powerful as <em>the work you're here to do.</em></h1>
+      <p class="hero-sub">I build brands from the inside out — where identity, strategy, and design converge to create something the world can't ignore.</p>
+      <a href="#book" class="hero-cta">Book a Brand Clarity Conversation</a>
+      <span class="hero-cta-sub">A 30-minute call. No pitch. Just clarity.</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-ring"></div>
+    <div class="hero-right-content">
+      <p class="hero-quote">"She listens deeply for essence and has a knack for sensing and reflecting the wild truth with ease and grace."</p>
+      <span class="hero-quote-cite">— <a href="https://www.thestarhouse.org" target="_blank" rel="noopener" style="color: var(--amber); text-decoration: none; border-bottom: 1px solid rgba(217,136,89,0.4); transition: border-color 0.3s;">Corin Blanchard</a>, The StarHouse</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Full palette strip ── -->
+<div class="color-strip">
+  <div style="background: var(--brick);"></div>
+  <div style="background: var(--berry);"></div>
+  <div style="background: var(--amber);"></div>
+  <div style="background: var(--sand);"></div>
+  <div style="background: var(--patina);"></div>
+  <div style="background: var(--blush);"></div>
+  <div style="background: var(--cream);"></div>
+</div>
+
+<!-- ══════════ PHILOSOPHY ══════════ -->
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <div class="section-eyebrow">The Approach</div>
+    <h2>Most brands are built <em>backwards.</em></h2>
+    <p>They start with a logo. A color palette. A website template. And then they wonder why nothing sticks... why clients don't convert... why the pricing always feels like a fight.</p>
+    <p>That's because design without identity is decoration. And decoration doesn't build trust, command premium pricing, or magnetically attract the right people.</p>
+    <p>I start where it matters: <strong>who you are.</strong> Your identity. Your positioning. Your voice. The strategic architecture that everything visual will stand on. When that foundation is right, the design practically builds itself — and the brand lasts.</p>
+    <div class="amber-rule" style="margin-top: 40px;"></div>
+  </div>
+</section>
+
+<!-- ══════════ WHAT I BUILD — Patina + Cream Split ══════════ -->
+<section class="what-i-build">
+  <div class="wib-left">
+    <div class="wib-left-content">
+      <div class="section-eyebrow" style="color: var(--amber);">What I Build</div>
+      <h2>Brands that <em>hold.</em></h2>
+      <p>Not pretty surfaces. Not mood boards. Strategic brand ecosystems built on identity, sharpened by intuition, and expressed with precision.</p>
+      <p>Every project moves through the same rigorous process — because shortcuts create brands you'll rebrand in eighteen months.</p>
+    </div>
+  </div>
+  <div class="wib-right">
+    <div class="wib-item">
+      <h3><span class="num">01</span>Identity Architecture</h3>
+      <p>Deep excavation of who you are, who you serve, and what makes you impossible to replicate. This is the foundation everything else is built on.</p>
+    </div>
+    <div class="wib-item">
+      <h3><span class="num">02</span>Brand Strategy</h3>
+      <p>Positioning, messaging, voice, competitive differentiation. The strategic skeleton that tells the world exactly where you stand and why you matter.</p>
+    </div>
+    <div class="wib-item">
+      <h3><span class="num">03</span>Visual Expression</h3>
+      <p>Color, typography, design systems, brand books. Every visual decision grounded in the strategy — not aesthetics for aesthetics' sake.</p>
+    </div>
+    <div class="wib-item">
+      <h3><span class="num">04</span>Growth Consulting</h3>
+      <p>Offer architecture, content strategy, launch planning. Because a beautiful brand without a growth engine is just a beautiful business card.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIAL — Berry/Brick gradient ══════════ -->
+<section class="testimonial">
+  <div class="quote-accent-left"></div>
+  <div class="quote-accent-right"></div>
+  <div class="testimonial-content">
+    <div class="section-eyebrow" style="color: var(--amber); margin-bottom: 32px;">Client Words</div>
+    <blockquote>"She sees what you can't see yet — and builds the bridge between who you are and how the world experiences you."</blockquote>
+    <cite>— Past Client</cite>
+  </div>
+</section>
+
+<!-- ══════════ WHO THIS IS FOR ══════════ -->
+<section class="who-for">
+  <div class="who-for-inner">
+    <div class="section-eyebrow">Who This Is For</div>
+    <h2>Built for founders who are <em>ready.</em></h2>
+    <p class="subtitle">Not everyone is ready for this work. The ones who are? They already know something needs to change.</p>
+    <div class="who-cards">
+      <div class="who-card">
+        <h3>The Brilliant Practitioner</h3>
+        <p>You've built a thriving practice almost entirely on referrals. Your work speaks for itself — but your brand doesn't. Your website looks like 2019, your messaging is clinical, and you're leaving reach and revenue on the table. You need a brand that matches the caliber of what you do.</p>
+      </div>
+      <div class="who-card">
+        <h3>The Scaling Visionary</h3>
+        <p>You're building something bigger than one business. Multiple ventures, a growing empire, a conscious legacy. But your brand is fragmented — each piece tells a different story. You need someone who can see the whole architecture and unify it.</p>
+      </div>
+      <div class="who-card">
+        <h3>The Rising Expert</h3>
+        <p>You've built real traction — group programs, a growing audience, genuine momentum. But your brand was DIY'd and it's hitting a ceiling. You know you need to level up, and you're ready to invest in the foundation that lets you scale without starting over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ APPROACH STRIP — Warm blush/sand ══════════ -->
+<section class="approach-strip">
+  <div class="approach-inner">
+    <div class="section-eyebrow">How It Works</div>
+    <h2>Identity first. Strategy second. <em>Design last.</em></h2>
+    <div class="approach-cols">
+      <div class="approach-col">
+        <div class="approach-col-num">PHASE 01</div>
+        <h3>Discovery</h3>
+        <p>We go deep. Not surface-level questionnaires — real conversation about who you are, what you've built, and where you're going. I need to understand the landscape before I can shape it.</p>
+      </div>
+      <div class="approach-col">
+        <div class="approach-col-num">PHASE 02</div>
+        <h3>Architecture</h3>
+        <p>Identity, positioning, messaging, voice. The strategic skeleton that everything visual will hang on. This is the phase most designers skip — and the reason most brands don't last.</p>
+      </div>
+      <div class="approach-col">
+        <div class="approach-col-num">PHASE 03</div>
+        <h3>Expression</h3>
+        <p>Now we design. And because the foundation is airtight, the visual choices practically make themselves. Every color, every typeface, every pixel earns its place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA — Berry + Cream Split ══════════ -->
+<section class="cta-band" id="book">
+  <div class="cta-left">
+    <div class="cta-left-content">
+      <h2>Ready to build something <em>that lasts?</em></h2>
+      <p>It starts with a conversation. No pitch deck. No pressure. Just a real conversation about where you are and where you want to go.</p>
+    </div>
+  </div>
+  <div class="cta-right">
+    <div class="cta-right-content">
+      <div class="section-eyebrow">Let's Talk</div>
+      <p>Book a Brand Clarity Conversation — a complimentary 30-minute call to explore whether we're the right fit. No obligation. Just clarity.</p>
+      <a href="YOUR_CALENDLY_OR_GCAL_LINK" class="hero-cta">Schedule a Conversation</a>
+      <p class="cta-sub">30 minutes · Complimentary · By application</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+  </div>
+  <div class="footer-rule"></div>
+  <p>&copy; 2026 Kiana Prema Consulting. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
