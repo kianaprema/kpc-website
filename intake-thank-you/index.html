@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Kiana Prema Consulting</title>
+<meta name="description" content="Your pre-CORE intake has been received.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brick: #BF5454;
+  --berry: #8C0343;
+  --amber: #D98859;
+  --sand: #BFAF80;
+  --patina: #4E7B72;
+  --blush: #F2AB9B;
+  --cream: #F2DCC9;
+  --dark: #2C1810;
+  --bg: #FAF6F1;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, #4a0228 100%);
+  color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(217, 136, 89, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  left: -180px;
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(217, 136, 89, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card {
+  max-width: 560px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.amber-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--amber);
+  margin: 0 auto 28px;
+}
+
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 32px;
+}
+
+.body-copy {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(242, 220, 201, 0.85);
+  margin-bottom: 20px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.body-copy em {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--cream);
+}
+
+.signature {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--amber);
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(217, 136, 89, 0.25);
+}
+
+.footer {
+  margin-top: 48px;
+  font-family: 'Cormorant', serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(242, 220, 201, 0.5);
+}
+
+.footer .dot {
+  color: var(--amber);
+  margin: 0 8px;
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 40px;
+  }
+  .body-copy {
+    font-size: 15px;
+  }
+  .signature {
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="amber-rule"></div>
+  <div class="eyebrow">Received</div>
+  <h1>Thank you.</h1>
+
+  <p class="body-copy">
+    Your words are with me now. I'll read every one of them carefully before we meet — <em>this is how I prepare to hold the room for you.</em>
+  </p>
+
+  <p class="body-copy">
+    Keep an eye on your inbox. I'll reach out if anything needs clarifying before our session. Otherwise, I'll see you when we meet.
+  </p>
+
+  <p class="signature">
+    With care,<br>Kiana
+  </p>
+
+  <div class="footer">
+    Kiana Prema Consulting <span class="dot">·</span> Intuitive Brand Engineering
+  </div>
+</div>
+
+</body>
+</html>
