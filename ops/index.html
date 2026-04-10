@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ops Hub — Kiana Prema Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brick: #BF5454;
+  --berry: #8C0343;
+  --amber: #D98859;
+  --sand: #BFAF80;
+  --patina: #4E7B72;
+  --blush: #F2AB9B;
+  --cream: #F2DCC9;
+  --dark: #2C1810;
+  --bg: #FAF6F1;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  min-height: 100vh;
+  padding: 60px 24px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.hub-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: 'Cormorant', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.hub-sub {
+  font-family: 'Cormorant', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--brick);
+  margin-bottom: 32px;
+}
+
+.divider {
+  width: 56px;
+  height: 2px;
+  background: var(--amber);
+  margin-bottom: 48px;
+}
+
+/* ── Tool Cards ── */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.tool-card {
+  background: #fff;
+  border: 1px solid rgba(217,136,89,0.2);
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-decoration: none;
+  color: var(--dark);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--amber);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(44,24,16,0.08);
+  border-color: var(--amber);
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.tool-name {
+  font-family: 'Cormorant', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.tool-desc {
+  font-size: 13px;
+  color: #7a6b60;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.tool-meta {
+  font-size: 11px;
+  color: var(--amber);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 14px;
+}
+
+/* ── Full-width card variant ── */
+.tool-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Workflow Section ── */
+.workflow-section {
+  background: #fff;
+  border: 1px solid rgba(217,136,89,0.15);
+  border-radius: 10px;
+  padding: 32px 28px;
+  margin-bottom: 48px;
+}
+
+.workflow-section h2 {
+  font-family: 'Cormorant', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: var(--dark);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+.step-text strong {
+  color: var(--berry);
+}
+
+/* ── Footer ── */
+.hub-footer {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(217,136,89,0.15);
+}
+
+.hub-footer .sig {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--brick);
+  margin-bottom: 6px;
+}
+
+.hub-footer .meta {
+  font-size: 11px;
+  color: var(--dark);
+  opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+  body { padding: 40px 16px; }
+  h1 { font-size: 36px; }
+  .tool-grid { grid-template-columns: 1fr; }
+  .workflow-section { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="hub-eyebrow">Internal &middot; Kiana Prema Consulting</div>
+  <h1>Ops Hub</h1>
+  <div class="hub-sub">Content tools &amp; posting workflow</div>
+  <div class="divider"></div>
+
+  <!-- ── Instagram Content ── -->
+  <div class="section-label">Instagram Content</div>
+  <div class="tool-grid">
+
+    <a href="month2-visuals.html" class="tool-card">
+      <div class="tool-icon">&#9635;</div>
+      <div class="tool-name">Month 2 Visuals</div>
+      <div class="tool-desc">Visual cards, PNG export, and captions for Posts 16&ndash;27. Download images and copy captions directly from this page.</div>
+      <div class="tool-meta">Apr 28 &ndash; May 23 &middot; 12 posts &middot; 26 PNGs</div>
+    </a>
+
+    <a href="month1-visuals.html" class="tool-card">
+      <div class="tool-icon">&#9635;</div>
+      <div class="tool-name">Month 1 Visuals</div>
+      <div class="tool-desc">Visual cards and PNG export for Posts 1&ndash;15. The original grid launch set.</div>
+      <div class="tool-meta">Apr 11 &ndash; Apr 25 &middot; 15 posts &middot; 35 PNGs</div>
+    </a>
+
+    <a href="hashtag-generator.html" class="tool-card wide">
+      <div class="tool-icon">&#9733;</div>
+      <div class="tool-name">Hashtag Generator</div>
+      <div class="tool-desc">Generate a fresh, randomized set of hashtags from the KPC strategy bank. Copy and paste directly into your post. Edit the bank anytime the strategy evolves.</div>
+      <div class="tool-meta">4 tiers &middot; 15&ndash;20 per set &middot; always rotating</div>
+    </a>
+
+  </div>
+
+  <!-- ── Posting Workflow ── -->
+  <div class="workflow-section">
+    <h2>Content Posting SOP</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Open the <strong>visuals page</strong> for the current month. Download the PNG(s) for the post using the per-post download button.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Click the <strong>Caption</strong> dropdown on the same post. Hit <strong>Copy</strong>. Paste into Meta Business Suite.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">Open the <strong>Hashtag Generator</strong>. Hit <strong>Generate</strong>, then <strong>Copy to Clipboard</strong>. Paste below the caption in Meta Business Suite.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">Schedule or publish in <strong>Meta Business Suite</strong>.</div>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <div class="hub-footer">
+    <div class="sig">Kiana Prema Consulting</div>
+    <div class="meta">Ops Hub &middot; Not linked from the public site &middot; Last updated April 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>

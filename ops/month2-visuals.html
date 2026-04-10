@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPC Instagram Visuals — Month 2 | Kiana Prema Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brick: #BF5454;
+  --berry: #8C0343;
+  --amber: #D98859;
+  --sand: #BFAF80;
+  --patina: #4E7B72;
+  --blush: #F2AB9B;
+  --cream: #F2DCC9;
+  --dark: #2C1810;
+  --bg: #FAF6F1;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f0ede8;
+  color: #333;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-family: 'Cormorant', serif;
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--amber);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.instructions {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+/* Post Group */
+.post-group {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+.post-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+.post-title-label {
+  font-family: 'Cormorant', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 20px;
+  padding-left: 4px;
+}
+
+.card {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.slides {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  flex: 0 0 360px;
+  width: 360px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   SHARED TEXTURES & ACCENTS
+   ═══════════════════════════════════════════ */
+
+.linen {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.015) 2px,
+    rgba(255,255,255,0.015) 4px
+  );
+}
+
+.gold-arc::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(217,136,89,0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.gold-arc.top-right::after { top: -80px; right: -80px; }
+.gold-arc.bottom-left::after { bottom: -80px; left: -80px; }
+.gold-arc.center::after { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 280px; height: 280px; }
+
+.gold-bracket::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 30px;
+  height: 80px;
+  border-left: 1px solid var(--amber);
+  border-top: 1px solid var(--amber);
+  pointer-events: none;
+}
+
+.amber-rule::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--amber);
+}
+
+.wordmark {
+  position: absolute;
+  bottom: 24px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.num-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   CARD STYLES
+   ═══════════════════════════════════════════ */
+
+/* --- BERRY CARDS --- */
+.card-dark {
+  background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, #4a0228 100%);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  text-align: center;
+}
+.card-dark .headline {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.25;
+  color: var(--cream);
+}
+.card-dark .sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: rgba(242,220,201,0.6);
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* --- CREAM CARDS --- */
+.card-cream {
+  background: var(--bg);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  text-align: center;
+}
+.card-cream .headline {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--dark);
+}
+.card-cream .sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #7A4A3A;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+/* --- PATINA CARDS --- */
+.card-patina {
+  background: linear-gradient(160deg, var(--patina) 0%, #3a5f58 100%);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  text-align: center;
+}
+.card-patina .headline {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--cream);
+}
+.card-patina .sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(242,220,201,0.65);
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+/* --- BRICK CARDS --- */
+.card-brick {
+  background: linear-gradient(160deg, var(--brick) 0%, #8a3535 100%);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  text-align: center;
+}
+.card-brick .headline {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.3;
+}
+.card-brick .sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(242,220,201,0.7);
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+/* Carousel slide label */
+.slide-label {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Week divider */
+.week-divider {
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  padding: 24px 0;
+  border-top: 1px solid #d4cdc4;
+  text-align: center;
+}
+.week-divider .week-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 4px;
+}
+.week-divider .week-theme {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--dark);
+}
+
+/* Reel reference section */
+.reel-section {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 40px;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid #e8dad0;
+}
+.reel-card {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e8dad0;
+}
+.reel-card:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.reel-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+.reel-title {
+  font-family: 'Cormorant', serif;
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.reel-hook {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--brick);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.reel-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #7A4A3A;
+  line-height: 1.7;
+}
+.reel-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #B09A8C;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 375px;
+  }
+  .card-dark .headline, .card-cream .headline, .card-patina .headline, .card-brick .headline {
+    font-size: 26px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   EXPORT BAR & BUTTONS
+   ═══════════════════════════════════════════ */
+.export-bar {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 16px 20px;
+  background: var(--dark);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.export-bar .label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-primary {
+  background: var(--brick);
+  color: #fff;
+}
+.btn-group {
+  background: var(--amber);
+  color: var(--dark);
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.progress {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--cream);
+  opacity: 0.6;
+}
+.post-group-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.post-group-header .post-label {
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════
+   CAPTION BLOCKS
+   ═══════════════════════════════════════════ */
+.caption-block {
+  max-width: 600px;
+  margin-top: 16px;
+  position: relative;
+}
+.caption-block summary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 0;
+  user-select: none;
+  list-style: none;
+}
+.caption-block summary::-webkit-details-marker { display: none; }
+.caption-block summary::before {
+  content: '\25B6';
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 9px;
+  transition: transform 0.2s;
+}
+.caption-block[open] summary::before {
+  transform: rotate(90deg);
+}
+.caption-text {
+  background: #fff;
+  border: 1px solid #e8dad0;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--dark);
+  white-space: pre-wrap;
+  margin-top: 8px;
+  position: relative;
+}
+.copy-caption-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--amber);
+  color: var(--dark);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.copy-caption-btn:hover { opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<h1>Instagram Visual Cards</h1>
+<div class="subtitle">Kiana Prema Consulting &mdash; Month 2</div>
+<p class="instructions">April 28 &ndash; May 23 &middot; 3x/week posts + 1&ndash;2 Reels/week. Funnel arc: Weeks 1&ndash;2 tease the gap, Weeks 3&ndash;4 launch the Brand Integrity Audit ($37).</p>
+
+<div class="export-bar">
+  <span class="label">Export</span>
+  <button class="btn btn-primary" id="download-all">⬇  Download All PNGs</button>
+  <span class="progress" id="progress">Ready.</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     WEEK 1 — "The gap you can feel but can't name"
+     ═══════════════════════════════════════════════════════ -->
+<div class="week-divider">
+  <div class="week-label">Week 1 &middot; April 28 &ndash; May 2</div>
+  <div class="week-theme">&ldquo;The gap you can feel but can&rsquo;t name&rdquo;</div>
+</div>
+
+<!-- POST 16 — Brand Education — Carousel (4 slides)
+     "The 4 Layers of a Brand (and Which One You're Probably Missing)" -->
+<div class="post-group">
+  <div class="post-label">Post 16 &middot; Brand Education &middot; Carousel &mdash; 4 Slides</div>
+  <div class="post-title-label">The 4 Layers of a Brand (and Which One You&rsquo;re Probably Missing)</div>
+  <div class="slides">
+    <!-- Slide 1: Cover -->
+    <div class="card card-patina linen gold-arc bottom-left amber-rule">
+      <div class="slide-label">1 / 4</div>
+      <div class="headline" style="font-size:26px;">The 4 Layers<br>of a Brand<br><em style="color:var(--amber);">(and which one you&rsquo;re<br>probably missing)</em></div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+    <!-- Slide 2: The Layers -->
+    <div class="card card-cream" style="padding:36px 32px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 4</div>
+      <div style="display:flex; flex-direction:column; gap:12px; width:100%; text-align:left;">
+        <div style="padding:14px 16px; background:var(--patina); color:var(--cream); border-radius:4px;">
+          <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;">01 &middot; Identity</div>
+          <div style="font-family:'Cormorant',serif; font-size:15px; font-style:italic; margin-top:2px;">Who you are and who you serve</div>
+        </div>
+        <div style="padding:14px 16px; background:var(--brick); color:var(--cream); border-radius:4px;">
+          <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;">02 &middot; Strategy</div>
+          <div style="font-family:'Cormorant',serif; font-size:15px; font-style:italic; margin-top:2px;">How you position in the market</div>
+        </div>
+        <div style="padding:14px 16px; background:var(--sand); color:var(--dark); border-radius:4px;">
+          <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;">03 &middot; Messaging</div>
+          <div style="font-family:'Cormorant',serif; font-size:15px; font-style:italic; margin-top:2px;">What you say and how you say it</div>
+        </div>
+        <div style="padding:14px 16px; background:var(--blush); color:var(--dark); border-radius:4px;">
+          <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;">04 &middot; Design</div>
+          <div style="font-family:'Cormorant',serif; font-size:15px; font-style:italic; margin-top:2px;">The visual expression of all of the above</div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3: The Question -->
+    <div class="card card-cream" style="padding:48px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">3 / 4</div>
+      <div class="headline" style="font-size:22px; color:var(--dark);">Most people start<br>at the bottom.</div>
+      <div class="sub" style="margin-top:20px;">They hire a designer before they have a strategy.<br>They write copy before they know who they&rsquo;re talking to.<br>They launch before the foundation is set.</div>
+    </div>
+    <!-- Slide 4: The Closer -->
+    <div class="card card-dark linen">
+      <div class="slide-label">4 / 4</div>
+      <div class="headline" style="font-size:22px;">If you can&rsquo;t clearly<br>articulate layers 1&ndash;3...</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub" style="font-size:15px;">That&rsquo;s the gap.</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Your brand has four layers. Most people only build one.
+
+Identity. Strategy. Messaging. Design.
+
+They work like architecture — each layer supports the one above it. Skip one and the whole thing becomes unstable. You might not see it right away, but your audience will feel it.
+
+Here's the pattern I see over and over: a founder hires a designer before they have a strategy. They write copy before they know who they're really talking to. They launch before the foundation is set.
+
+It doesn't mean the work was bad. It means the order was wrong.
+
+If you can't clearly articulate your identity, your positioning, and your message — that's the gap. And no amount of beautiful design will close it.
+
+Save this if it landed. And if you felt that gap while reading — the link in my bio is a good place to start.
+    </div>
+  </details>
+</div>
+
+<!-- POST 17 — Philosophy / Authority — Single Image
+     "Strategy without identity is a house built on sand." -->
+<div class="post-group">
+  <div class="post-label">Post 17 &middot; Philosophy / Authority &middot; Single Image</div>
+  <div class="post-title-label">Strategy without identity is a house built on sand.</div>
+  <div class="slides">
+    <div class="card card-dark linen gold-arc center">
+      <div class="headline" style="font-size:30px;">Strategy without identity<br>is a house built<br><em style="color:var(--amber);">on sand.</em></div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Strategy without identity is a house built on sand.
+
+You can have the sharpest positioning in the market. The cleanest funnel. The most dialed-in messaging.
+
+But if you haven't done the deeper work of knowing who you are, what you stand for, and why this business exists beyond revenue — it will all eventually crack.
+
+Identity is the foundation. Strategy is the frame. Everything else is finishing work.
+
+Most people want to skip to the finishes. I get it — it's the exciting part. But the brands that last? They were built from the ground up.
+
+That's the work I do. And that's the order I build in. Always.
+    </div>
+  </details>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     WEEK 2 — "What most people get wrong"
+     ═══════════════════════════════════════════════════════ -->
+<div class="week-divider">
+  <div class="week-label">Week 2 &middot; May 5 &ndash; May 9</div>
+  <div class="week-theme">&ldquo;What most people get wrong&rdquo;</div>
+</div>
+
+<!-- POST 18 — Brand Education — Carousel (5 slides)
+     "5 Questions Your Brand Should Be Able to Answer" -->
+<div class="post-group">
+  <div class="post-label">Post 18 &middot; Brand Education &middot; Carousel &mdash; 5 Slides</div>
+  <div class="post-title-label">5 Questions Your Brand Should Be Able to Answer (But Probably Can&rsquo;t)</div>
+  <div class="slides">
+    <!-- Slide 1: Cover -->
+    <div class="card card-cream" style="position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">1 / 5</div>
+      <div class="headline" style="font-size:24px; color:var(--dark);">5 Questions Your Brand<br>Should Be Able to Answer<br><em style="color:var(--brick);">(But Probably Can&rsquo;t)</em></div>
+      <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="card card-cream" style="padding:44px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 5</div>
+      <div class="num-circle">1</div>
+      <div class="headline" style="font-size:20px; margin-top:16px;">Who are you really<br>building this for?</div>
+      <div class="sub" style="text-align:left;">Not &ldquo;everyone.&rdquo; Your actual ideal human. Their fears, desires, and the language they use when they think nobody&rsquo;s listening.</div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="card card-cream" style="padding:44px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">3 / 5</div>
+      <div class="num-circle">2</div>
+      <div class="headline" style="font-size:20px; margin-top:16px;">What do you believe<br>that your competitors don&rsquo;t?</div>
+      <div class="sub" style="text-align:left;">Your point of view is your brand&rsquo;s sharpest edge. If you sound like everyone else, you&rsquo;ll be chosen like everyone else &mdash; on price.</div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="card card-cream" style="padding:44px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">4 / 5</div>
+      <div class="num-circle">3</div>
+      <div class="headline" style="font-size:18px; margin-top:16px;">What does your brand sound like<br>when you&rsquo;re not in the room?</div>
+      <div class="sub" style="text-align:left;">Your website, your emails, your social &mdash; they speak on your behalf 24/7. Do they sound like you at your most aligned?</div>
+    </div>
+    <!-- Slide 5 -->
+    <div class="card card-dark linen">
+      <div class="slide-label">5 / 5</div>
+      <div class="headline" style="font-size:20px;">If you hesitated<br>on even one...</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub" style="font-size:15px;">That hesitation is the gap<br>between where you are<br>and where you should be.</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Five questions. That's all it takes to know whether your brand is built on solid ground — or borrowed confidence.
+
+I ask these questions at the start of every engagement. Not to test people, but because the answers reveal everything.
+
+If you could answer all five without hesitating — your brand has a real foundation. If you paused on even one... that pause is information. It's telling you exactly where the gap is.
+
+The good news? Gaps aren't failures. They're just the places where the work hasn't been done yet.
+
+And that's a starting point, not a dead end.
+
+Save this post and come back to it when you're ready to be honest with yourself about where your brand actually stands. The link in my bio is there when you are.
+    </div>
+  </details>
+</div>
+
+<!-- POST 19 — Social Proof — Carousel (3 slides)
+     "Built with CORE" — KPC Self-Case Study -->
+<div class="post-group">
+  <div class="post-label">Post 19 &middot; Social Proof &middot; Carousel &mdash; 3 Slides</div>
+  <div class="post-title-label">Built with CORE &mdash; The Kiana Prema Consulting Brand</div>
+  <div class="slides">
+    <!-- Slide 1: Cover -->
+    <div class="card card-cream" style="position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">1 / 3</div>
+      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--patina); margin-bottom:16px;">Case Study</div>
+      <div class="headline" style="font-size:24px; color:var(--dark);">I put my own brand<br>through the same process<br>I use with clients.</div>
+      <div class="sub">This is what came out.</div>
+      <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
+    </div>
+    <!-- Slide 2: The Process -->
+    <div class="card card-cream" style="padding:36px 32px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 3</div>
+      <div style="text-align:left; width:100%;">
+        <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); margin-bottom:16px;">The CORE Process Applied</div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:'Cormorant',serif; font-size:16px; font-weight:600; color:var(--patina);">Identity</div>
+          <div style="font-family:'DM Sans'; font-size:12px; color:var(--dark); line-height:1.7;">Chemical engineer meets intuitive brand architect. Precision and soul in equal measure.</div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:'Cormorant',serif; font-size:16px; font-weight:600; color:var(--brick);">Strategy</div>
+          <div style="font-family:'DM Sans'; font-size:12px; color:var(--dark); line-height:1.7;">Positioned for visionary founders ready to invest in brand architecture, not decoration.</div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:'Cormorant',serif; font-size:16px; font-weight:600; color:var(--sand);">Messaging</div>
+          <div style="font-family:'DM Sans'; font-size:12px; color:var(--dark); line-height:1.7;">Intelligent and mystical. Precise and expansive. Never clinical, never chaotic.</div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant',serif; font-size:16px; font-weight:600; color:var(--blush);">Expression</div>
+          <div style="font-family:'DM Sans'; font-size:12px; color:var(--dark); line-height:1.7;">Desert Rose palette. Cormorant + DM Sans. Every color intentional. Every detail earned.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3: The Result -->
+    <div class="card card-dark linen gold-arc top-right">
+      <div class="slide-label">3 / 3</div>
+      <div class="headline" style="font-size:22px;">The brand you see right now<br>was built from the inside out.</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub">Identity first. Strategy second.<br>Design last.<br><br>That&rsquo;s the only order that lasts.</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>I put my own brand through the same process I use with clients. Every layer. Every question. Every hard decision.
+
+Kiana Prema Consulting wasn't designed in a weekend. It was excavated.
+
+Identity: chemical engineer meets intuitive brand architect. Precision and soul in equal measure.
+
+Strategy: positioned for visionary founders who are ready to invest in brand architecture — not decoration.
+
+Messaging: intelligent and mystical. Precise and expansive. Never clinical. Never chaotic.
+
+Expression: the Desert Rose palette. Cormorant and DM Sans. Every color intentional. Every detail earned.
+
+The brand you see right now was built from the inside out. Identity first. Strategy second. Design last. That's the only order that lasts.
+
+I share this because I think it matters that I've done the work I ask my clients to do. This isn't theory — it's practice.
+    </div>
+  </details>
+</div>
+
+<!-- POST 20 — Philosophy / Authority — Single Image
+     "Clarity is the most expensive thing I sell." -->
+<div class="post-group">
+  <div class="post-label">Post 20 &middot; Philosophy / Authority &middot; Single Image</div>
+  <div class="post-title-label">Clarity is the most expensive thing I sell.</div>
+  <div class="slides">
+    <div class="card card-cream" style="position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
+      <div class="headline" style="font-size:28px; color:var(--dark);">Clarity is the most<br>expensive thing<br><em style="color:var(--brick);">I sell.</em></div>
+      <div class="sub" style="margin-top:20px;">Everything else &mdash; the strategy, the visuals,<br>the messaging &mdash; is what clarity makes possible.</div>
+      <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Clarity is the most expensive thing I sell.
+
+Not because I price it that way — but because everything else depends on it.
+
+The strategy, the visuals, the messaging, the positioning — none of it works until you're clear. Clear on who you are. Clear on who you're for. Clear on what you actually believe.
+
+Most founders come to me thinking they need a rebrand. What they actually need is to hear themselves think — without the noise of the market, the comparison, the "but my competitor does it this way."
+
+When clarity arrives, everything else falls into place. The decisions get easier. The voice gets sharper. The brand starts working because it finally knows what it's supposed to do.
+
+That's the work. And it's worth more than any logo.
+    </div>
+  </details>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     WEEK 3 — "Here's what I built for you" — Audit Launch
+     ═══════════════════════════════════════════════════════ -->
+<div class="week-divider">
+  <div class="week-label">Week 3 &middot; May 12 &ndash; May 16</div>
+  <div class="week-theme">&ldquo;Here&rsquo;s what I built for you&rdquo;</div>
+</div>
+
+<!-- POST 21 — Conversion / CTA — Carousel (3 slides)
+     "Introducing: The Brand Integrity Audit" -->
+<div class="post-group">
+  <div class="post-label">Post 21 &middot; Conversion &middot; Carousel &mdash; 3 Slides</div>
+  <div class="post-title-label">Introducing: The Brand Integrity Audit</div>
+  <div class="slides">
+    <!-- Slide 1: Hook -->
+    <div class="card card-dark linen gold-arc center">
+      <div class="slide-label">1 / 3</div>
+      <div class="headline" style="font-size:26px;">How strong is<br>your brand &mdash;<br><em style="color:var(--amber);">really?</em></div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+    <!-- Slide 2: The Product -->
+    <div class="card card-cream" style="padding:40px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 3</div>
+      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:16px;">New from Kiana Prema Consulting</div>
+      <div class="headline" style="font-size:22px; color:var(--dark);">The Brand<br>Integrity Audit</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub" style="text-align:left; font-size:13px;">A self-guided diagnostic across the 4 layers of brand architecture.<br><br>30 minutes. Total clarity.<br><br>You&rsquo;ll know exactly where you stand &mdash; and exactly what to fix first.</div>
+      <div style="font-family:'DM Sans'; font-size:18px; font-weight:600; color:var(--amber); margin-top:20px;">$37</div>
+    </div>
+    <!-- Slide 3: CTA -->
+    <div class="card card-brick linen" style="position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
+      <div class="slide-label">3 / 3</div>
+      <div class="headline" style="font-size:22px; color:var(--cream);">Your brand is already<br>telling a story.</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub" style="color:rgba(242,220,201,0.7); font-size:15px;">Find out which one.<br><br>Link in bio.</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>How strong is your brand — really?
+
+Not your logo. Not your color palette. Your brand.
+
+The identity underneath. The strategy holding it up. The messaging that speaks when you're not in the room. The design that translates all of it into something people can feel in three seconds.
+
+I built the Brand Integrity Audit because I kept having the same conversation: talented founders with beautiful brands that weren't converting. The outside looked polished — but underneath, something was off. A layer was missing. And they could feel it, even if they couldn't name it.
+
+This audit walks you through all four layers in about 30 minutes. You'll know exactly where you stand — and exactly what to fix first.
+
+No guessing. No expensive discovery calls. Just clarity.
+
+$37. Link in bio.
+    </div>
+  </details>
+</div>
+
+<!-- POST 22 — Brand Education — Single Image
+     "Your brand has four layers. Most people only build one." -->
+<div class="post-group">
+  <div class="post-label">Post 22 &middot; Brand Education &middot; Single Image</div>
+  <div class="post-title-label">Your brand has four layers. Most people only build one.</div>
+  <div class="slides">
+    <div class="card" style="display:flex; overflow:hidden;">
+      <div style="width:50%; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center;">
+        <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--sand); margin-bottom:16px;">What most people build</div>
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%; padding:0 12px;">
+          <div style="padding:10px; background:rgba(44,24,16,0.06); border-radius:3px; font-family:'DM Sans'; font-size:12px; color:rgba(44,24,16,0.25);">Identity</div>
+          <div style="padding:10px; background:rgba(44,24,16,0.06); border-radius:3px; font-family:'DM Sans'; font-size:12px; color:rgba(44,24,16,0.25);">Strategy</div>
+          <div style="padding:10px; background:rgba(44,24,16,0.06); border-radius:3px; font-family:'DM Sans'; font-size:12px; color:rgba(44,24,16,0.25);">Messaging</div>
+          <div style="padding:10px; background:var(--blush); border-radius:3px; font-family:'DM Sans'; font-size:12px; font-weight:600; color:var(--dark);">Design &check;</div>
+        </div>
+      </div>
+      <div style="width:2px; background:var(--amber);"></div>
+      <div style="width:50%; background:linear-gradient(180deg, var(--berry) 0%, #4a0228 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center;">
+        <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); margin-bottom:16px;">What I build</div>
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%; padding:0 12px;">
+          <div style="padding:10px; background:var(--patina); border-radius:3px; font-family:'DM Sans'; font-size:12px; font-weight:600; color:var(--cream);">Identity &check;</div>
+          <div style="padding:10px; background:var(--brick); border-radius:3px; font-family:'DM Sans'; font-size:12px; font-weight:600; color:var(--cream);">Strategy &check;</div>
+          <div style="padding:10px; background:var(--sand); border-radius:3px; font-family:'DM Sans'; font-size:12px; font-weight:600; color:var(--dark);">Messaging &check;</div>
+          <div style="padding:10px; background:var(--blush); border-radius:3px; font-family:'DM Sans'; font-size:12px; font-weight:600; color:var(--dark);">Design &check;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Your brand has four layers. Most people only build one.
+
+They jump straight to design — the logo, the colors, the fonts — and call it a brand. And honestly? I understand why. Design is the visible part. It's exciting. It feels like progress.
+
+But design without strategy is decoration. And decoration without identity is a costume.
+
+The left side of this image is what most people build: one layer, floating without support.
+
+The right side is what I build: all four layers, in order, each one earning the next.
+
+Identity. Strategy. Messaging. Design.
+
+That's not a checklist — it's an architecture. And the order matters.
+
+If you've been wondering why your brand looks right but doesn't feel right... this might be why. Grab the free guide in my bio — it'll help you see where the gaps are.
+    </div>
+  </details>
+</div>
+
+<!-- POST 23 — Conversion / CTA — Single Image (Testimonial + CTA)
+     Corin testimonial paired with audit CTA -->
+<div class="post-group">
+  <div class="post-label">Post 23 &middot; Social Proof + Conversion &middot; Single Image</div>
+  <div class="post-title-label">Client Testimonial &mdash; paired with Brand Integrity Audit CTA</div>
+  <div class="slides">
+    <div class="card linen gold-bracket" style="background:linear-gradient(160deg, var(--patina) 0%, #2d4f49 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:44px 40px; text-align:center;">
+      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:22px; line-height:1.35; color:var(--cream); margin-bottom:24px;">&ldquo;The CORE strategy provided a grounded, simple and strategic framework that empowered a critical breakthrough in terms of identity and brand.&rdquo;</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin-bottom:14px;"></div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(242,220,201,0.5);">Corin Blanchard</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:rgba(242,220,201,0.35); margin-top:4px;">The StarHouse</div>
+      <div style="font-family:'DM Sans'; font-size:11px; color:var(--amber); margin-top:24px; letter-spacing:0.05em;">Want this kind of clarity? Start with the audit &rarr; link in bio</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>"The CORE strategy provided a grounded, simple and strategic framework that empowered a critical breakthrough in terms of identity and brand." — Corin Blanchard, The StarHouse
+
+This is what happens when the foundation gets built first.
+
+Not a mood board. Not a Pinterest aesthetic. A framework that holds — one that gives you the clarity to make decisions from a place of alignment instead of anxiety.
+
+Corin came in with a vision. What she needed wasn't more ideas — it was a structure that could hold them.
+
+That's the CORE process. And it's the same architecture that lives inside the Brand Integrity Audit.
+
+If you've been wondering where your brand actually stands — not where you hope it stands — the audit will show you. 30 minutes. Total clarity. $37.
+
+Link in bio.
+    </div>
+  </details>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     WEEK 4 — "The invitation"
+     ═══════════════════════════════════════════════════════ -->
+<div class="week-divider">
+  <div class="week-label">Week 4 &middot; May 19 &ndash; May 23</div>
+  <div class="week-theme">&ldquo;The invitation&rdquo;</div>
+</div>
+
+<!-- POST 24 — Conversion / CTA — Single Image
+     "30 minutes. 4 layers. Total clarity." -->
+<div class="post-group">
+  <div class="post-label">Post 24 &middot; Conversion &middot; Single Image</div>
+  <div class="post-title-label">30 minutes. 4 layers. Total clarity.</div>
+  <div class="slides">
+    <div class="card card-cream" style="position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
+      <div style="font-family:'Cormorant',serif; font-size:42px; font-weight:300; color:var(--dark); line-height:1.15;">30 minutes.<br>4 layers.<br><em style="color:var(--brick);">Total clarity.</em></div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:20px auto;"></div>
+      <div style="font-family:'DM Sans'; font-size:14px; color:var(--amber); font-weight:600; letter-spacing:0.04em;">The Brand Integrity Audit &mdash; $37</div>
+      <div style="font-family:'DM Sans'; font-size:12px; color:#7A4A3A; margin-top:8px;">Link in bio</div>
+      <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>30 minutes. 4 layers. Total clarity.
+
+That's what the Brand Integrity Audit gives you.
+
+Not a vague "your brand could be stronger" — an actual diagnostic across the four layers of brand architecture: Identity, Strategy, Messaging, and Design.
+
+You'll walk away knowing exactly where you stand and exactly what to fix first.
+
+I built this because I kept watching talented founders pour money into the wrong things — new logos when the real problem was messaging, new websites when the real problem was positioning. The audit stops the guessing.
+
+$37. Self-guided. Done in one sitting.
+
+Link in bio.
+    </div>
+  </details>
+</div>
+
+<!-- POST 25 — Brand Education — Carousel (4 slides)
+     "What Brand Integrity Actually Means" -->
+<div class="post-group">
+  <div class="post-label">Post 25 &middot; Brand Education &middot; Carousel &mdash; 4 Slides</div>
+  <div class="post-title-label">What Brand Integrity Actually Means (and Why It Matters More Than Aesthetics)</div>
+  <div class="slides">
+    <!-- Slide 1: Cover -->
+    <div class="card card-brick linen amber-rule">
+      <div class="slide-label">1 / 4</div>
+      <div class="headline" style="font-size:24px; color:var(--cream);">What Brand Integrity<br><em>Actually Means</em></div>
+      <div class="sub" style="color:rgba(242,220,201,0.5);">And why it matters more than aesthetics</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="card card-cream" style="padding:44px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 4</div>
+      <div class="headline" style="font-size:20px;">Brand integrity is alignment.</div>
+      <div class="sub" style="text-align:left; margin-top:16px;">It&rsquo;s the alignment between who you are, what you say, and what people experience when they find you.<br><br>When all three match &mdash; that&rsquo;s when trust happens instantly.</div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="card card-cream" style="padding:44px 36px;">
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">3 / 4</div>
+      <div class="headline" style="font-size:20px;">Aesthetics without integrity<br>is a costume.</div>
+      <div class="sub" style="text-align:left; margin-top:16px;">It might look good in a photo, but the moment someone engages with your brand &mdash; reads your copy, visits your site, gets on a call &mdash; the mask slips.<br><br>And they feel it, even if they can&rsquo;t name it.</div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="card card-dark linen">
+      <div class="slide-label">4 / 4</div>
+      <div class="headline" style="font-size:20px;">Integrity isn&rsquo;t about<br>being perfect.</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub" style="font-size:14px;">It&rsquo;s about being whole.<br><br>Want to know your score?<br>The Brand Integrity Audit &mdash; link in bio.</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Brand integrity isn't about being perfect. It's about being whole.
+
+It's the alignment between who you are, what you say, and what people experience when they find you. When those three things match — trust happens instantly. Pricing conversations get easier. Referrals come from people who actually understand what you do.
+
+When they don't match? Something feels off. Your audience can't name it, but they feel it. And they move on.
+
+Aesthetics without integrity is a costume. It might look good in a photo, but the moment someone reads your copy, visits your site, or gets on a call — the mask slips.
+
+This isn't about perfection. It's about doing the work to become whole.
+
+Want to know where your brand actually stands? The Brand Integrity Audit walks you through all four layers in 30 minutes. $37. Link in bio.
+    </div>
+  </details>
+</div>
+
+<!-- POST 26 — Conversion / CTA — Single Image
+     "Your brand is telling a story. Do you know which one?" -->
+<div class="post-group">
+  <div class="post-label">Post 26 &middot; Conversion &middot; Single Image</div>
+  <div class="post-title-label">Your brand is telling a story. Do you know which one?</div>
+  <div class="slides">
+    <div class="card card-dark linen gold-arc top-right">
+      <div class="headline" style="font-size:28px;">Your brand is<br>telling a story.</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:18px auto;"></div>
+      <div class="sub" style="font-size:18px; font-family:'Cormorant',serif; font-style:italic; color:var(--amber);">Do you know which one?</div>
+      <div style="font-family:'DM Sans'; font-size:12px; color:rgba(242,220,201,0.5); margin-top:20px;">Find out in 30 minutes &middot; The Brand Integrity Audit &middot; Link in bio</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>Your brand is telling a story. Do you know which one?
+
+Every touchpoint — your website, your social, your emails, your pricing page — is saying something about who you are and what you stand for. Whether you designed it that way or not.
+
+The question isn't whether your brand has a story. It does. The question is whether it's the story you'd choose.
+
+Most founders I work with discover that their brand is telling an older version of their story. One that made sense two years ago but doesn't match who they've become. The growth happened — but the brand didn't grow with it.
+
+If that resonates, this is your invitation. The Brand Integrity Audit shows you exactly where the story is aligned and where it's drifted. 30 minutes. Total honesty. $37.
+
+Find out which story yours is telling. Link in bio.
+    </div>
+  </details>
+</div>
+
+<!-- POST 27 — Philosophy / Authority — Single Image
+     "The work is sacred. The strategy is precise. Both at once." -->
+<div class="post-group">
+  <div class="post-label">Post 27 &middot; Philosophy / Authority &middot; Single Image</div>
+  <div class="post-title-label">The work is sacred. The strategy is precise. Both at once.</div>
+  <div class="slides">
+    <div class="card" style="display:flex; flex-direction:column; overflow:hidden;">
+      <div style="flex:1; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:40px 36px;">
+        <div style="font-family:'Cormorant',serif; font-style:italic; font-size:30px; font-weight:400; color:var(--dark); text-align:center; line-height:1.25;">The work is sacred.<br>The strategy is precise.<br><span style="color:var(--amber);">Both at once.</span></div>
+      </div>
+      <div style="height:120px; background:var(--patina); display:flex; align-items:center; justify-content:center; padding:0 36px; position:relative;">
+        <div style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--amber);"></div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; color:rgba(242,220,201,0.7); text-align:center; line-height:1.7;">This is what happens when a chemical engineer<br>becomes an intuitive brand architect.</div>
+      </div>
+    </div>
+  </div>
+  <details class="caption-block">
+    <summary>Caption</summary>
+    <div class="caption-text"><button class="copy-caption-btn" onclick="copyCaption(this)">Copy</button>The work is sacred. The strategy is precise. Both at once.
+
+That's the thing people don't expect when they work with me. They come in thinking it'll be one or the other — either the mystical deep-dive into identity, or the spreadsheet-driven marketing strategy.
+
+It's both. It has to be.
+
+Because a brand without soul is just a business card. And a brand without structure is just a feeling that never converts.
+
+I was a chemical engineer before I was a brand architect. I learned that the most beautiful things in nature aren't beautiful by accident — they're beautiful because their structure is sound.
+
+That's what I bring to this work. Precision and reverence. Systems and soul.
+
+If that resonates with how you want your brand to feel — I'd love to talk. Start with the free guide in my bio, or go straight to the Brand Integrity Audit if you're ready to see where you stand.
+
+Either way, I'm here when you are.
+    </div>
+  </details>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     REEL CONCEPTS — Reference Section
+     ═══════════════════════════════════════════════════════ -->
+<div class="week-divider" style="margin-top:100px;">
+  <div class="week-label">Reel Concepts</div>
+  <div class="week-theme">6 Reels &middot; Voiceover + B-Roll &amp; Text + Music</div>
+</div>
+
+<div class="reel-section">
+  <div class="reel-card">
+    <div class="reel-label">Reel 01 &middot; Week 1 &middot; Voiceover + B-Roll</div>
+    <div class="reel-title">The Engineer &amp; The Architect</div>
+    <div class="reel-hook">Hook: &ldquo;I used to think branding was about making things pretty.&rdquo;</div>
+    <div class="reel-body">Voiceover: &ldquo;I used to think branding was about making things pretty. Then I became a chemical engineer. And I learned that structure is what makes beauty last. That&rsquo;s what I bring to brand work &mdash; not decoration. Architecture.&rdquo;</div>
+    <div class="reel-note">B-roll: hands arranging objects, light on paper, architectural details, slow intentional movements. Audio: ambient/moody instrumental, low under voice. 15&ndash;20 sec.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-label">Reel 02 &middot; Week 2 &middot; Text + Music</div>
+    <div class="reel-title">$500 Brand vs $15,000 Brand</div>
+    <div class="reel-hook">Hook: &ldquo;A $500 brand vs a $15,000 brand&rdquo;</div>
+    <div class="reel-body">Text builds on screen line by line: &ldquo;$500 brand: a logo, a color palette, a Canva template. $15,000 brand: a reason someone trusts you before they&rsquo;ve ever spoken to you.&rdquo; Hold on the last line. Slow fade.</div>
+    <div class="reel-note">Audio: trending ambient/editorial track. Can be built entirely in CapCut or IG Reel editor. 12&ndash;15 sec.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-label">Reel 03 &middot; Week 2 &middot; Voiceover + B-Roll</div>
+    <div class="reel-title">The Reason Most Brands Don&rsquo;t Last</div>
+    <div class="reel-hook">Hook: &ldquo;The reason most brands don&rsquo;t last...&rdquo;</div>
+    <div class="reel-body">Voiceover: &ldquo;The reason most brands don&rsquo;t last isn&rsquo;t bad design. It&rsquo;s that nobody stopped to ask the hard questions first. Who are you? Who is this for? What do you actually believe? Skip those... and you&rsquo;ll rebrand again in 18 months.&rdquo;</div>
+    <div class="reel-note">B-roll: peeling paint, crumbling textures transitioning to clean architectural lines, something being built with care. Audio: minimal piano or ambient. 20 sec.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-label">Reel 04 &middot; Week 3 &middot; Text + Music</div>
+    <div class="reel-title">You Don&rsquo;t Need a Rebrand</div>
+    <div class="reel-hook">Hook: &ldquo;Most people don&rsquo;t need a rebrand.&rdquo;</div>
+    <div class="reel-body">Text builds: &ldquo;Most people don&rsquo;t need a rebrand. They need to know what&rsquo;s actually broken. That&rsquo;s why I built this.&rdquo; Cut to: clean text showing &ldquo;The Brand Integrity Audit &mdash; $37 &mdash; link in bio.&rdquo; Hold.</div>
+    <div class="reel-note">Audio: confident, clean editorial track. 12&ndash;15 sec. This is the audit launch Reel &mdash; pair with Post 21.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-label">Reel 05 &middot; Week 3 &middot; Voiceover + B-Roll</div>
+    <div class="reel-title">What Changed After We Worked Together</div>
+    <div class="reel-hook">Hook: &ldquo;I asked a client what changed after we worked together.&rdquo;</div>
+    <div class="reel-body">Voiceover reads a short transformation story &mdash; a client going from constant second-guessing to total brand confidence. Use Corin&rsquo;s story. End card: &ldquo;This is what brand integrity feels like.&rdquo;</div>
+    <div class="reel-note">B-roll: slow, warm, grounded imagery &mdash; nature, light, textures. Audio: warm ambient. 20&ndash;25 sec.</div>
+  </div>
+
+  <div class="reel-card">
+    <div class="reel-label">Reel 06 &middot; Week 4 &middot; Voiceover + B-Roll</div>
+    <div class="reel-title">I Don&rsquo;t Build Brands. I Excavate Them.</div>
+    <div class="reel-hook">Hook: &ldquo;I don&rsquo;t build brands. I excavate them.&rdquo;</div>
+    <div class="reel-body">Voiceover: &ldquo;I don&rsquo;t build brands. I excavate them. The brand was always there &mdash; buried under other people&rsquo;s expectations, market pressure, and imposter syndrome. My job is to dig it out and give it a structure that holds.&rdquo;</div>
+    <div class="reel-note">B-roll: archaeological/geological textures, hands in earth or sand, something being revealed or uncovered. Audio: deep, slow, cinematic. 15&ndash;20 sec. End card: Kiana Prema Consulting.</div>
+  </div>
+</div>
+
+<script>
+/* ── Caption copy button ── */
+function copyCaption(btn) {
+  var block = btn.closest('.caption-text');
+  var text = block.textContent.replace('Copy', '').trim();
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copied!';
+    setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+  });
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+(function() {
+  /* ── Font readiness ── */
+  var fontsReady = false;
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function() {
+      fontsReady = true;
+      document.getElementById('progress').textContent = 'Fonts loaded. Ready to export.';
+    });
+  } else {
+    fontsReady = true;
+  }
+
+  /* ── Index all exportable cards (post-groups only, skip reels) ── */
+  var reelSection = document.querySelector('.reel-section');
+  var postGroups = Array.from(document.querySelectorAll('.post-group')).filter(function(g) {
+    return !reelSection || !reelSection.contains(g);
+  });
+
+  var allCards = [];
+  var POST_START = 16; // Month 2 starts at Post 16
+
+  postGroups.forEach(function(group, groupIdx) {
+    var postNum = String(POST_START + groupIdx).padStart(2, '0');
+    var cards = Array.from(group.querySelectorAll('.card'));
+    var isCarousel = cards.length > 1;
+
+    cards.forEach(function(card, cardIdx) {
+      var filename = isCarousel
+        ? 'kpc-ig-post-' + postNum + '-slide-' + (cardIdx + 1) + '.png'
+        : 'kpc-ig-post-' + postNum + '.png';
+      allCards.push({ card: card, filename: filename, postNum: postNum });
+      card.dataset.filename = filename;
+    });
+
+    /* Inject per-post download button */
+    var label = group.querySelector('.post-label');
+    if (label) {
+      var btn = document.createElement('button');
+      btn.className = 'btn btn-group';
+      btn.textContent = isCarousel ? '\u2B07 ' + cards.length + ' slides' : '\u2B07 Download PNG';
+      btn.style.marginLeft = '12px';
+      btn.onclick = function() { downloadPostGroup(groupIdx, btn); };
+      var header = document.createElement('div');
+      header.className = 'post-group-header';
+      label.parentNode.insertBefore(header, label);
+      header.appendChild(label);
+      header.appendChild(btn);
+    }
+  });
+
+  /* Update total count in Download All button */
+  var dlAllBtn = document.getElementById('download-all');
+  dlAllBtn.textContent = '\u2B07  Download All ' + allCards.length + ' PNGs';
+
+  /* ── Capture function — scale 3 for 1080×1350 ── */
+  function captureCard(card) {
+    return html2canvas(card, {
+      scale: 3,
+      backgroundColor: null,
+      useCORS: true,
+      logging: false,
+      windowWidth: document.documentElement.scrollWidth,
+      windowHeight: document.documentElement.scrollHeight
+    });
+  }
+
+  /* ── Download blob ── */
+  function downloadCanvas(canvas, filename) {
+    return new Promise(function(resolve) {
+      canvas.toBlob(function(blob) {
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(function() { URL.revokeObjectURL(url); resolve(); }, 200);
+      }, 'image/png');
+    });
+  }
+
+  /* ── Per-post group download ── */
+  async function downloadPostGroup(groupIdx, btn) {
+    var origText = btn.textContent;
+    btn.disabled = true;
+    var group = postGroups[groupIdx];
+    var cards = Array.from(group.querySelectorAll('.card'));
+    var postNum = String(POST_START + groupIdx).padStart(2, '0');
+    var isCarousel = cards.length > 1;
+
+    for (var i = 0; i < cards.length; i++) {
+      btn.textContent = 'Exporting ' + (i + 1) + '/' + cards.length + '...';
+      var canvas = await captureCard(cards[i]);
+      var fn = isCarousel
+        ? 'kpc-ig-post-' + postNum + '-slide-' + (i + 1) + '.png'
+        : 'kpc-ig-post-' + postNum + '.png';
+      await downloadCanvas(canvas, fn);
+    }
+
+    btn.textContent = 'Done!';
+    btn.disabled = false;
+    setTimeout(function() { btn.textContent = origText; }, 2000);
+  }
+
+  /* ── Batch download all ── */
+  async function downloadAll(btn) {
+    var origText = btn.textContent;
+    btn.disabled = true;
+    var progress = document.getElementById('progress');
+
+    for (var i = 0; i < allCards.length; i++) {
+      progress.textContent = 'Exporting ' + (i + 1) + ' of ' + allCards.length + '...';
+      btn.textContent = '\u2B07 ' + (i + 1) + '/' + allCards.length;
+      var canvas = await captureCard(allCards[i].card);
+      await downloadCanvas(canvas, allCards[i].filename);
+    }
+
+    progress.textContent = 'All ' + allCards.length + ' PNGs exported!';
+    btn.textContent = origText;
+    btn.disabled = false;
+  }
+
+  dlAllBtn.addEventListener('click', function() { downloadAll(dlAllBtn); });
+})();
+</script>
+
+</body>
+</html>
