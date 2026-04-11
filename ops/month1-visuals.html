@@ -495,6 +495,63 @@ h1 {
   min-width: 180px;
   text-align: center;
 }
+
+/* ═══════════════════════════════════════════
+   CAPTION SECTIONS
+   ═══════════════════════════════════════════ */
+.caption-section { margin-top: 12px; }
+.caption-section summary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  cursor: pointer;
+  padding: 8px 4px;
+  list-style: none;
+  user-select: none;
+}
+.caption-section summary::-webkit-details-marker { display: none; }
+.caption-section summary::before { content: '▸ '; }
+.caption-section[open] summary::before { content: '▾ '; }
+.caption-box {
+  background: var(--bg);
+  border: 1px solid rgba(217,136,89,0.3);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-top: 8px;
+  position: relative;
+}
+.caption-box .copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--berry);
+  color: var(--cream);
+  border: none;
+  border-radius: 2px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.caption-box .copy-btn:hover { background: var(--brick); }
+.caption-box pre {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--dark);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 600px;
+  margin: 0;
+  padding-top: 8px;
+}
 </style>
 </head>
 <body>
@@ -509,6 +566,15 @@ h1 {
   <span class="progress" id="progress">Ready.</span>
 </div>
 
+<script>
+function copyCaption(btn) {
+  var pre = btn.parentElement.querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent).then(function() {
+    btn.textContent = 'Copied!';
+    setTimeout(function() { btn.textContent = 'Copy Caption'; }, 2000);
+  });
+}
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <!-- ═══════════════════════════════════════════════════
@@ -526,33 +592,52 @@ h1 {
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>Your brand is not your logo.
+
+It's not your color palette. It's not the Canva template you customized at midnight.
+
+Your brand is how people feel when they find you. The story that unfolds before you say a word. The certainty in the room when you speak about your work.
+
+Most founders build the outside first and wonder why nothing sticks. But a brand that converts — that holds — it comes from the inside out.
+
+Identity. Then strategy. Then design.
+
+We give form, structure, voice, and body to the brands that are changing the world. And we start with who you actually are.
+
+#brandstrategy #brandidentity #intuitivebusiness #branddesign #businessconsulting #brandconsultant #kianaprema #premiumbranding #intentionalbusiness #identityfirst</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 02 — Brand Education — Carousel (6 slides)
-     "5 Signs You've Outgrown Your Brand"
+     "Five Signs Your Brand Has Stopped Growing With You"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 02 · Brand Education · Carousel — 6 Slides</div>
-  <div class="post-title-label">5 Signs You've Outgrown Your Brand</div>
+  <div class="post-title-label">Five Signs Your Brand Has Stopped Growing With You</div>
   <div class="slides">
     <!-- Slide 1: Cover -->
     <div class="card card-patina linen gold-arc bottom-left amber-rule">
       <div class="slide-label">1 / 6</div>
-      <div class="headline" style="font-size:28px;">5 Signs You've<br><em>Outgrown</em><br>Your Brand</div>
+      <div class="headline" style="font-size:26px;">Five Signs Your Brand<br>Has <em>Stopped Growing</em><br>With You</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
     <!-- Slide 2 -->
     <div class="card card-cream">
       <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 6</div>
       <div class="num-circle">1</div>
-      <div class="headline" style="font-size:22px; margin-top:20px;">Your work has evolved...<br>but your website still sounds<br>like 2019 you.</div>
+      <div class="headline" style="font-size:22px; margin-top:20px;">Your work has deepened...<br>but your brand still tells<br>yesterday's story.</div>
     </div>
     <!-- Slide 3 -->
     <div class="card card-cream">
       <div class="slide-label" style="color:rgba(44,24,16,0.3);">3 / 6</div>
       <div class="num-circle">2</div>
-      <div class="headline" style="font-size:22px; margin-top:20px;">You cringe a little<br>every time you send<br>someone your link.</div>
+      <div class="headline" style="font-size:22px; margin-top:20px;">You cringe every time<br>you send someone<br>your link.</div>
     </div>
     <!-- Slide 4 -->
     <div class="card card-cream">
@@ -571,23 +656,42 @@ h1 {
       <div class="slide-label">6 / 6</div>
       <div class="num-circle">5</div>
       <div class="headline" style="font-size:20px; margin-top:20px;">You built your brand<br>for who you were...<br>not who you're becoming.</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub">That's not a design problem.<br>That's a signal.</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>You've evolved. Your work has deepened. Your prices have shifted. Your clients are better.
+
+But the thing that represents you to the world? It's still telling yesterday's story.
+
+This isn't about vanity. It's about alignment. When your brand lags behind who you've become, people feel the gap. And gaps cost you money.
+
+Your brand should be as deep as the work it represents. If it's not, we need to talk about what becoming looks like for you next.
+
+If any of these slides resonate — that's not a design problem. That's a signal that it's time.
+
+#brandstrategy #rebrand #brandgrowth #businessgrowth #personalbranding #brandconsultant #kianaprema #intuitivebusiness #alignment #becoming</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 03 — Brand Transformation — Single Image
-     "The Rebirth of Kiana Prema Consulting"
+     "How I Rebuilt My Own Brand"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 03 · Brand Transformation · Single Image</div>
-  <div class="post-title-label">The Rebirth of Kiana Prema Consulting</div>
+  <div class="post-title-label">How I Rebuilt My Own Brand</div>
   <div class="slides">
     <div class="card" style="background:var(--bg); padding:40px 36px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative;">
       <div style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--amber);"></div>
       <div style="font-family:'Cormorant',serif; font-style:italic; font-size:26px; font-weight:400; color:var(--dark); margin-bottom:6px;">Desert Rose</div>
-      <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:var(--sand); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:24px;">The palette of Kiana Prema Consulting</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:var(--sand); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:24px;">How I rebuilt my own brand — from the root</div>
       <!-- Palette display -->
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:100%; margin-bottom:8px;">
         <div style="background:var(--brick); height:56px; border-radius:4px; display:flex; align-items:flex-end; padding:6px 8px; box-shadow:0 2px 6px rgba(0,0,0,0.12);"><span style="font-family:'DM Sans'; font-size:8px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Brick</span></div>
@@ -600,10 +704,33 @@ h1 {
         <div style="background:var(--blush); height:48px; border-radius:4px; display:flex; align-items:flex-end; padding:6px 8px; box-shadow:0 2px 6px rgba(0,0,0,0.06);"><span style="font-family:'DM Sans'; font-size:8px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(44,24,16,0.6);">Blush</span></div>
         <div style="background:var(--cream); height:48px; border-radius:4px; display:flex; align-items:flex-end; padding:6px 8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); border:1px solid rgba(44,24,16,0.08);"><span style="font-family:'DM Sans'; font-size:8px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(44,24,16,0.5);">Cream</span></div>
       </div>
-      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:16px; color:var(--dark); line-height:1.5;">Every color intentional.<br>Every detail earned.</div>
+      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:16px; color:var(--dark); line-height:1.5;">I went back to the root.<br>Every color intentional. Every detail earned.</div>
       <div style="position:absolute; bottom:24px; left:0; right:0; text-align:center; font-family:'Cormorant',serif; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>I rebuilt my own brand from the ground up.
+
+Not because the old one failed. But because I changed. My understanding deepened. My clients evolved. The boundaries of my work expanded. And the brand I was wearing? It wasn't mine anymore.
+
+So I did with my own brand what I do with my clients' — I went back to the root.
+
+Who am I now? Not who was I. Now.
+
+What does the work feel like from the inside?
+
+What is this becoming?
+
+Every color in this palette — Desert Rose — was chosen with intention. Brick. Berry. Amber. Patina. The old is burning away. What's emerging deserves a vessel worthy of it.
+
+This is what brand evolution looks like.
+
+#rebrand #brandidentity #brandstrategy #brandevolution #intuitivebusiness #brandconsultant #kianaprema #premiumbranding #brandtransformation #becoming</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -622,6 +749,23 @@ h1 {
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>When a client says this, I know the work landed.
+
+She sees you. She gets it. And she can say it back in a way that finally makes sense.
+
+That's what brand strategy is supposed to do — hold the mirror at the exact angle where everything clicks into place.
+
+I don't start by asking what your website should look like. I start by asking who are you becoming. What is your work trying to do in the world. What does alignment feel like from the inside.
+
+Then we build the vessel that holds that.
+
+#brandconsultant #testimonial #clientlove #brandstrategy #intuitivebusiness #businessgrowth #kianaprema #brandidentity #premiumbranding #brandstrategist</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -630,28 +774,28 @@ h1 {
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 05 · Brand Education · Carousel — 4 Slides</div>
-  <div class="post-title-label">The Brand Hierarchy Nobody Teaches You</div>
+  <div class="post-title-label">Why Your Last Rebrand Didn't Stick</div>
   <div class="slides">
     <!-- Slide 1: Cover -->
     <div class="card card-cream" style="position:relative;">
       <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
       <div class="slide-label" style="color:rgba(44,24,16,0.3);">1 / 4</div>
-      <div class="headline" style="font-size:28px; color:var(--dark);">The Brand Hierarchy<br><em style="color:var(--patina);">Nobody Teaches You</em></div>
+      <div class="headline" style="font-size:28px; color:var(--dark);">Why Your Last Rebrand<br><em style="color:var(--patina);">Didn't Stick</em></div>
       <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
     </div>
     <!-- Slide 2: Diagram -->
     <div class="card card-cream" style="padding:40px 32px;">
       <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 4</div>
       <div style="display:flex; flex-direction:column; align-items:center; gap:8px; width:100%;">
-        <div style="font-family:'DM Sans'; font-size:10px; color:var(--amber); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;">↓ I start here</div>
-        <div style="width:100%; padding:14px; background:var(--patina); color:var(--cream); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">IDENTITY</div>
-        <div style="color:var(--amber); font-size:14px;">↓</div>
-        <div style="width:85%; padding:14px; background:var(--brick); color:var(--cream); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">STRATEGY</div>
+        <div style="font-family:'DM Sans'; font-size:10px; color:var(--brick); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;">↓ Most people start here</div>
+        <div style="width:55%; padding:14px; background:var(--blush); color:var(--dark); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">DESIGN</div>
         <div style="color:var(--amber); font-size:14px;">↓</div>
         <div style="width:70%; padding:14px; background:var(--sand); color:var(--dark); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">MESSAGING</div>
         <div style="color:var(--amber); font-size:14px;">↓</div>
-        <div style="width:55%; padding:14px; background:var(--blush); color:var(--dark); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">DESIGN</div>
-        <div style="font-family:'DM Sans'; font-size:10px; color:var(--brick); letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">↑ Most people start here</div>
+        <div style="width:85%; padding:14px; background:var(--brick); color:var(--cream); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">STRATEGY</div>
+        <div style="color:var(--amber); font-size:14px;">↓</div>
+        <div style="width:100%; padding:14px; background:var(--patina); color:var(--cream); border-radius:3px; font-family:'DM Sans'; font-size:14px; font-weight:600; text-align:center; letter-spacing:0.04em;">IDENTITY</div>
+        <div style="font-family:'DM Sans'; font-size:10px; color:var(--amber); letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">↑ I start here — at the root</div>
       </div>
     </div>
     <!-- Slide 3 -->
@@ -671,11 +815,34 @@ h1 {
     <!-- Slide 4 -->
     <div class="card card-dark linen">
       <div class="slide-label">4 / 4</div>
-      <div class="headline" style="font-size:22px;">When you skip the top three,<br>your design has nothing<br>to stand on.</div>
+      <div class="headline" style="font-size:22px;">When you skip the foundation,<br>your design has nothing<br>to stand on.</div>
       <div class="sub" style="margin-top:20px;">And you'll rebrand again<br>in 18 months.</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>You hired someone. You picked colors. You got a new logo. And for about six months, you felt the lift.
+
+Then something felt off again.
+
+Here's why: You started at the surface.
+
+Design without identity is decoration. It's a coat of paint on a house with no foundation. No wonder it cracked.
+
+The brands that actually hold — the ones that feel inevitable — they're built from the root. Identity is the foundation. Strategy is the frame. Messaging is the structure. Design is the last layer — the expression of everything underneath.
+
+Identity first. Always.
+
+Most people start at the surface and work down. I start at the root and build up. That's why the brands I build don't crack in eighteen months.
+
+If you've rebranded more than once and still don't feel right, it's not a design problem. It's a foundation problem. And the fix starts at the root.
+
+#brandstrategy #brandfoundation #rebrand #businessstrategy #brandeducation #brandconsultant #kianaprema #identityfirst #brandframework #strategyfirst</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -696,159 +863,277 @@ h1 {
       </div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>I obsess over the details. And I don't apologize for it.
+
+The exact weight of a headline. The breathing room between elements. The way a sentence lands when you read it aloud. The silence between ideas.
+
+Some people call that perfectionism. I call it precision. And precision is a form of care.
+
+When I build a brand, I'm holding someone's life work in my hands. The way the world will experience them. The story they'll tell without saying a word. That deserves obsessive attention.
+
+I'm a chemical engineer by training. Systems thinker by nature. Intuitive by practice. The intersection of those three is where the best work gets built.
+
+Strategic clarity meets sacred essence — and the brand becomes the bridge.
+
+#brandstrategy #precision #intuitivebusiness #detailsmatter #brandconsultant #branddevelopment #kianaprema #brandstrategist #craftsmanship #intentional</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 07 — Philosophy / POV — Single Image
-     "I don't build brands for everyone."
+     "I don't work with everyone."
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 07 · Philosophy / POV · Single Image</div>
-  <div class="post-title-label">I don't build brands for everyone.</div>
+  <div class="post-title-label">I don't work with everyone.</div>
   <div class="slides">
     <div class="card card-dark linen gold-arc center">
-      <div class="headline" style="font-size:30px;">I don't build brands<br>for everyone.</div>
+      <div class="headline" style="font-size:30px;">I don't work<br>with everyone.</div>
       <div style="width:40px; height:1px; background:var(--amber); margin:18px auto;"></div>
-      <div class="sub" style="font-size:15px; color:rgba(242,220,201,0.55);">I build them for the ones<br>who are ready.</div>
+      <div class="sub" style="font-size:15px; color:rgba(242,220,201,0.55);">This work requires something<br>from both of us.</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>I don't work with everyone.
+
+Not because I'm exclusive for the sake of it. But because this work requires something from both of us.
+
+It requires you to be honest about who you are. It requires you to sit with questions that don't have quick answers. It requires trust. And it requires you to understand that brand is identity work — not a project to check off.
+
+The clients I work with best? They know who they are. They've done the inner work. They just haven't figured out how to translate it yet.
+
+That's where I come in. That's what I do.
+
+If you're still figuring out what you want to sell, we're probably not ready. But if you know who you are and you're tired of your brand telling the wrong story? Let's talk about what alignment looks like.
+
+#brandconsultant #brandstrategy #selectclients #intentionalbusiness #luxurybrand #positioning #kianaprema #brandstrategist #consciousbusiness #visionary</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 08 — Social Proof — Carousel (3 slides)
-     "Behind the Build"
+     "Inside the Strategy Session — What's Actually Happening"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
-  <div class="post-label">Post 08 · Social Proof · Carousel — 4 Slides</div>
-  <div class="post-title-label">Behind the Build — What a Brand Strategy Process Actually Looks Like</div>
+  <div class="post-label">Post 08 · Social Proof · Carousel — 3 Slides</div>
+  <div class="post-title-label">Inside the Strategy Session — What's Actually Happening</div>
   <div class="slides">
     <!-- Slide 1: Cover -->
     <div class="card card-cream" style="position:relative;">
       <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
-      <div class="slide-label" style="color:rgba(44,24,16,0.3);">1 / 4</div>
-      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--brick); margin-bottom:16px;">Behind the Build</div>
-      <div class="headline" style="font-size:24px; color:var(--dark);">What a Brand Strategy<br>Process <em style="color:var(--brick);">Actually</em><br>Looks Like</div>
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">1 / 3</div>
+      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--brick); margin-bottom:16px;">Inside the Session</div>
+      <div class="headline" style="font-size:24px; color:var(--dark);">What's <em style="color:var(--brick);">Actually</em><br>Happening</div>
       <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
     </div>
-    <!-- Slide 2: Phase 1 -->
+    <!-- Slide 2: Deep Listening -->
     <div class="card card-cream" style="padding:40px 36px; position:relative;">
-      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 4</div>
+      <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 3</div>
       <div style="position:absolute; left:28px; top:0; bottom:0; width:3px; background:var(--patina);"></div>
       <div style="font-family:'Cormorant',serif; font-size:48px; font-weight:300; color:var(--patina); margin-bottom:4px;">01</div>
-      <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--patina); font-weight:600; margin-bottom:16px;">Discovery</div>
-      <div style="font-family:'DM Sans'; font-size:13px; color:var(--dark); line-height:1.8; text-align:left;">We go deep. Not surface-level questionnaires... real conversation about who you are, what you've built, and where you're going. I need to understand the landscape before I can shape it.</div>
+      <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--patina); font-weight:600; margin-bottom:16px;">Deep Listening</div>
+      <div style="font-family:'DM Sans'; font-size:13px; color:var(--dark); line-height:1.8; text-align:left;">We ask the questions nobody else asks. Who are you — not who you used to be. Who are you now. What are you becoming. This is where identity takes root.</div>
     </div>
-    <!-- Slide 3: Phase 2 -->
-    <div class="card card-cream" style="padding:40px 36px; position:relative;">
-      <div class="slide-label" style="color:rgba(44,24,16,0.3);">3 / 4</div>
-      <div style="position:absolute; left:28px; top:0; bottom:0; width:3px; background:var(--brick);"></div>
-      <div style="font-family:'Cormorant',serif; font-size:48px; font-weight:300; color:var(--brick); margin-bottom:4px;">02</div>
-      <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); font-weight:600; margin-bottom:16px;">Identity Architecture</div>
-      <div style="font-family:'DM Sans'; font-size:13px; color:var(--dark); line-height:1.8; text-align:left;">This is where the magic happens. Positioning. Messaging. Voice. The strategic skeleton that everything visual will hang on. This is the part most designers skip... and it's the reason most brands don't last.</div>
-    </div>
-    <!-- Slide 4: Phase 3 -->
-    <div class="card card-cream" style="padding:40px 36px; position:relative;">
-      <div class="slide-label" style="color:rgba(44,24,16,0.3);">4 / 4</div>
+    <!-- Slide 3: Structure + Expression -->
+    <div class="card card-dark linen" style="padding:40px 36px; position:relative;">
+      <div class="slide-label">3 / 3</div>
       <div style="position:absolute; left:28px; top:0; bottom:0; width:3px; background:var(--amber);"></div>
-      <div style="font-family:'Cormorant',serif; font-size:48px; font-weight:300; color:var(--amber); margin-bottom:4px;">03</div>
-      <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); font-weight:600; margin-bottom:16px;">Expression</div>
-      <div style="font-family:'DM Sans'; font-size:13px; color:var(--dark); line-height:1.8; text-align:left;">Visual identity, brand book, design systems. Because the strategy is airtight, the design choices practically make themselves. This is where it all comes alive.</div>
+      <div style="font-family:'Cormorant',serif; font-size:48px; font-weight:300; color:var(--amber); margin-bottom:4px;">02</div>
+      <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); font-weight:600; margin-bottom:16px;">Structure + Expression</div>
+      <div style="font-family:'DM Sans'; font-size:13px; color:rgba(242,220,201,0.8); line-height:1.8; text-align:left;">Positioning. Messaging. Voice. Then visual design — the easy part. Because when the foundation is right, the design practically builds itself.</div>
+      <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>People ask me what brand strategy actually looks like.
+
+Fair question. It's not a mood board. It's not picking brand colors from Pinterest.
+
+It's a process of uncovering who you really are, what your work is actually trying to do, who you're becoming — and then architecting the entire external expression of that identity.
+
+From the words on your homepage to the feeling someone has the moment they land on your page.
+
+Phase 1 is deep listening. We're asking the questions nobody else asks. Who are you? Not who did you used to be. Who are you now. What are you becoming.
+
+Phase 2 is where everything takes form. We're building the structure. The clarity. The positioning that holds.
+
+And then the visual design? That's the easy part. Because we already know exactly what needs to happen.
+
+#brandstrategy #brandprocess #behindthescenes #brandconsultant #strategyfirst #kianaprema #brandstrategist #brandbuild #intentionalbusiness #clarity</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 09 — Brand Education — Single Image
-     "$500 Brand vs $15,000 Brand"
+     "Brand Strategy vs. a Logo on Fiverr"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 09 · Brand Education · Single Image</div>
-  <div class="post-title-label">The Difference Between a $500 Brand and a $15,000 Brand</div>
+  <div class="post-title-label">Brand Strategy vs. a Logo on Fiverr</div>
   <div class="slides">
     <div class="card" style="display:flex; overflow:hidden;">
       <div style="width:50%; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center;">
-        <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--sand); margin-bottom:12px;">A</div>
-        <div style="font-family:'Cormorant',serif; font-size:28px; font-weight:400; color:var(--dark); margin-bottom:12px;">$500<br>brand</div>
-        <div style="font-family:'DM Sans'; font-size:11px; color:#7A4A3A; line-height:1.7;">A coat of paint.</div>
+        <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--sand); margin-bottom:12px;">A $500 brand</div>
+        <div style="font-family:'Cormorant',serif; font-size:26px; font-weight:400; color:var(--dark); margin-bottom:12px;">Decoration</div>
+        <div style="font-family:'DM Sans'; font-size:11px; color:#7A4A3A; line-height:1.7;">Logo. Colors. Fonts. Done.</div>
       </div>
       <div style="width:2px; background:var(--amber);"></div>
       <div style="width:50%; background:linear-gradient(180deg, var(--berry) 0%, #4a0228 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center;">
-        <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); margin-bottom:12px;">A</div>
-        <div style="font-family:'Cormorant',serif; font-style:italic; font-size:32px; font-weight:400; color:var(--cream); margin-bottom:12px;">$15,000<br>brand</div>
-        <div style="font-family:'DM Sans'; font-size:11px; color:rgba(242,220,201,0.65); line-height:1.7;">Architecture.</div>
+        <div style="font-family:'DM Sans'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); margin-bottom:12px;">A $15,000 brand</div>
+        <div style="font-family:'Cormorant',serif; font-style:italic; font-size:26px; font-weight:400; color:var(--cream); margin-bottom:12px;">Architecture</div>
+        <div style="font-family:'DM Sans'; font-size:11px; color:rgba(242,220,201,0.65); line-height:1.7;">A system you build from.</div>
       </div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>A $500 brand: logo, colors, fonts. Done.
+
+A full brand strategy: a foundation that shapes how your entire business moves through the world. From first impression to the moment someone pays.
+
+One is a thing. The other is a system.
+
+One gives you something to look at. The other gives you something to build from. Something to stand on. Something that holds.
+
+A $500 brand is decoration. A $15,000 brand is architecture.
+
+And if your business is outgrowing six figures, the decoration is going to start cracking. It always does.
+
+This isn't about spending more for the sake of luxury. It's about matching the investment to the ambition. One brand. One truth. Everyone aligned.
+
+When stakeholders are unclear, when you're sending mixed signals, when the market is confused about who you are — you need architecture. You need strategy.
+
+#brandstrategy #brandvalue #investinyourbrand #premiumbranding #brandconsultant #kianaprema #brandpricing #businessgrowth #brandeducation #brandbuilding</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 10 — Brand Transformation — Carousel (4 slides)
-     "What Changes When Your Brand Finally Matches Your Work"
+     "What Shifts When Brand Meets Reality"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 10 · Brand Transformation · Carousel — 4 Slides</div>
-  <div class="post-title-label">What Changes When Your Brand Finally Matches Your Work</div>
+  <div class="post-title-label">What Shifts When Brand Meets Reality</div>
   <div class="slides">
     <!-- Slide 1: Cover -->
     <div class="card card-brick linen" style="position:relative;">
       <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
       <div class="slide-label">1 / 4</div>
-      <div class="headline" style="font-size:24px; color:var(--cream);">What changes when<br>your brand finally<br><em>matches your work</em></div>
+      <div class="headline" style="font-size:24px; color:var(--cream);">What shifts when<br><em>brand meets reality</em></div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
     <!-- Slide 2 -->
     <div class="card card-cream" style="padding:48px 36px;">
       <div class="slide-label" style="color:rgba(44,24,16,0.3);">2 / 4</div>
-      <div class="headline" style="font-size:20px;">You stop explaining yourself.<br><br>Your brand does it for you.</div>
-      <div class="sub">Inquiries come in already warm...<br>already trusting...<br>already at your price point.</div>
+      <div class="headline" style="font-size:20px;">You stop over-explaining.<br>You stop undercharging.</div>
+      <div class="sub">Alignment is magnetic.<br>Misalignment is expensive.</div>
     </div>
     <!-- Slide 3 -->
     <div class="card card-patina linen" style="padding:48px 36px;">
       <div class="slide-label">3 / 4</div>
-      <div class="headline" style="font-size:20px; color:var(--cream);">You raise your prices<br>and nobody flinches.</div>
-      <div class="sub" style="color:rgba(242,220,201,0.6);">Because everything about the experience communicates the value before you ever name the number.</div>
+      <div class="headline" style="font-size:20px; color:var(--cream);">You raise your rates<br>and nobody flinches.</div>
+      <div class="sub" style="color:rgba(242,220,201,0.6);">Not because the work changed.<br>But now it's finally wrapped<br>in something that communicates<br>its actual worth.</div>
     </div>
     <!-- Slide 4 -->
     <div class="card card-dark linen">
       <div class="slide-label">4 / 4</div>
-      <div class="headline" style="font-size:20px;">You stop second-guessing<br>every decision.</div>
-      <div class="sub">Because your brand is built on a<br>foundation of identity — and when<br>you know who you are, the<br>choices get easy.</div>
+      <div class="headline" style="font-size:20px;">Clear enough to build from.<br>Sacred enough to believe in.</div>
+      <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
+      <div class="sub">Your brand is either working<br>for you or against you.<br>There is no neutral.</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>The biggest shift isn't visual. It's energetic.
+
+When your brand finally matches the caliber of your work, something clicks into alignment. You stop over-explaining. You stop undercharging. You stop attracting the people who weren't meant for you anyway.
+
+Because alignment is magnetic. Misalignment is expensive.
+
+I've watched clients raise their rates 40% within months of launching a real brand strategy — not because the work changed. The work was already excellent. But now it was finally wrapped in something that communicated its actual worth.
+
+Your brand is either working for you or against you. There is no neutral.
+
+Clarity enough to build from. Sacred enough to believe in.
+
+What is yours doing?
+
+#brandtransformation #brandstrategy #alignment #raiseyourrates #premiumbranding #businessgrowth #brandconsultant #kianaprema #intentionalbusiness #energetic</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
-     POST 11 — Social Proof — Single Image (Testimonial 2)
-     "The Returning Client" — Scott Vineberg
+     POST 11 — Social Proof — Single Image
+     "When the Work Finally Holds" — Scott Vineberg
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 11 · Social Proof · Single Image</div>
-  <div class="post-title-label">Client Testimonial — The Returning Client (Scott Vineberg)</div>
+  <div class="post-title-label">Client Story — When the Work Finally Holds</div>
   <div class="slides">
     <div class="card linen" style="background:linear-gradient(160deg, var(--patina) 0%, #2d4f49 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 40px; text-align:center;">
-      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:24px; line-height:1.35; color:var(--cream); margin-bottom:28px;">"I've hired Kiana across multiple ventures. Every time I've stepped into a new vision, we'd open CORE again... and she'd help me see what was actually there."</div>
+      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:24px; line-height:1.35; color:var(--cream); margin-bottom:28px;">"Every time I've stepped into a new vision, we open the strategy again — and she helps me see what's actually there."</div>
       <div style="width:40px; height:1px; background:var(--amber); margin-bottom:16px;"></div>
       <div style="font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(242,220,201,0.5);">Scott Vineberg</div>
       <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:rgba(242,220,201,0.35); margin-top:4px;">Visionary Founder &amp; Serial Entrepreneur</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>There's a client I've worked with across multiple ventures. A visionary. The kind of founder whose mind is three moves ahead and always building the next thing before the last one is finished.
+
+Every time he steps into a new vision, we open the strategy again.
+
+Because the work I do isn't about one brand or one launch. It's about creating the kind of clarity that moves with you when you're still becoming.
+
+I can hold the bigness of what someone is trying to become without flattening it into something small enough to explain in a sales letter.
+
+Most brand people can't do that. They want the vision boxed up and shipped. They don't know what to do with a founder who is still evolving.
+
+I do.
+
+If you've been told your vision is "too much" or "not ready yet" — you might not need more clarity. You might need someone who knows how to hold the vision while it's still becoming.
+
+#brandconsultant #visionaryfounder #brandstrategy #clientlove #intuitivebusiness #founder #kianaprema #serialentrepreneur #becoming #expansion</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 12 — Brand Education — Carousel (5 slides)
-     "3 Things to Get Right Before You Hire a Brand Designer"
+     "Before You Hire a Brand Designer — Get These Three Things Clear"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 12 · Brand Education · Carousel — 5 Slides</div>
-  <div class="post-title-label">3 Things to Get Right Before You Hire a Brand Designer</div>
+  <div class="post-title-label">Before You Hire a Brand Designer — Get These Three Things Clear</div>
   <div class="slides">
     <!-- Slide 1: Cover -->
     <div class="card card-brick linen amber-rule">
       <div class="slide-label">1 / 5</div>
-      <div class="headline" style="font-size:26px; color:var(--cream);">3 Things to Get Right<br><em>Before You Hire<br>a Brand Designer</em></div>
+      <div class="headline" style="font-size:24px; color:var(--cream);">Before You Hire<br>a Brand Designer —<br><em>Get These Three<br>Things Clear</em></div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
     <!-- Slide 2 -->
@@ -875,13 +1160,32 @@ h1 {
     <!-- Slide 5 -->
     <div class="card card-dark linen">
       <div class="slide-label">5 / 5</div>
-      <div class="headline" style="font-size:20px;">If you don't have these<br>three things dialed...</div>
+      <div class="headline" style="font-size:20px;">Design without strategy<br>is just aesthetics.</div>
       <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
-      <div class="sub" style="font-size:15px;">You don't need a designer yet.<br>You need a strategist.</div>
-      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:20px; color:var(--amber); margin-top:12px;">Hi.</div>
+      <div class="sub" style="font-size:15px;">We build the foundation first.<br>We help you remember.</div>
+      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:18px; color:var(--amber); margin-top:12px;">Then the work builds itself.</div>
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>Most people hire a designer way too early.
+
+And I'm not saying design doesn't matter. It absolutely does. But design without strategy is just aesthetics. And aesthetics alone don't convert. They don't hold. They don't become part of how people recognize you.
+
+Before you spend on a designer, get these three things clear.
+
+This is exactly what I do with clients before a single visual element gets created. We build the foundation first. We don't tell you who your brand is. We help you remember.
+
+By the time we hand things to a designer, the strategy is airtight. The work practically builds itself.
+
+If you're thinking about a rebrand, save this for when you're ready to invest in something that actually lasts.
+
+#brandstrategy #brandeducation #hireabranddesigner #branddesigner #brandconsultant #businessstrategy #kianaprema #brandeducation #strategyfirst #foundation</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -897,59 +1201,124 @@ h1 {
       <div class="wordmark" style="color:var(--cream);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>Brand is ceremony.
+
+It's the act of taking something invisible — your purpose, your gifts, the thing that makes you irreplaceable — and giving it a form the world can witness.
+
+I don't take that lightly.
+
+Every color is intentional. Every word is weighed. Every space between elements holds meaning. Because when you're building something that carries a human being's life work, it deserves reverence.
+
+Not preciousness. Not fragility. Reverence.
+
+There's a difference between sacred and delicate.
+
+I approach this work the way I approach everything — with precision, with intuition, and with the understanding that what we're doing here is holy.
+
+The old is burning away. What's emerging deserves a vessel worthy of it.
+
+#brandstrategy #sacredbusiness #intuitivebusiness #brandceremony #brandconsultant #intentionalbusiness #kianaprema #brandphilosophy #consciousbusiness #sacred</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
      POST 14 — Brand Transformation — Carousel (3 slides)
-     "A Brand Isn't Built in a Day — It's Built in Layers"
+     "A Brand Becomes You — One Layer at a Time"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 14 · Brand Transformation · Carousel — 3 Slides</div>
-  <div class="post-title-label">A Brand Isn't Built in a Day — It's Built in Layers</div>
+  <div class="post-title-label">A Brand Becomes You — One Layer at a Time</div>
   <div class="slides">
     <!-- Slide 1: Cover — Cream -->
     <div class="card card-cream" style="position:relative;">
       <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--amber);"></div>
       <div class="slide-label" style="color:rgba(44,24,16,0.3);">1 / 3</div>
-      <div class="headline" style="font-size:24px; color:var(--dark);">A brand isn't built<br>in a day.</div>
+      <div class="headline" style="font-size:24px; color:var(--dark);">A brand becomes you.</div>
       <div style="width:40px; height:1px; background:var(--amber); margin:16px auto;"></div>
-      <div class="sub" style="font-size:16px; font-family:'Cormorant',serif; font-style:italic; color:var(--amber);">It's built in layers.</div>
+      <div class="sub" style="font-size:16px; font-family:'Cormorant',serif; font-style:italic; color:var(--amber);">One layer at a time.</div>
       <div class="wordmark" style="color:rgba(44,24,16,0.3);">Kiana Prema Consulting</div>
     </div>
     <!-- Slide 2: Patina -->
     <div class="card card-patina linen" style="padding:44px 36px;">
       <div class="slide-label">2 / 3</div>
-      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px;">Layer One</div>
+      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px;">First We Dig</div>
       <div class="headline" style="font-size:22px; color:var(--cream);">Excavation</div>
-      <div class="sub" style="margin-top:16px; color:rgba(242,220,201,0.65);">We dig into who you really are. Your story. Your edges. The thing that makes you impossible to replicate.</div>
+      <div class="sub" style="margin-top:16px; color:rgba(242,220,201,0.65);">Real brands aren't assembled. They're excavated. Layer by layer — each one revealing what the layer before couldn't see.</div>
     </div>
     <!-- Slide 3: Brick -->
     <div class="card card-brick linen" style="padding:44px 36px;">
       <div class="slide-label">3 / 3</div>
-      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px;">Layer Two</div>
-      <div class="headline" style="font-size:22px; color:var(--cream);">Architecture</div>
-      <div class="sub" style="margin-top:16px; color:rgba(242,220,201,0.7);">We shape the strategy. Positioning, messaging, voice. The invisible structure that makes everything else work.</div>
+      <div style="font-family:'DM Sans'; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px;">Then We Build</div>
+      <div class="headline" style="font-size:22px; color:var(--cream);">Becoming</div>
+      <div class="sub" style="margin-top:16px; color:rgba(242,220,201,0.7);">This isn't a rebrand. It's a becoming. Something that holds. Something that breathes. Something that feels so aligned it was always meant to exist.</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>You can't rush a real brand build.
+
+Because real brands aren't assembled. They're excavated. Layer by layer. Each one revealing what the layer before couldn't see.
+
+First we dig. Then we structure. Then — and only then — do we design.
+
+It takes time. It takes showing up. It takes the willingness to sit in the uncomfortable middle where things aren't clear yet and trust the process anyway.
+
+This isn't a rebrand. It's a becoming.
+
+And what comes out the other side? Something that holds. Something that breathes. Something that feels so aligned it moves through the world like it was always meant to exist.
+
+That's what I build. That's the only work I do.
+
+#brandbuild #brandlayers #brandprocess #brandstrategy #brandconsultant #intentionalbusiness #kianaprema #becoming #transformation #premiumbranding</pre>
+    </div>
+  </details>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
-     POST 15 — Social Proof — Single Image (CTA)
-     "Currently accepting select clients for Q2 2026"
+     POST 15 — Social Proof / CTA — Single Image
+     "Now accepting a small number of clients for Q2"
      ═══════════════════════════════════════════════════ -->
 <div class="post-group">
   <div class="post-label">Post 15 · Social Proof · Single Image</div>
-  <div class="post-title-label">Currently accepting select clients for Q2 2026.</div>
+  <div class="post-title-label">Now accepting a small number of clients for Q2.</div>
   <div class="slides">
     <div class="card" style="background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 40px; text-align:center; position:relative;">
       <div style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--amber);"></div>
-      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:32px; font-weight:400; color:var(--dark); line-height:1.25; margin-bottom:16px;">Currently accepting<br>select clients</div>
+      <div style="font-family:'Cormorant',serif; font-style:italic; font-size:30px; font-weight:400; color:var(--dark); line-height:1.25; margin-bottom:16px;">Now accepting<br>a small number<br>of clients</div>
       <div style="font-family:'DM Sans',sans-serif; font-size:16px; font-weight:600; letter-spacing:0.06em; color:var(--amber); margin-bottom:24px;">Q2 2026</div>
       <div style="width:60px; height:1px; background:var(--amber); margin-bottom:24px;"></div>
       <div style="font-family:'DM Sans',sans-serif; font-size:12px; color:#7A4A3A; line-height:1.7;">Brand strategy · Full brand builds<br>Strategic consulting</div>
       <div style="position:absolute; bottom:28px; left:0; right:0; text-align:center; font-family:'Cormorant',serif; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(44,24,16,0.35);">Kiana Prema Consulting</div>
     </div>
   </div>
+  <details class="caption-section" data-html2canvas-ignore="true">
+    <summary>Caption</summary>
+    <div class="caption-box">
+      <button class="copy-btn" onclick="copyCaption(this)">Copy Caption</button>
+      <pre>I work with a small number of clients at a time. Intentionally.
+
+Because the work I do requires deep attention. And I refuse to dilute that by spreading myself too thin across people and projects who don't align with how I work.
+
+Right now I'm accepting a select number of clients for Q2 2026.
+
+Brand strategy. Full brand builds. Strategic consulting for founders who are ready to translate their vision into something clear, executable, and capable of growing with them.
+
+If that's you — DM me or hit the link in bio.
+
+We start with a real conversation. Not a pitch deck. Not a cookie-cutter process. Just two people talking about where you are, where you want to go, and whether this work is right for right now.
+
+No pressure. Just clarity.
+
+#brandconsultant #nowbooking #brandstrategy #selectclients #Q2 #luxurybranding #businessconsulting #kianaprema #brandstrategist #alignment</pre>
+    </div>
+  </details>
 </div>
 
 <script>
