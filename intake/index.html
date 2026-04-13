@@ -40,7 +40,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ──────────────────────────────────
+/* ─────────────────────────────────
    HEADER SECTION
    ───────────────────────────────── */
 .header {
@@ -124,12 +124,157 @@ body {
   color: var(--cream);
 }
 
-/* ──────────────────────────────────
+/* ─────────────────────────────────
+   CEREMONY SECTION
+   ───────────────────────────────── */
+.ceremony-wrap {
+  max-width: 680px;
+  margin: -60px auto 0;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.ceremony-card {
+  background: #fff;
+  padding: 56px 48px 48px;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 8px 32px rgba(140, 3, 67, 0.1), 0 2px 8px rgba(44, 24, 16, 0.04);
+  border-top: 3px solid var(--amber);
+  text-align: center;
+}
+
+.ceremony-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+
+.ceremony-title {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--dark);
+  margin-bottom: 28px;
+}
+
+.ceremony-body {
+  max-width: 520px;
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #5A3D32;
+}
+
+.ceremony-body p {
+  margin-bottom: 18px;
+}
+
+.ceremony-body p:last-child {
+  margin-bottom: 0;
+}
+
+.ceremony-body em {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 16.5px;
+  color: var(--dark);
+}
+
+.ceremony-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--amber);
+  margin: 32px auto;
+  opacity: 0.5;
+}
+
+/* ─────────────────────────────────
+   MODALITY INVITATION
+   ───────────────────────────────── */
+.modality-section {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.modality-heading {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modality-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.modality-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg);
+  border-radius: 4px;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.modality-option:hover {
+  border-left-color: var(--amber);
+}
+
+.modality-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 1px;
+}
+
+.modality-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5A3D32;
+}
+
+.modality-text strong {
+  font-weight: 600;
+  color: var(--dark);
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.ceremony-bottom-border {
+  height: 1px;
+  background: rgba(217, 136, 89, 0.2);
+  margin: 32px -48px 0;
+}
+
+/* ─────────────────────────────────
    FORM CONTAINER
    ───────────────────────────────── */
 .form-wrap {
   max-width: 680px;
-  margin: -60px auto 80px;
+  margin: 0 auto 80px;
   padding: 0 24px;
   position: relative;
   z-index: 2;
@@ -137,10 +282,9 @@ body {
 
 form {
   background: #fff;
-  padding: 56px 48px;
-  border-radius: 4px;
+  padding: 48px 48px 56px;
+  border-radius: 0 0 4px 4px;
   box-shadow: 0 8px 32px rgba(140, 3, 67, 0.1), 0 2px 8px rgba(44, 24, 16, 0.04);
-  border-top: 3px solid var(--amber);
 }
 
 .form-intro {
@@ -293,6 +437,22 @@ button[type="submit"]:active {
   transform: translateY(0);
 }
 
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-error {
+  display: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--brick);
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
 /* ─────────────────────────────────
    FOOTER
    ───────────────────────────────── */
@@ -324,12 +484,28 @@ button[type="submit"]:active {
   .header .intro {
     font-size: 14px;
   }
-  .form-wrap {
+  .ceremony-wrap {
     padding: 0 16px;
     margin-top: -50px;
   }
+  .ceremony-card {
+    padding: 40px 24px 36px;
+  }
+  .ceremony-title {
+    font-size: 24px;
+  }
+  .ceremony-bottom-border {
+    margin: 28px -24px 0;
+  }
+  .modality-option {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .form-wrap {
+    padding: 0 16px;
+  }
   form {
-    padding: 40px 24px;
+    padding: 36px 24px 40px;
   }
   .form-intro {
     font-size: 17px;
@@ -363,15 +539,68 @@ button[type="submit"]:active {
   </p>
 </header>
 
-<!-- ══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
+     CEREMONY OPENING
+     ═══════════════════════════════════════════════ -->
+<div class="ceremony-wrap">
+  <div class="ceremony-card">
+    <div class="ceremony-eyebrow">A Sacred Pause</div>
+    <h2 class="ceremony-title">Before you begin writing,<br>take a moment to arrive.</h2>
+
+    <div class="ceremony-body">
+      <p>
+        Close the extra tabs. Set your phone aside. If it feels right, light a candle, pour something warm, or simply take three slow breaths.
+      </p>
+      <p>
+        This form is not a task to rush through. <em>It is the opening of our work together.</em> The way you answer these questions — honestly, without editing yourself — is how I begin to understand your business, your vision, and where we need to go.
+      </p>
+      <p>
+        There is no right way to do this. There is only your way.
+      </p>
+    </div>
+
+    <div class="ceremony-divider"></div>
+
+    <!-- ── Modality Invitation ── -->
+    <div class="modality-section">
+      <h3 class="modality-heading">Choose the tool that feels truest</h3>
+      <div class="modality-options">
+        <div class="modality-option">
+          <div class="modality-icon">&#9998;</div>
+          <div class="modality-text">
+            <strong>Write by hand first</strong>
+            Let your pen move before your editor does. Write your answers on paper, then come back and type them here when you're ready.
+          </div>
+        </div>
+        <div class="modality-option">
+          <div class="modality-icon">&#9000;</div>
+          <div class="modality-text">
+            <strong>Type directly</strong>
+            If the keyboard is where your thoughts flow clearest, start here. Let it be a stream — you can always refine later.
+          </div>
+        </div>
+        <div class="modality-option">
+          <div class="modality-icon">&#9688;</div>
+          <div class="modality-text">
+            <strong>Speak your answers</strong>
+            Sometimes the most powerful way to find your truth is to say it out loud. Use your phone's voice-to-text and let your words land unfiltered. You might surprise yourself.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ceremony-bottom-border"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
      FORM
      ═══════════════════════════════════════════════ -->
 <div class="form-wrap">
-  <form name="core-intake" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/intake-thank-you">
+  <form id="core-intake-form" novalidate>
 
-    <input type="hidden" name="form-name" value="core-intake">
     <div class="honeypot">
-      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
     </div>
 
     <p class="form-intro">
@@ -451,18 +680,84 @@ button[type="submit"]:active {
     <!-- ───── Submit ───── -->
     <div class="submit-wrap">
       <p class="submit-note">I'll read every word before our session. Thank you for the care.</p>
-      <button type="submit">Send It Over</button>
+      <button type="submit" id="submit-btn">Send It Over</button>
+      <p class="submit-error" id="submit-error"></p>
     </div>
 
   </form>
 </div>
 
-<!-- ══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      FOOTER
      ═══════════════════════════════════════════════ -->
 <footer class="footer">
-  Kiana Prema Consulting <span class="dot">·</span> Intuitive Brand Engineering
+  Kiana Prema Consulting <span class="dot">&middot;</span> Intuitive Brand Engineering
 </footer>
+
+<!-- ═══════════════════════════════════════════════
+     FORM SUBMISSION HANDLER
+     Posts directly to Google Apps Script web app.
+     Pipeline: form → fetch POST (JSON) → Apps Script → branded email to Kiki
+     ═══════════════════════════════════════════════ -->
+<script>
+(function() {
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxNQ2M-FCnXk0_g6HpYerh_inwFKaZ46tlXlnDbDkIn6ZKNfbX3_5NM1Uo6o_5JcuQa/exec';
+  var THANK_YOU = '/intake-thank-you/';
+
+  var form = document.getElementById('core-intake-form');
+  var btn = document.getElementById('submit-btn');
+  var errorEl = document.getElementById('submit-error');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errorEl.style.display = 'none';
+
+    // Honeypot check
+    if (form.querySelector('[name="bot-field"]').value) return;
+
+    // Basic HTML5 validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Collect form data
+    var fields = ['name', 'email', 'business', 'links', 'offering', 'working', 'stuck', 'intention', 'anything-else'];
+    var data = {};
+    fields.forEach(function(f) {
+      var el = form.querySelector('[name="' + f + '"]');
+      if (el) data[f] = el.value.trim();
+    });
+
+    // Disable button while sending
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+
+    // POST to Apps Script
+    // Using no-cors mode — the request goes through but we can't read the response.
+    // Apps Script's error handler emails Kiki the raw payload if anything fails,
+    // so no data is ever lost.
+    fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        form_name: 'core-intake',
+        created_at: new Date().toISOString(),
+        data: data
+      })
+    }).then(function() {
+      // Redirect to thank-you page
+      window.location.href = THANK_YOU;
+    }).catch(function(err) {
+      btn.disabled = false;
+      btn.textContent = 'Send It Over';
+      errorEl.textContent = 'Something went wrong. Please try again, or email kiana@kianaprema.com directly.';
+      errorEl.style.display = 'block';
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
