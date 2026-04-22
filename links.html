@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Links — Kiana Prema Consulting</title>
-<meta name="description" content="Kiana Prema Consulting — Intuitive Brand Strategy for Visionary Founders. Freebies, offers, and ways to connect.">
+<meta name="description" content="Kiana Prema Consulting — Intuitive Brand Strategy for Visionary Entrepreneurs. Freebies, offers, and ways to connect.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -163,10 +163,10 @@ body::before {
   border: 1px solid var(--berry);
 }
 .link-btn.primary:hover {
-  background: var(--brick);
-  border-color: var(--brick);
+  background: #6E0235;
+  border-color: var(--amber);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(140,3,67,0.2);
+  box-shadow: 0 6px 20px rgba(140,3,67,0.25);
 }
 
 /* Secondary CTA — filled lighter */
@@ -176,10 +176,27 @@ body::before {
   border: 1px solid var(--brick);
 }
 .link-btn.secondary:hover {
-  background: var(--berry);
-  border-color: var(--berry);
+  background: #A04545;
+  border-color: var(--amber);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(191,84,84,0.2);
+  box-shadow: 0 6px 20px rgba(191,84,84,0.25);
+}
+
+/* Premium CTA — patina (sage) background with amber accent */
+.link-btn.premium {
+  background: var(--patina);
+  color: var(--cream);
+  border: 1px solid var(--patina);
+}
+.link-btn.premium:hover {
+  background: #3f665e;
+  border-color: var(--amber);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78,123,114,0.25);
+}
+.link-btn.premium .link-eyebrow {
+  color: var(--amber);
+  opacity: 1;
 }
 
 /* Standard — outlined */
@@ -324,7 +341,14 @@ body::before {
       </span>
     </a>
 
-    <a href="https://core.kianaprema.com" class="link-btn secondary">
+    <a href="https://kianaprema.com/blueprint" class="link-btn secondary">
+      <span class="link-label">
+        <span class="link-eyebrow">Self-Guided · $37</span>
+        The Brand Becoming Blueprint — Map Your Brand's Next Layer
+      </span>
+    </a>
+
+    <a href="https://core.kianaprema.com" class="link-btn premium">
       <span class="link-label">
         <span class="link-eyebrow">Limited Beta</span>
         CORE Brand Strategy Session — $997

@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Brand Becoming Blueprint — Kiana Prema Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #FAF6F1;
+      color: #2C1810;
+      line-height: 1.75;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    :root {
+      --brick: #BF5454;
+      --berry: #8C0343;
+      --amber: #D98859;
+      --sand: #BFAF80;
+      --patina: #4E7B72;
+      --blush: #F2AB9B;
+      --cream: #F2DCC9;
+      --canvas: #FAF6F1;
+      --dark: #2C1810;
+    }
+
+    /* ─ PRINT STYLES ─ */
+    @page {
+      size: letter;
+      margin: 0.6in 0.55in;
+    }
+
+    @media print {
+      /* ── base ── */
+      html, body {
+        background: white !important;
+        font-size: 11pt;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .page-wrapper {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* ── hide interactive / screen-only chrome ── */
+      .no-print,
+      .progress-bar-container,
+      .nav-sticky,
+      .scroll-top,
+      button { display: none !important; }
+
+      /* keep the Book CTA (anchor) visible, show URL next to it for pen-and-paper users */
+      a.cta-btn {
+        display: inline-block !important;
+        border: 1.5pt solid #8C0343 !important;
+        color: #8C0343 !important;
+        padding: 8pt 14pt !important;
+        background: white !important;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a.cta-btn::after {
+        content: " → " attr(href);
+        display: block;
+        font-size: 9pt;
+        font-weight: 400;
+        margin-top: 4pt;
+        color: #555;
+        word-break: break-all;
+      }
+
+      /* keep brand anchors + rules visible but unclickable styling fine */
+      a { color: inherit; text-decoration: none; }
+
+      /* ── widow / orphan control ── */
+      p, li, div { orphans: 3; widows: 3; }
+
+      /* ── section-level page breaks ── */
+      .hero-section { page-break-after: always; break-after: page; }
+      .layer-section { page-break-before: always; break-before: page; }
+      .results-section { page-break-before: always; break-before: page; }
+
+      /* keep the "before you begin" + "your info" + "how to use" blocks together on page 2 where they belong */
+      .before-you-begin,
+      .your-info,
+      .how-to-use { page-break-inside: avoid; break-inside: avoid; }
+
+      .before-invite { page-break-inside: avoid; break-inside: avoid; }
+
+      /* ── don't split these blocks across pages ── */
+      .question-block,
+      .how-step,
+      .info-field,
+      .layer-header,
+      .rating-row,
+      .score-section,
+      .scoring-section,
+      .results-header,
+      .results-grid,
+      .insight-card,
+      .next-steps,
+      .hero-meta,
+      .meta-item,
+      .info-grid,
+      #interpretation-block { page-break-inside: avoid; break-inside: avoid; }
+
+      /* stack the two insight cards vertically on paper so each can own its own page-break boundary */
+      .insight-cards {
+        display: block !important;
+        grid-template-columns: none !important;
+      }
+      .insight-cards > .insight-card { margin-bottom: 0.35in; }
+
+      /* ── keep headers with the content that follows ── */
+      h1, h2, h3, h4,
+      .layer-header,
+      .layer-intro,
+      .score-eyebrow,
+      .question-label { page-break-after: avoid; break-after: avoid; }
+
+      /* ── workbook fields: visible bordered boxes, enough writing space ── */
+      .workbook-field,
+      textarea.workbook-field {
+        border: 1px solid #999 !important;
+        background: white !important;
+        min-height: 110px !important;
+        resize: none;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* info fields (name, business, etc.) render with underlines for handwriting */
+      .info-field input,
+      .info-field textarea {
+        border: 0 !important;
+        border-bottom: 1px solid #555 !important;
+        background: white !important;
+        min-height: 1.6em;
+      }
+
+      /* rating dots render as circles on paper, not filled buttons */
+      .rating-dot {
+        border: 1px solid #555 !important;
+        background: white !important;
+        color: #333 !important;
+      }
+
+      /* keep layer headers with their first question — no orphan header at bottom of page */
+      .layer-header + .layer-intro,
+      .layer-intro + .question-block { page-break-before: avoid; break-before: avoid; }
+
+      /* footer sticks to end, doesn't orphan */
+      .footer-brand,
+      .footer-tagline,
+      .footer-copy { page-break-inside: avoid; break-inside: avoid; }
+
+      /* image / rule lines shouldn't split */
+      .hero-rule { page-break-after: avoid; break-after: avoid; }
+    }
+
+    /* ─ NAVIGATION ─ */
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 246, 241, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--blush);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant', serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--berry);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-link {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background: var(--berry);
+      color: white;
+    }
+
+    .nav-link.layer-1 { border-bottom: 2px solid var(--berry); }
+    .nav-link.layer-2 { border-bottom: 2px solid var(--patina); }
+    .nav-link.layer-3 { border-bottom: 2px solid var(--amber); }
+    .nav-link.layer-4 { border-bottom: 2px solid var(--brick); }
+
+    /* ─ PROGRESS BAR ─ */
+    .progress-bar-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: rgba(44, 24, 16, 0.95);
+      padding: 0.6rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 6px;
+      background: rgba(242, 220, 201, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--berry), var(--amber));
+      border-radius: 3px;
+      transition: width 0.5s ease;
+      width: 0%;
+    }
+
+    .progress-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ─ PAGE WRAPPER ─ */
+    .page-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ─ HERO SECTION ─ */
+    .hero-section {
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant', serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant', serif;
+      font-size: 24px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--patina);
+      margin-bottom: 2rem;
+    }
+
+    .hero-rule {
+      width: 80px;
+      height: 2px;
+      background: var(--amber);
+      margin: 0 auto 2rem;
+    }
+
+    .hero-description {
+      font-size: 15px;
+      color: var(--dark);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .hero-meta {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+
+    .meta-value {
+      font-family: 'Cormorant', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--berry);
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--sand);
+      font-weight: 500;
+    }
+
+    /* ─ YOUR INFO SECTION ─ */
+    .your-info {
+      background: white;
+      border: 1px solid var(--blush);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .your-info h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .your-info-lead {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--patina);
+      font-style: italic;
+      margin-bottom: 1.75rem;
+      max-width: 58ch;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .info-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--amber);
+      margin-bottom: 0.4rem;
+    }
+
+    .info-field input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--cream);
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--dark);
+      background: var(--canvas);
+      transition: border-color 0.2s;
+    }
+
+    .info-field input:focus {
+      outline: none;
+      border-color: var(--amber);
+    }
+
+    .info-field.full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* ─ HOW TO USE ─ */
+    .how-to-use {
+      background: linear-gradient(135deg, rgba(140, 3, 67, 0.04), rgba(78, 123, 114, 0.04));
+      border: 1px solid var(--blush);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .how-to-use h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .how-step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+
+    .how-step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: var(--berry);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .step-text strong {
+      color: var(--berry);
+    }
+
+    /* ─ BEFORE YOU BEGIN (intentional container-setting) ─ */
+    .before-you-begin {
+      background: linear-gradient(135deg, rgba(242, 171, 155, 0.18), rgba(242, 220, 201, 0.35));
+      border: 1px solid var(--blush);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 2.5rem 2.25rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .before-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    .before-you-begin h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .before-lead {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--dark);
+      margin-bottom: 1.75rem;
+      max-width: 58ch;
+    }
+
+    .before-invitations {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .before-invite {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    .before-invite .arrow {
+      color: var(--berry);
+      font-weight: 700;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .before-invite strong {
+      color: var(--berry);
+    }
+
+    .before-close {
+      font-family: 'Cormorant', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--berry);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    /* ─ LAYER SECTIONS ─ */
+    .layer-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .layer-header {
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .layer-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 2px;
+      background: var(--amber);
+    }
+
+    .layer-1 .layer-header { background: linear-gradient(135deg, #8C0343, #6B0233); }
+    .layer-2 .layer-header { background: linear-gradient(135deg, #4E7B72, #3A5E57); }
+    .layer-3 .layer-header { background: linear-gradient(135deg, #D98859, #C07040); }
+    .layer-4 .layer-header { background: linear-gradient(135deg, #BF5454, #A04040); }
+
+    .layer-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    .layer-title {
+      font-family: 'Cormorant', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .layer-question {
+      font-family: 'Cormorant', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .layer-intro {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--dark);
+      margin-bottom: 2rem;
+      padding: 0 0.5rem;
+    }
+
+    /* ─ QUESTION BLOCKS ─ */
+    .question-block {
+      background: white;
+      border: 1px solid var(--cream);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .question-block:hover {
+      border-color: var(--blush);
+    }
+
+    .question-block.answered {
+      border-color: var(--patina);
+      border-left: 3px solid var(--patina);
+    }
+
+    .question-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .question-text {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+
+    .question-subtext {
+      font-size: 13px;
+      color: var(--sand);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .workbook-field {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--cream);
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--dark);
+      background: var(--canvas);
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+
+    .workbook-field:focus {
+      outline: none;
+      border-color: var(--amber);
+      background: white;
+    }
+
+    .workbook-field::placeholder {
+      color: var(--sand);
+      font-style: italic;
+    }
+
+    /* ─ RATING SCALES ─ */
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .rating-label {
+      font-size: 13px;
+      color: var(--dark);
+      min-width: 160px;
+    }
+
+    .rating-dots {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .rating-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--cream);
+      background: var(--canvas);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--sand);
+      transition: all 0.2s;
+    }
+
+    .rating-dot:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .rating-dot.selected {
+      background: var(--berry);
+      border-color: var(--berry);
+      color: white;
+    }
+
+    .rating-anchor {
+      font-size: 10px;
+      color: var(--sand);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─ MULTI-SELECT ─ */
+    .multi-select {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .select-chip {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--cream);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--dark);
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--canvas);
+      user-select: none;
+    }
+
+    .select-chip:hover {
+      border-color: var(--amber);
+    }
+
+    .select-chip.selected {
+      background: var(--berry);
+      border-color: var(--berry);
+      color: white;
+    }
+
+    /* ─ LAYER SCORE ─ */
+    .layer-score-card {
+      background: linear-gradient(135deg, rgba(140, 3, 67, 0.06), rgba(78, 123, 114, 0.06));
+      border: 1px solid var(--blush);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .score-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .score-value {
+      font-family: 'Cormorant', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--berry);
+    }
+
+    .score-label {
+      font-size: 13px;
+      color: var(--sand);
+      margin-top: 0.25rem;
+    }
+
+    .score-interpretation {
+      margin-top: 1rem;
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ─ RESULTS SECTION ─ */
+    .results-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 2px solid var(--amber);
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .results-header .hero-eyebrow { margin-bottom: 0.75rem; }
+
+    .results-header h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .results-header p {
+      font-family: 'Cormorant', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--patina);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid var(--cream);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .result-card .layer-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.4rem;
+    }
+
+    .result-card.layer-1-card .layer-dot { background: var(--berry); }
+    .result-card.layer-2-card .layer-dot { background: var(--patina); }
+    .result-card.layer-3-card .layer-dot { background: var(--amber); }
+    .result-card.layer-4-card .layer-dot { background: var(--brick); }
+
+    .result-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .result-score {
+      font-family: 'Cormorant', serif;
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .result-card.layer-1-card .result-score { color: var(--berry); }
+    .result-card.layer-2-card .result-score { color: var(--patina); }
+    .result-card.layer-3-card .result-score { color: var(--amber); }
+    .result-card.layer-4-card .result-score { color: var(--brick); }
+
+    .result-status {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    .overall-score {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #8C0343, #2C1810);
+      border-radius: 8px;
+      margin-bottom: 2.5rem;
+    }
+
+    .overall-score .score-eyebrow { color: var(--amber); }
+    .overall-score .score-value { color: white; font-size: 56px; }
+    .overall-score .score-label { color: var(--cream); }
+
+    /* ─ STRONGEST / EVOLVING ─ */
+    .insight-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .insight-card {
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .insight-card.strongest {
+      background: rgba(78, 123, 114, 0.08);
+      border: 1px solid rgba(78, 123, 114, 0.2);
+    }
+
+    .insight-card.evolving {
+      background: rgba(191, 84, 84, 0.08);
+      border: 1px solid rgba(191, 84, 84, 0.2);
+    }
+
+    .insight-card h3 {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .insight-card.strongest h3 { color: var(--patina); }
+    .insight-card.evolving h3 { color: var(--brick); }
+
+    .insight-card p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ─ NEXT STEPS ─ */
+    .next-steps {
+      background: white;
+      border: 2px solid var(--amber);
+      border-radius: 8px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .next-steps h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .next-steps p {
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 0.8rem 2.5rem;
+      background: var(--berry);
+      color: white;
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover { background: #6B0233; }
+
+    .cta-btn.secondary {
+      background: transparent;
+      border: 1px solid var(--berry);
+      color: var(--berry);
+      margin-left: 1rem;
+    }
+
+    .cta-btn.secondary:hover {
+      background: var(--berry);
+      color: white;
+    }
+
+    /* ─ FOOTER ─ */
+    .blueprint-footer {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      border-top: 1px solid var(--cream);
+      margin-top: 4rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--berry);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--sand);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--sand);
+      margin-top: 1rem;
+    }
+
+    /* ─ SCROLL TOP ─ */
+    .scroll-top {
+      position: fixed;
+      bottom: 4rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--berry);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 98;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* ─ RESPONSIVE ─ */
+    @media (max-width: 640px) {
+      .hero-title { font-size: 34px; }
+      .hero-subtitle { font-size: 18px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .insight-cards { grid-template-columns: 1fr; }
+      .layer-title { font-size: 28px; }
+      .nav-links { display: none; }
+      .rating-label { min-width: 100px; font-size: 12px; }
+      .cta-btn.secondary { margin-left: 0; margin-top: 0.75rem; display: inline-block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav class="nav-sticky no-print">
+  <div class="nav-brand">Brand Becoming Blueprint</div>
+  <div class="nav-links">
+    <a href="#layer-1" class="nav-link layer-1">Identity</a>
+    <a href="#layer-2" class="nav-link layer-2">Strategy</a>
+    <a href="#layer-3" class="nav-link layer-3">Messaging</a>
+    <a href="#layer-4" class="nav-link layer-4">Design</a>
+    <a href="#results" class="nav-link">Results</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero-section">
+    <div class="hero-eyebrow">Kiana Prema Consulting</div>
+    <h1 class="hero-title">The Brand Becoming<br>Blueprint</h1>
+    <div class="hero-subtitle">A Self-Guided Diagnostic Across the 4 Layers of Brand Architecture</div>
+    <div class="hero-rule"></div>
+    <p class="hero-description">
+      Your brand is more than a logo and a color palette. It's a living system — built on identity, shaped by strategy, expressed through messaging, and made visible through design. When all four layers are aligned, your brand doesn't just <em>look</em> right. It <em>feels</em> right. To you, to your team, and to every person who encounters it.
+    </p>
+    <p class="hero-description" style="margin-top: 1rem;">
+      This Blueprint walks you through each layer, one honest question at a time. In about 30 minutes, you'll see exactly where you stand — and exactly what's ready to evolve first.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-value">4</div>
+        <div class="meta-label">Layers</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-value">20</div>
+        <div class="meta-label">Questions</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-value">~30</div>
+        <div class="meta-label">Minutes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ BEFORE YOU BEGIN ═══════════════ -->
+  <section class="before-you-begin">
+    <div class="before-eyebrow">An Invitation</div>
+    <h2>Set the Container</h2>
+    <p class="before-lead">
+      This isn't a form... it's a conversation with your work, your business, and the brand becoming through you. That kind of conversation asks for a different quality of presence than scrolling through your phone in line at the coffee shop. So before you dive in, take a few minutes to set the container.
+    </p>
+
+    <div class="before-invitations">
+      <div class="before-invite">
+        <span class="arrow">→</span>
+        <div><strong>Make the space your own.</strong> Close the tabs. Put the phone on silent. Light a candle if that's your thing. Pour something warm to drink. This is your time.</div>
+      </div>
+      <div class="before-invite">
+        <span class="arrow">→</span>
+        <div><strong>Give yourself ~30 minutes of uninterrupted attention.</strong> Half-distracted answers give you half-clear results. Block the time the way you'd block time for a session with a coach you respect.</div>
+      </div>
+      <div class="before-invite">
+        <span class="arrow">→</span>
+        <div><strong>Drop in before you write.</strong> Take three slow breaths. Notice what's already alive in you about your business right now... the excitement, the questions, the friction, the longing. Let those be the doorway in.</div>
+      </div>
+      <div class="before-invite">
+        <span class="arrow">→</span>
+        <div><strong>Answer from the truth, not the brand voice.</strong> This isn't where you perform. It's where you get clear. The messier and more honest your answers, the more useful what you build from them will be.</div>
+      </div>
+    </div>
+
+    <div class="before-close">When you feel settled... begin.</div>
+  </section>
+
+  <!-- ═══════════════ YOUR STARTING POINT ═══════════════ -->
+  <section class="your-info">
+    <h2>Where You Stand Today</h2>
+    <p class="your-info-lead">A snapshot of your brand as it lives right now... yours to keep and return to as your business evolves.</p>
+    <div class="info-grid">
+      <div class="info-field">
+        <label>Your Name</label>
+        <input type="text" id="info-name" placeholder="First and last name">
+      </div>
+      <div class="info-field">
+        <label>Brand / Business Name</label>
+        <input type="text" id="info-brand" placeholder="Your company or brand name">
+      </div>
+      <div class="info-field">
+        <label>Industry / Niche</label>
+        <input type="text" id="info-industry" placeholder="e.g. Coaching, Health & Wellness, SaaS">
+      </div>
+      <div class="info-field">
+        <label>How long have you been in business?</label>
+        <input type="text" id="info-years" placeholder="e.g. 3 years, just starting, 10+ years">
+      </div>
+      <div class="info-field full-width">
+        <label>What brought you here today?</label>
+        <input type="text" id="info-intention" placeholder="What are you hoping to discover or clarify about your brand?">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ HOW TO USE ═══════════════ -->
+  <section class="how-to-use">
+    <h2>How This Works</h2>
+    <div class="how-step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Move through all four layers in order.</strong> Identity first, then Strategy, Messaging, and Design. The order matters — each layer builds on the one before it.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Answer honestly, not aspirationally.</strong> This isn't about where you want to be. It's about where you actually stand right now. Clarity comes from truth, not wishful thinking.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Rate each dimension.</strong> After the open-ended questions, you'll rate your confidence in each area. These scores generate your Blueprint Map at the end.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-num">4</div>
+      <div class="step-text"><strong>Read your results.</strong> Your Brand Becoming Blueprint shows where you're strong, where you're evolving, and exactly what to focus on first.</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LAYER 1: IDENTITY ═══════════════ -->
+  <section id="layer-1" class="layer-section layer-1">
+    <div class="layer-header">
+      <div class="layer-number">Layer 01</div>
+      <div class="layer-title">Identity</div>
+      <div class="layer-question">Who are you really? And who are you becoming?</div>
+    </div>
+
+    <p class="layer-intro">
+      Identity is the foundation everything else is built on. It's not your logo. It's not your tagline. It's the <em>truth</em> of who you are, what you believe, and who you're built to serve. Most brands skip this layer — or build it once and never revisit it. That's why they rebrand every 18 months. Identity isn't static. It evolves as you evolve. The question is whether your brand is evolving with you.
+    </p>
+
+    <div class="question-block" data-layer="1">
+      <div class="question-label">Identity · Question 1</div>
+      <div class="question-text">What do you believe about your work that most people in your industry don't?</div>
+      <div class="question-subtext">The truth only you can speak. The conviction that shapes everything you build.</div>
+      <textarea class="workbook-field" placeholder="Write freely. There's no wrong answer — just your truth."></textarea>
+    </div>
+
+    <div class="question-block" data-layer="1">
+      <div class="question-label">Identity · Question 2</div>
+      <div class="question-text">Describe your ideal client in one paragraph — not demographics, but the moment they're in when they find you.</div>
+      <div class="question-subtext">Not "women 35-50." The specific human. What they're struggling with. Why they come to you.</div>
+      <textarea class="workbook-field" placeholder="Think about one real person, or the pattern you've seen across your best clients..."></textarea>
+    </div>
+
+    <div class="question-block" data-layer="1">
+      <div class="question-label">Identity · Question 3</div>
+      <div class="question-text">If your brand had a soul, what would it value above everything else?</div>
+      <div class="question-subtext">Not what you sell. What you stand for. The non-negotiable underneath it all.</div>
+      <textarea class="workbook-field" placeholder="This is the thing you'd never compromise on, no matter what the market tells you..."></textarea>
+    </div>
+
+    <div class="question-block" data-layer="1">
+      <div class="question-label">Identity · Question 4</div>
+      <div class="question-text">What has changed about you — as a person and as a professional — that your brand doesn't yet reflect?</div>
+      <div class="question-subtext">Growth creates gaps. This question finds them.</div>
+      <textarea class="workbook-field" placeholder="Where have you outgrown your current brand?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="1">
+      <div class="question-label">Identity · Question 5</div>
+      <div class="question-text">When someone spends 5 minutes on your website or social media, what do they feel?</div>
+      <div class="question-subtext">Be honest. Not what you want them to feel — what they actually feel right now.</div>
+      <textarea class="workbook-field" placeholder="If you're not sure, that's worth noticing..."></textarea>
+    </div>
+
+    <!-- Identity Confidence Ratings -->
+    <div class="layer-score-card">
+      <div class="score-eyebrow">Rate Your Identity Layer</div>
+      <p style="font-size: 13px; color: var(--dark); margin: 0.5rem 0 1rem;">How confident are you in each of these dimensions? (1 = not clear at all · 5 = rock solid)</p>
+
+      <div class="rating-row">
+        <span class="rating-label">Core beliefs & values</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="identity-beliefs">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Ideal client clarity</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="identity-client">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Brand-self alignment</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="identity-alignment">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="score-value" id="score-layer-1">— / 15</div>
+      <div class="score-label">Identity Score</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LAYER 2: STRATEGY ═══════════════ -->
+  <section id="layer-2" class="layer-section layer-2">
+    <div class="layer-header">
+      <div class="layer-number">Layer 02</div>
+      <div class="layer-title">Strategy</div>
+      <div class="layer-question">How do you want to be known?</div>
+    </div>
+
+    <p class="layer-intro">
+      Strategy is how your identity becomes positioning. It's your competitive truth — the thing you see that nobody else does. Your proof. Your reason. The answer to "why should someone choose <em>you</em>?" Without this layer, you're just another option in a crowded feed. With it, you become the only option for the right people.
+    </p>
+
+    <div class="question-block" data-layer="2">
+      <div class="question-label">Strategy · Question 1</div>
+      <div class="question-text">What is the one transformation your clients experience that no one else in your space delivers quite the same way?</div>
+      <div class="question-subtext">Not what you do. What happens to them because of you.</div>
+      <textarea class="workbook-field" placeholder="Think about the 'after' — what changes in their world?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="2">
+      <div class="question-label">Strategy · Question 2</div>
+      <div class="question-text">Why should someone choose you at your highest price?</div>
+      <div class="question-subtext">Not features. Not deliverables. The reason investment in you is worth it.</div>
+      <textarea class="workbook-field" placeholder="What makes you irreplaceable at your premium tier?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="2">
+      <div class="question-label">Strategy · Question 3</div>
+      <div class="question-text">What's your competitive truth — the thing you see about your industry that your competitors are ignoring or getting wrong?</div>
+      <div class="question-subtext">This is your strategic edge. The gap only you can fill.</div>
+      <textarea class="workbook-field" placeholder="What do you know to be true that your market hasn't caught up to?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="2">
+      <div class="question-label">Strategy · Question 4</div>
+      <div class="question-text">Do your current offers (services, products, pricing) reflect the level you're operating at — or are you underpricing the work you do?</div>
+      <div class="question-subtext">Honest inventory. Is your offer architecture aligned with your actual value?</div>
+      <textarea class="workbook-field" placeholder="Think about each thing you sell. Does the price match the transformation?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="2">
+      <div class="question-label">Strategy · Question 5</div>
+      <div class="question-text">If a stranger found your brand tomorrow, could they explain in one sentence what you do and why it matters?</div>
+      <div class="question-subtext">Positioning clarity. Can someone who's never met you articulate your value?</div>
+      <textarea class="workbook-field" placeholder="Try writing that one sentence yourself. If it's hard, that's the gap..."></textarea>
+    </div>
+
+    <!-- Strategy Confidence Ratings -->
+    <div class="layer-score-card">
+      <div class="score-eyebrow">Rate Your Strategy Layer</div>
+      <p style="font-size: 13px; color: var(--dark); margin: 0.5rem 0 1rem;">How confident are you in each of these dimensions? (1 = not clear at all · 5 = rock solid)</p>
+
+      <div class="rating-row">
+        <span class="rating-label">Positioning clarity</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="strategy-positioning">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Offer-value alignment</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="strategy-offers">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Competitive differentiation</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="strategy-differentiation">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="score-value" id="score-layer-2">— / 15</div>
+      <div class="score-label">Strategy Score</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LAYER 3: MESSAGING ═══════════════ -->
+  <section id="layer-3" class="layer-section layer-3">
+    <div class="layer-header">
+      <div class="layer-number">Layer 03</div>
+      <div class="layer-title">Messaging</div>
+      <div class="layer-question">How do you say it?</div>
+    </div>
+
+    <p class="layer-intro">
+      Messaging is how your identity and strategy become words. It's the voice people hear when you're not in the room. It's the feeling they get from your website copy, your emails, your social captions. When messaging is working, people don't just understand what you do — they feel something. They recognize themselves in your language. They trust you before they've ever spoken to you.
+    </p>
+
+    <div class="question-block" data-layer="3">
+      <div class="question-label">Messaging · Question 1</div>
+      <div class="question-text">What does your brand sound like when you're not in the room?</div>
+      <div class="question-subtext">If someone read your website, your emails, and your social media — what voice would they hear?</div>
+      <textarea class="workbook-field" placeholder="Describe the tone, energy, and personality of your written voice..."></textarea>
+    </div>
+
+    <div class="question-block" data-layer="3">
+      <div class="question-label">Messaging · Question 2</div>
+      <div class="question-text">Do your current words match the depth of the work you do?</div>
+      <div class="question-subtext">Many brands water down their language to sound "accessible." Does your copy actually reflect the transformation you deliver?</div>
+      <textarea class="workbook-field" placeholder="Read your own homepage right now. Does it sound like you?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="3">
+      <div class="question-label">Messaging · Question 3</div>
+      <div class="question-text">What's the one sentence that captures everything your brand stands for?</div>
+      <div class="question-subtext">Your Brand Identity Statement. The line that, if someone read only this, they'd understand the heart of what you do.</div>
+      <textarea class="workbook-field" placeholder="If you don't have one yet, try writing it now. Even a rough draft reveals a lot..."></textarea>
+    </div>
+
+    <div class="question-block" data-layer="3">
+      <div class="question-label">Messaging · Question 4</div>
+      <div class="question-text">When you write for your brand, does it feel natural — or do you find yourself performing?</div>
+      <div class="question-subtext">Voice alignment. Do you write as yourself, or as some version of who you think you should be?</div>
+      <textarea class="workbook-field" placeholder="Be honest about the gap between your natural voice and your brand voice..."></textarea>
+    </div>
+
+    <div class="question-block" data-layer="3">
+      <div class="question-label">Messaging · Question 5</div>
+      <div class="question-text">Could someone on your team (or a VA, or AI) write for your brand and sound like you?</div>
+      <div class="question-subtext">Scalable voice. If your messaging depends entirely on you showing up, it's not a system — it's a bottleneck.</div>
+      <textarea class="workbook-field" placeholder="Think about what would need to be documented for someone else to capture your voice..."></textarea>
+    </div>
+
+    <!-- Messaging Confidence Ratings -->
+    <div class="layer-score-card">
+      <div class="score-eyebrow">Rate Your Messaging Layer</div>
+      <p style="font-size: 13px; color: var(--dark); margin: 0.5rem 0 1rem;">How confident are you in each of these dimensions? (1 = not clear at all · 5 = rock solid)</p>
+
+      <div class="rating-row">
+        <span class="rating-label">Brand voice clarity</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="messaging-voice">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Copy-work alignment</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="messaging-copy">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Voice scalability</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="messaging-scalability">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="score-value" id="score-layer-3">— / 15</div>
+      <div class="score-label">Messaging Score</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LAYER 4: DESIGN ═══════════════ -->
+  <section id="layer-4" class="layer-section layer-4">
+    <div class="layer-header">
+      <div class="layer-number">Layer 04</div>
+      <div class="layer-title">Design</div>
+      <div class="layer-question">How does it look?</div>
+    </div>
+
+    <p class="layer-intro">
+      Design is the final layer — the one everyone starts with and the one that breaks first when the foundation underneath it is missing. Visual identity should be the <em>expression</em> of your identity, strategy, and messaging. When design leads without the other three layers, you get a brand that looks beautiful but feels hollow. When design follows identity, you get a brand that's unmistakable.
+    </p>
+
+    <div class="question-block" data-layer="4">
+      <div class="question-label">Design · Question 1</div>
+      <div class="question-text">Does your visual identity make you feel proud — or are you apologizing for it?</div>
+      <div class="question-subtext">The gut check. When you share your website or hand someone a card, what do you feel?</div>
+      <textarea class="workbook-field" placeholder="Pride? Excitement? Embarrassment? Something in between?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="4">
+      <div class="question-label">Design · Question 2</div>
+      <div class="question-text">What should someone feel within 3 seconds of landing on your website or profile?</div>
+      <div class="question-subtext">This is your visual first impression. Not what they should read — what they should feel.</div>
+      <textarea class="workbook-field" placeholder="Name the emotion. Trust? Warmth? Authority? Curiosity?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="4">
+      <div class="question-label">Design · Question 3</div>
+      <div class="question-text">Is your visual identity consistent across every touchpoint — website, social, email, proposals, client materials?</div>
+      <div class="question-subtext">Visual coherence. Does everything look like it came from the same brand?</div>
+      <textarea class="workbook-field" placeholder="Think about each place your brand shows up. Are they telling the same visual story?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="4">
+      <div class="question-label">Design · Question 4</div>
+      <div class="question-text">When was the last time you invested in your visual identity? Does it reflect who you are now?</div>
+      <div class="question-subtext">Brands age. The visual identity you built 3 years ago might not fit the business you're running today.</div>
+      <textarea class="workbook-field" placeholder="Has your business evolved faster than your design?"></textarea>
+    </div>
+
+    <div class="question-block" data-layer="4">
+      <div class="question-label">Design · Question 5</div>
+      <div class="question-text">Could someone look at your brand for 10 seconds and know exactly what level of work you deliver?</div>
+      <div class="question-subtext">Design signals value. Does yours signal the right level? Premium? Approachable? Expert? All three?</div>
+      <textarea class="workbook-field" placeholder="Think about a potential client's first impression of your visual brand..."></textarea>
+    </div>
+
+    <!-- Design Confidence Ratings -->
+    <div class="layer-score-card">
+      <div class="score-eyebrow">Rate Your Design Layer</div>
+      <p style="font-size: 13px; color: var(--dark); margin: 0.5rem 0 1rem;">How confident are you in each of these dimensions? (1 = not clear at all · 5 = rock solid)</p>
+
+      <div class="rating-row">
+        <span class="rating-label">Visual pride</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="design-pride">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Cross-platform consistency</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="design-consistency">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="rating-row">
+        <span class="rating-label">Value signaling</span>
+        <span class="rating-anchor">1</span>
+        <div class="rating-dots" data-rating="design-value">
+          <div class="rating-dot" data-value="1">1</div>
+          <div class="rating-dot" data-value="2">2</div>
+          <div class="rating-dot" data-value="3">3</div>
+          <div class="rating-dot" data-value="4">4</div>
+          <div class="rating-dot" data-value="5">5</div>
+        </div>
+        <span class="rating-anchor">5</span>
+      </div>
+
+      <div class="score-value" id="score-layer-4">— / 15</div>
+      <div class="score-label">Design Score</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RESULTS ═══════════════ -->
+  <section id="results" class="results-section">
+    <div class="results-header">
+      <div class="hero-eyebrow">Your Blueprint</div>
+      <h2>Brand Architecture Map</h2>
+      <p>Here's where you stand across all four layers.</p>
+    </div>
+
+    <!-- Overall Score -->
+    <div class="overall-score">
+      <div class="score-eyebrow">Overall Brand Integrity</div>
+      <div class="score-value" id="overall-score">— / 60</div>
+      <div class="score-label">Total across all four layers</div>
+    </div>
+
+    <!-- Layer Scores Grid -->
+    <div class="results-grid">
+      <div class="result-card layer-1-card">
+        <h3><span class="layer-dot"></span> Identity</h3>
+        <div class="result-score" id="result-layer-1">—</div>
+        <div class="result-status" id="status-layer-1">Complete the layer above</div>
+      </div>
+      <div class="result-card layer-2-card">
+        <h3><span class="layer-dot"></span> Strategy</h3>
+        <div class="result-score" id="result-layer-2">—</div>
+        <div class="result-status" id="status-layer-2">Complete the layer above</div>
+      </div>
+      <div class="result-card layer-3-card">
+        <h3><span class="layer-dot"></span> Messaging</h3>
+        <div class="result-score" id="result-layer-3">—</div>
+        <div class="result-status" id="status-layer-3">Complete the layer above</div>
+      </div>
+      <div class="result-card layer-4-card">
+        <h3><span class="layer-dot"></span> Design</h3>
+        <div class="result-score" id="result-layer-4">—</div>
+        <div class="result-status" id="status-layer-4">Complete the layer above</div>
+      </div>
+    </div>
+
+    <!-- Strongest + Evolving -->
+    <div class="insight-cards">
+      <div class="insight-card strongest">
+        <h3 id="strongest-title">Your Strongest Layer</h3>
+        <p id="strongest-text">Complete all four layers to see your results.</p>
+      </div>
+      <div class="insight-card evolving">
+        <h3 id="evolving-title">Ready to Evolve</h3>
+        <p id="evolving-text">Complete all four layers to see your results.</p>
+      </div>
+    </div>
+
+    <!-- Interpretation -->
+    <div class="how-to-use" id="interpretation-block" style="display: none;">
+      <h2>What This Means</h2>
+      <div id="interpretation-text"></div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="next-steps">
+      <div class="hero-eyebrow">What Comes Next</div>
+      <h2>This Is Where Clarity Becomes Action</h2>
+      <p>
+        Now you can see exactly where your brand stands — and exactly what's ready to evolve first. If you want to go deeper, a Brand Clarity Conversation is a free 30-minute call where we look at your Blueprint together and map the path forward.
+      </p>
+      <a href="https://tidycal.com/kianaprema/brand-clarity-conversation" class="cta-btn" target="_blank">Book a Brand Clarity Conversation</a>
+      <button class="cta-btn secondary" onclick="window.print()">Print Your Blueprint</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="blueprint-footer">
+    <div class="footer-brand">Kiana Prema Consulting</div>
+    <div class="footer-tagline">Strategic Clarity Meets Sacred Essence</div>
+    <div class="footer-copy">&copy; 2026 Kiana Prema Consulting. All rights reserved.</div>
+  </footer>
+
+</div><!-- .page-wrapper -->
+
+<!-- Progress Bar -->
+<div class="progress-bar-container no-print">
+  <span class="progress-label" id="progress-text">0 of 20 questions</span>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+  <span class="progress-label" id="progress-pct">0%</span>
+</div>
+
+<!-- Scroll to top -->
+<button class="scroll-top no-print" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+<script>
+  // ═══════════════════════════════════
+  // BRAND BECOMING BLUEPRINT — ENGINE
+  // ═══════════════════════════════════
+
+  const scores = {};
+  const LAYERS = ['1', '2', '3', '4'];
+  const LAYER_NAMES = { '1': 'Identity', '2': 'Strategy', '3': 'Messaging', '4': 'Design' };
+  const LAYER_RATINGS = {
+    '1': ['identity-beliefs', 'identity-client', 'identity-alignment'],
+    '2': ['strategy-positioning', 'strategy-offers', 'strategy-differentiation'],
+    '3': ['messaging-voice', 'messaging-copy', 'messaging-scalability'],
+    '4': ['design-pride', 'design-consistency', 'design-value']
+  };
+
+  // Rating dot click handlers
+  document.querySelectorAll('.rating-dots').forEach(group => {
+    const ratingKey = group.dataset.rating;
+    group.querySelectorAll('.rating-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        const val = parseInt(dot.dataset.value);
+        scores[ratingKey] = val;
+        // Update visual state
+        group.querySelectorAll('.rating-dot').forEach(d => {
+          d.classList.toggle('selected', parseInt(d.dataset.value) <= val);
+        });
+        updateScores();
+      });
+    });
+  });
+
+  // Track textarea completion for progress
+  const textareas = document.querySelectorAll('.workbook-field');
+  textareas.forEach(ta => {
+    ta.addEventListener('input', () => {
+      const block = ta.closest('.question-block');
+      if (ta.value.trim().length > 0) {
+        block.classList.add('answered');
+      } else {
+        block.classList.remove('answered');
+      }
+      updateProgress();
+    });
+  });
+
+  function updateProgress() {
+    const answered = document.querySelectorAll('.question-block.answered').length;
+    const total = textareas.length;
+    const pct = Math.round((answered / total) * 100);
+    document.getElementById('progress-text').textContent = `${answered} of ${total} questions`;
+    document.getElementById('progress-pct').textContent = `${pct}%`;
+    document.getElementById('progress-fill').style.width = `${pct}%`;
+  }
+
+  function updateScores() {
+    let overallTotal = 0;
+    let allComplete = true;
+
+    LAYERS.forEach(layer => {
+      const ratingKeys = LAYER_RATINGS[layer];
+      let layerTotal = 0;
+      let layerComplete = true;
+
+      ratingKeys.forEach(key => {
+        if (scores[key] !== undefined) {
+          layerTotal += scores[key];
+        } else {
+          layerComplete = false;
+          allComplete = false;
+        }
+      });
+
+      if (layerComplete) {
+        document.getElementById(`score-layer-${layer}`).textContent = `${layerTotal} / 15`;
+        document.getElementById(`result-layer-${layer}`).textContent = `${layerTotal}/15`;
+        document.getElementById(`status-layer-${layer}`).textContent = getStatusLabel(layerTotal, 15);
+        document.getElementById(`status-layer-${layer}`).style.color = getStatusColor(layerTotal, 15);
+        overallTotal += layerTotal;
+      } else {
+        document.getElementById(`score-layer-${layer}`).textContent = '— / 15';
+        document.getElementById(`result-layer-${layer}`).textContent = '—';
+        document.getElementById(`status-layer-${layer}`).textContent = 'Complete the ratings above';
+        document.getElementById(`status-layer-${layer}`).style.color = '#BFAF80';
+      }
+    });
+
+    if (allComplete) {
+      document.getElementById('overall-score').textContent = `${overallTotal} / 60`;
+      generateInsights(overallTotal);
+    } else {
+      document.getElementById('overall-score').textContent = '— / 60';
+    }
+  }
+
+  function getStatusLabel(score, max) {
+    const pct = score / max;
+    if (pct >= 0.87) return 'Strong Foundation';
+    if (pct >= 0.67) return 'Solid — Room to Grow';
+    if (pct >= 0.47) return 'Evolving';
+    return 'Needs Attention';
+  }
+
+  function getStatusColor(score, max) {
+    const pct = score / max;
+    if (pct >= 0.87) return '#4E7B72';
+    if (pct >= 0.67) return '#D98859';
+    if (pct >= 0.47) return '#BF5454';
+    return '#8C0343';
+  }
+
+  // ─── LAYER INSIGHT COPY ───
+  // Keys are sorted CSV of layer numbers: '1', '2', '1,2', '1,2,3', '1,2,3,4', etc.
+  // Single-layer keys preserve the original single-layer copy.
+  const STRONGEST_COPY = {
+    // Single-layer (existing copy, unchanged)
+    '1': 'You know who you are. That foundation is rare — and it means everything else has something real to build on. Your identity clarity is your competitive advantage.',
+    '2': 'Your strategic positioning is clear. You know what you offer, why it matters, and how you\'re different. This is the engine that drives growth.',
+    '3': 'Your voice is working. People hear you and feel something — and that\'s not something you can fake. Your messaging clarity means your brand speaks even when you\'re not in the room.',
+    '4': 'Your visual presence commands the right attention. People see your brand and immediately understand the level of work you deliver. That first impression is doing its job.',
+    // Two-way ties
+    '1,2': 'Your Identity and Strategy layers are your strongest — tied at the same score. That\'s a meaningful combination. You know who you are AND you know where you sit in the market... which is the clearest operating foundation a brand can have. The downstream work (messaging and design) has something real and specific to build on.',
+    '1,3': 'Your Identity and Messaging layers are your strongest — tied at the same score. You know who you are, and you can articulate it. That combination is what creates real resonance with the right clients; they hear something true and recognize themselves in your words. The foundation and the voice are aligned.',
+    '1,4': 'Your Identity and Design layers are your strongest — tied at the same score. You know who you are, and your visual presence is already communicating it. That\'s a rare pairing because design often runs ahead of identity; in your case, they\'re moving together. The foundation and the first impression are both doing their work.',
+    '2,3': 'Your Strategy and Messaging layers are your strongest — tied at the same score. You know exactly where you sit in the market and you can speak about it with precision. This is the combination that drives lead generation and conversion; your positioning and your words are working as a system.',
+    '2,4': 'Your Strategy and Design layers are your strongest — tied at the same score. Your positioning is clear and your visuals are supporting it. Clients meet your brand and immediately know the level they\'re engaging with... even before they read a word. The market-facing architecture is doing its job.',
+    '3,4': 'Your Messaging and Design layers are your strongest — tied at the same score. These are the two most visible layers to your audience — what they read and what they see — and both are working. Your brand meets people with clarity and intentionality from the first impression through the last word.',
+    // Three-way ties
+    '1,2,3': 'Three of your layers are your strongest — tied at the same score: Identity, Strategy, and Messaging. This is a powerful combination. You know who you are, where you sit, and how to speak it... which means the only thing catching up is Design. That\'s the layer where the smallest shift will create the largest visible change.',
+    '1,2,4': 'Three of your layers are your strongest — tied at the same score: Identity, Strategy, and Design. Your foundation, positioning, and visual presence are all working... which means you have a strong skeleton and a strong exterior. Messaging is the thread that connects them — and when it catches up, the whole system sings.',
+    '1,3,4': 'Three of your layers are your strongest — tied at the same score: Identity, Messaging, and Design. You know who you are, how to say it, and how to show it. The layer still in formation is Strategy... the market-facing clarity that turns resonance into revenue. When strategy sharpens, everything else you\'ve built becomes far more monetizable.',
+    '2,3,4': 'Three of your layers are your strongest — tied at the same score: Strategy, Messaging, and Design. All three market-facing layers are working, which means externally your brand looks coherent and clear. The one still forming is Identity... the deep inner layer. This is the pattern of a brand that has performed its way into clarity; the work now is to align the internal truth with what\'s already being expressed.',
+    // Four-way tie
+    '1,2,3,4': 'All four of your layers are tied at the same score — so your strongest and your evolving-layer sections are pointing at the same thing. If the scores are high, you\'re in rare architectural balance and every layer is reinforcing the others. If the scores are low or mid-range, you have a remarkably even foundation to build from, with no single weak link dragging the rest. Either way, the work ahead is elevation across the whole system.'
+  };
+
+  const EVOLVING_COPY = {
+    // Single-layer (existing copy, unchanged)
+    '1': 'Your identity layer is where the shift needs to happen first. Before you redesign anything visual or rewrite any copy, get clear on who you are now — not who you were when you started. Everything else follows from this.',
+    '2': 'Strategy is your growth bottleneck. You may know who you are, but the market doesn\'t see it clearly yet. Sharpening your positioning, pricing, and differentiation will unlock the next level.',
+    '3': 'Your messaging is the gap. The depth of your work isn\'t landing in your words yet. When your copy matches your capability, the right clients will find you faster — and trust you sooner.',
+    '4': 'Your design layer needs the most evolution. Your visuals may not be reflecting the caliber of work you actually deliver. A visual refresh — rooted in the identity, strategy, and messaging you already have — will change how people perceive you.',
+    // Two-way ties
+    '1,2': 'Your Identity and Strategy layers are tied at the same score... which means the foundation and the market-facing clarity are both still in formation. Start with Identity: who you are, what you believe, who you serve. Strategy can\'t sharpen until the identity underneath it is named. Messaging and Design will follow once these two are steady.',
+    '1,3': 'Your Identity and Messaging layers are tied at the same score. The irony is that messaging problems often read as voice problems when they\'re actually identity problems in disguise... you can\'t say who you are clearly until you know who you are clearly. Start with Identity. Messaging will clarify naturally once the core is named.',
+    '1,4': 'Your Identity and Design layers are tied at the same score — which creates a specific kind of mismatch. The visuals people see aren\'t rooted in a clear sense of who you are, so even good design feels ungrounded. Start with Identity. Design will know what to express once identity is named; without that foundation, any visual refresh is cosmetic.',
+    '2,3': 'Your Strategy and Messaging layers are tied at the same score. This is the classic growth-phase pattern... you know who you are, but the market doesn\'t see it clearly yet, and your words aren\'t doing the translating they need to do. Start with Strategy. Clear positioning is what messaging draws its language from; sharpen the strategy and the messaging tightens almost on its own.',
+    '2,4': 'Your Strategy and Design layers are tied at the same score. This often shows up as a business that\'s evolved past its branding... the positioning is shifting and the visuals are lagging behind. Start with Strategy. Once you know exactly where you sit in the market and for whom, design has a direction to serve; trying to redesign without that clarity just creates prettier confusion.',
+    '3,4': 'Your Messaging and Design layers are tied at the same score. These are the two most visible layers to your audience — what they read and what they see — and when both are soft, the outside world isn\'t getting a clean read on you. Start with Messaging. Once your words carry the full weight of your work, design has something specific to support; visuals without clear messaging often end up beautiful but mute.',
+    // Three-way ties
+    '1,2,3': 'Three of your layers are tied at the same score: Identity, Strategy, and Messaging. This pattern usually means the inner and market-facing work all need attention simultaneously... only Design is relatively steady. Start with Identity. It\'s the root of the other two, and trying to sharpen strategy or messaging without it is like building the second floor before the first is finished.',
+    '1,2,4': 'Three of your layers are tied at the same score: Identity, Strategy, and Design. Messaging is holding steady, which is rare... your voice may be carrying the brand while the foundation, positioning, and visuals catch up. Start with Identity. Strategy and Design will shift as identity clarifies; messaging is already doing some of the heavy lifting and can refine last.',
+    '1,3,4': 'Three of your layers are tied at the same score: Identity, Messaging, and Design. Strategy is the exception... you know where you sit in the market, but who you are, how you speak, and how you look haven\'t caught up with that clarity. Start with Identity. Strategy gives you a scaffold to build on, and identity is what fills it; messaging and design will shift once those two are aligned.',
+    '2,3,4': 'Three of your layers are tied at the same score: Strategy, Messaging, and Design. This is the most common pattern for founders whose businesses have outpaced their brands... Identity is intact, but everything that communicates it externally is lagging. Start with Strategy. Once positioning is sharp, messaging has language to draw from, and design has a direction to serve. Think of this as building outward from the core that\'s already there.',
+    // Four-way tie
+    '1,2,3,4': 'All four layers are tied at the same score — so your strongest layer and your evolving layer are pointing at the same thing. When the scores are low, this means your brand is a blank page... which is actually the strongest starting point, because you can build it right from the foundation instead of patching cracks. When the scores are high, it means your brand is in rare architectural balance and the work ahead is refinement, not rebuilding. Either way, start with Identity. Everything else is built on it.'
+  };
+
+  function formatLayerNames(layers) {
+    const names = layers.map(l => LAYER_NAMES[l]);
+    if (names.length === 1) return names[0];
+    if (names.length === 2) return `${names[0]} & ${names[1]}`;
+    const last = names[names.length - 1];
+    const rest = names.slice(0, -1).join(', ');
+    return `${rest}, & ${last}`;
+  }
+
+  function generateInsights(overallTotal) {
+    // Compute each layer's total
+    const layerTotals = {};
+    LAYERS.forEach(layer => {
+      let total = 0;
+      LAYER_RATINGS[layer].forEach(key => { total += (scores[key] || 0); });
+      layerTotals[layer] = total;
+    });
+
+    // Find ALL layers tied at the highest and lowest scores
+    const allTotals = Object.values(layerTotals);
+    const maxScore = Math.max(...allTotals);
+    const minScore = Math.min(...allTotals);
+    const strongestLayers = LAYERS.filter(l => layerTotals[l] === maxScore);
+    const weakestLayers = LAYERS.filter(l => layerTotals[l] === minScore);
+
+    // Render strongest block — title pluralizes based on tie count
+    const strongKey = strongestLayers.join(',');
+    const strongLabel = strongestLayers.length > 1 ? 'Layers' : 'Layer';
+
+    // Low-band override: when even the highest layer is still weak (< 9/15),
+    // reframe as "highest" not "strongest" — honest about where they stand.
+    // 4-way ties bypass this because the existing '1,2,3,4' copy already
+    // handles both high and low scoring with "architectural balance" language.
+    if (maxScore < 9 && strongestLayers.length < 4) {
+      const strongVerb = strongestLayers.length > 1 ? 'are' : 'is';
+      document.getElementById('strongest-title').textContent =
+        `Your Highest ${strongLabel}: ${formatLayerNames(strongestLayers)}`;
+      document.getElementById('strongest-text').textContent =
+        `Of your four layers, ${formatLayerNames(strongestLayers)} ${strongVerb} currently scoring highest... though every layer is still in formation. Think of this less as a strength to build from and more as the thread easiest to grab first. The work ahead is foundational — naming who you are, where you sit in the market, how you speak, and how you show up.`;
+    } else {
+      document.getElementById('strongest-title').textContent =
+        `Your Strongest ${strongLabel}: ${formatLayerNames(strongestLayers)}`;
+      document.getElementById('strongest-text').textContent =
+        STRONGEST_COPY[strongKey] || STRONGEST_COPY[strongestLayers[0]];
+    }
+
+    // Render evolving block — "Ready to Evolve" doesn't use Layer/Layers label
+    const weakKey = weakestLayers.join(',');
+    document.getElementById('evolving-title').textContent =
+      `Ready to Evolve: ${formatLayerNames(weakestLayers)}`;
+
+    // High-band override: when even the weakest layer is already strong (>= 13/15),
+    // reframe as refinement, not rebuild. 4-way ties bypass for the same reason.
+    if (minScore >= 13 && weakestLayers.length < 4) {
+      const weakIsMultiple = weakestLayers.length > 1;
+      const weakLayerPhrase = weakIsMultiple ? 'layers are' : 'layer is';
+      const weakWorkPhrase = weakIsMultiple ? 'these layers work' : 'this layer works';
+      const weakSubj = weakIsMultiple ? "they're" : "it's";
+      const weakObj = weakIsMultiple ? 'them' : 'it';
+      document.getElementById('evolving-text').textContent =
+        `Even your ${formatLayerNames(weakestLayers)} ${weakLayerPhrase} already in strong territory. At this level, we're talking refinement, not rebuilding... the question isn't whether ${weakWorkPhrase}, it's whether ${weakSubj} as precise as the rest of your brand architecture. Revisit ${weakObj} with a sharper eye — where could the language be tighter, the positioning more specific, the visuals more intentional? Small, careful refinements here are what move a strong brand into unmistakable.`;
+    } else if (maxScore < 9 && weakestLayers.length < 4) {
+      // Low-band override: when every layer is in early formation, the existing
+      // tie-specific copy can give "Start with Strategy/Messaging" directives
+      // that conflict with the interpretation tier's "Start with Identity"
+      // routing. Universal override re-routes to Identity for coherence.
+      document.getElementById('evolving-text').textContent =
+        `When every layer is in early formation, the real question isn't which of these to address first — it's whether the foundation underneath is clear. Start with Identity. Before strategy can sharpen, before messaging can carry weight, before design has a direction to serve, you need to name who you are now. Everything else takes its shape from that root.`;
+    } else {
+      document.getElementById('evolving-text').textContent =
+        EVOLVING_COPY[weakKey] || EVOLVING_COPY[weakestLayers[0]];
+    }
+
+    // Overall interpretation (unchanged)
+    const interpBlock = document.getElementById('interpretation-block');
+    const interpText = document.getElementById('interpretation-text');
+    interpBlock.style.display = 'block';
+
+    const pct = overallTotal / 60;
+    let interp = '';
+
+    if (pct >= 0.85) {
+      interp = '<p><strong>Your brand architecture is strong.</strong> All four layers are working together, which means your brand isn\'t just beautiful — it\'s <em>coherent</em>. The identity, strategy, messaging, and design are telling the same story. This is rare, and it means you\'re in a position to scale with confidence. Your next move isn\'t a rebuild — it\'s refinement. Look at your lowest-scoring layer for the specific place to invest your next round of attention.</p>';
+    } else if (pct >= 0.65) {
+      interp = '<p><strong>You have real strengths — and clear opportunities.</strong> Some layers are holding strong while others are ready for evolution. This is actually the most common pattern for founders who\'ve been growing fast: the business has outpaced the brand in specific places. The good news? You don\'t need to tear everything down. You need targeted, strategic work on the layers that scored lowest. Start there.</p>';
+    } else if (pct >= 0.45) {
+      interp = '<p><strong>Your brand is in transition — and you can feel it.</strong> There\'s a gap between where you are now and what your brand is communicating. That tension isn\'t failure — it\'s growth demanding expression. The layers that scored lowest are where the old version of your brand is still showing up. The ones that scored highest? That\'s where the new version is already emerging. Follow that thread.</p>';
+    } else {
+      interp = '<p><strong>You\'re standing at the beginning of something important.</strong> Low scores across multiple layers don\'t mean your brand is broken — they mean it hasn\'t been <em>built</em> yet. Not really. And that\'s actually a gift, because it means you can build it right from the foundation up, instead of patching cracks. Start with Identity. Everything else follows.</p>';
+    }
+
+    interpText.innerHTML = interp;
+  }
+
+  // Scroll-to-top visibility
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scroll-top');
+    btn.style.display = window.scrollY > 600 ? 'flex' : 'none';
+  });
+
+  // Nav active state on scroll
+  const sections = document.querySelectorAll('.layer-section, .results-section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (window.scrollY >= top) {
+        current = section.id;
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

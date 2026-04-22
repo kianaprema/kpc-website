@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Brand Becoming Blueprint — $37 | Kiana Prema Consulting</title>
+  <meta name="description" content="See exactly where your brand stands today — and what's ready to evolve next. 30 minutes. Total clarity. $37.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --brick: #BF5454;
+      --berry: #8C0343;
+      --amber: #D98859;
+      --sand: #BFAF80;
+      --patina: #4E7B72;
+      --blush: #F2AB9B;
+      --cream: #F2DCC9;
+      --canvas: #FAF6F1;
+      --dark: #2C1810;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--canvas);
+      color: var(--dark);
+      line-height: 1.75;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ─────────────── HERO ─────────────── */
+    .hero {
+      background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, var(--dark) 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(217, 136, 89, 0.1) 0%, transparent 60%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero .eyebrow { color: var(--amber); }
+
+    .hero h1 {
+      font-family: 'Cormorant', serif;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--blush);
+      margin-bottom: 2rem;
+    }
+
+    .hero-rule {
+      width: 80px;
+      height: 2px;
+      background: var(--amber);
+      margin: 0 auto 2rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 1.1rem 3rem;
+      background: var(--amber);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .hero-cta:hover {
+      background: #C07040;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(217, 136, 89, 0.3);
+    }
+
+    .hero-price {
+      margin-top: 0.75rem;
+      font-size: 13px;
+      color: var(--sand);
+    }
+
+    /* ─────────────── PRODUCT SHOWCASE (MOCKUPS) ─────────────── */
+    .showcase {
+      background: white;
+      padding: 5rem 2rem 4rem;
+      border-bottom: 1px solid var(--cream);
+      overflow: hidden;
+    }
+
+    .showcase-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .showcase-caption {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .showcase-caption .eyebrow { color: var(--amber); }
+
+    .showcase-caption h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.3;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .devices {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 1rem 1rem 3rem;
+    }
+
+    /* Laptop */
+    .laptop {
+      width: 560px;
+      max-width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .laptop-bezel {
+      background: #1A1008;
+      border-radius: 14px 14px 4px 4px;
+      padding: 18px 18px 8px;
+      box-shadow: 0 24px 60px rgba(44, 24, 16, 0.18);
+      position: relative;
+    }
+
+    .laptop-bezel::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background: #3A2A1E;
+      border-radius: 50%;
+    }
+
+    .laptop-screen {
+      background: var(--canvas);
+      border-radius: 3px;
+      aspect-ratio: 16 / 10;
+      padding: 10% 8% 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .laptop-screen::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(217, 136, 89, 0.08) 0%, transparent 65%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .mini-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-title {
+      font-family: 'Cormorant', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-subtitle {
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--berry);
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-rule {
+      width: 32px;
+      height: 1.5px;
+      background: var(--amber);
+      margin: 0 0 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-layers {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mini-layer {
+      width: 46px;
+      height: 28px;
+      background: white;
+      border-top: 2px solid;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .mini-layer.l1 { border-top-color: var(--berry); }
+    .mini-layer.l2 { border-top-color: var(--patina); }
+    .mini-layer.l3 { border-top-color: var(--amber); }
+    .mini-layer.l4 { border-top-color: var(--brick); }
+
+    .mini-cta {
+      background: var(--amber);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .laptop-base {
+      background: linear-gradient(to bottom, #2A1A10 0%, #1A1008 100%);
+      height: 10px;
+      margin: 0 -30px;
+      border-radius: 0 0 14px 14px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    .laptop-base::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 4px;
+      background: #0A0605;
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* Phone */
+    .phone {
+      width: 150px;
+      position: absolute;
+      right: 4%;
+      bottom: -10px;
+      z-index: 2;
+    }
+
+    .phone-bezel {
+      background: #1A1008;
+      border-radius: 22px;
+      padding: 8px;
+      box-shadow: 0 18px 40px rgba(44, 24, 16, 0.22);
+      position: relative;
+    }
+
+    .phone-screen {
+      background: var(--canvas);
+      border-radius: 16px;
+      aspect-ratio: 9 / 19.5;
+      padding: 22px 12px 16px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 54px;
+      height: 14px;
+      background: #0A0605;
+      border-radius: 0 0 9px 9px;
+      z-index: 3;
+    }
+
+    .mini-phone-nav {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 7px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--patina);
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    .mini-phone-label {
+      font-family: 'Cormorant', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .mini-phone-q-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 7px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+
+    .mini-phone-question {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8.5px;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .mini-phone-input {
+      background: white;
+      border: 1px solid var(--cream);
+      border-radius: 3px;
+      height: 52px;
+      margin-bottom: 10px;
+      padding: 5px 6px;
+      position: relative;
+    }
+
+    .mini-phone-input::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 16px;
+      height: 2px;
+      background: rgba(140, 3, 67, 0.15);
+      border-radius: 1px;
+    }
+    .mini-phone-input::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 6px;
+      width: 70%;
+      height: 2px;
+      background: rgba(140, 3, 67, 0.12);
+      border-radius: 1px;
+    }
+
+    .mini-phone-progress-wrap {
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    .mini-phone-progress-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mini-phone-progress {
+      height: 3px;
+      background: var(--cream);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .mini-phone-progress-fill {
+      height: 100%;
+      width: 35%;
+      background: var(--amber);
+      border-radius: 2px;
+    }
+
+    /* ─────────────── SECTIONS COMMON ─────────────── */
+    .section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem;
+    }
+
+    .section-wide {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .section p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─────────────── EMPATHY ─────────────── */
+    .empathy-section {
+      background: var(--canvas);
+    }
+
+    .empathy-section .section {
+      text-align: center;
+    }
+
+    .empathy-section h2 {
+      color: var(--berry);
+    }
+
+    .empathy-section p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--dark);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .empathy-close {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--patina);
+      margin-top: 1rem !important;
+    }
+
+    /* ─────────────── LAYER JOURNEY ─────────────── */
+    .journey-section {
+      background: white;
+      border-top: 1px solid var(--cream);
+      border-bottom: 1px solid var(--cream);
+    }
+
+    .journey-section .section-wide {
+      text-align: center;
+    }
+
+    .journey-intro {
+      max-width: 580px;
+      margin: 0 auto 3rem;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .journey-card {
+      padding: 1.75rem;
+      border-left: 3px solid;
+      background: var(--canvas);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .journey-card.l1 { border-left-color: var(--berry); }
+    .journey-card.l2 { border-left-color: var(--patina); }
+    .journey-card.l3 { border-left-color: var(--amber); }
+    .journey-card.l4 { border-left-color: var(--brick); }
+
+    .journey-card .card-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .journey-card.l1 .card-num { color: var(--berry); }
+    .journey-card.l2 .card-num { color: var(--patina); }
+    .journey-card.l3 .card-num { color: var(--amber); }
+    .journey-card.l4 .card-num { color: var(--brick); }
+
+    .journey-card h3 {
+      font-family: 'Cormorant', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .journey-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--dark);
+      margin: 0;
+    }
+
+    /* ─────────────── WHAT YOU'LL WALK AWAY WITH ─────────────── */
+    .walkaway-section {
+      background: var(--canvas);
+    }
+
+    .walkaway-section .section-wide {
+      text-align: center;
+    }
+
+    .walkaway-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+
+    .walkaway-item {
+      padding: 0.5rem 0;
+    }
+
+    .walkaway-num {
+      font-family: 'Cormorant', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .walkaway-item h3 {
+      font-family: 'Cormorant', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .walkaway-item p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--dark);
+      margin: 0;
+    }
+
+    /* ─────────────── PRICING ─────────────── */
+    .pricing-section {
+      background: white;
+      border-top: 1px solid var(--cream);
+      border-bottom: 1px solid var(--cream);
+      text-align: center;
+    }
+
+    .pricing-card {
+      max-width: 440px;
+      margin: 2rem auto 0;
+      border: 2px solid var(--amber);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      background: var(--canvas);
+    }
+
+    .pricing-card .price {
+      font-family: 'Cormorant', serif;
+      font-size: 64px;
+      font-weight: 500;
+      color: var(--berry);
+      line-height: 1;
+    }
+
+    .pricing-card .price-note {
+      font-size: 13px;
+      color: var(--sand);
+      margin: 0.5rem 0 2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .pricing-card .pricing-promise {
+      font-family: 'Cormorant', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--berry);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #6B0233;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(140, 3, 67, 0.3);
+    }
+
+    .pricing-guarantee {
+      margin-top: 1.25rem;
+      font-size: 12px;
+      color: var(--sand);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─────────────── FAQ ─────────────── */
+    .faq-section { background: var(--canvas); }
+
+    .faq-section .section {
+      text-align: center;
+    }
+
+    .faq-list {
+      text-align: left;
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--cream);
+      padding: 1.25rem 0;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 22px;
+      color: var(--amber);
+      font-weight: 300;
+      transition: transform 0.2s;
+    }
+
+    .faq-q.open::after { transform: rotate(45deg); }
+
+    .faq-a {
+      display: none;
+      padding-top: 0.75rem;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--dark);
+    }
+
+    .faq-a.visible { display: block; }
+
+    .faq-a a {
+      color: var(--berry);
+      text-decoration: none;
+      border-bottom: 1px solid var(--blush);
+    }
+
+    /* ─────────────── FINAL CTA ─────────────── */
+    .final-cta {
+      background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, var(--dark) 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(217, 136, 89, 0.1) 0%, transparent 60%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .final-cta .eyebrow { color: var(--amber); }
+
+    .final-cta h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .final-cta p {
+      color: rgba(242, 220, 201, 0.8);
+      margin-bottom: 2rem;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .final-cta .alt-link {
+      display: block;
+      margin-top: 1.25rem;
+      font-size: 13px;
+      color: var(--sand);
+    }
+
+    .final-cta .alt-link a {
+      color: var(--amber);
+      text-decoration: underline;
+    }
+
+    /* ─────────────── FOOTER ─────────────── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: #1A0F0A;
+    }
+
+    footer .footer-brand {
+      font-family: 'Cormorant', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+
+    footer .footer-tagline {
+      font-size: 11px;
+      color: var(--sand);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    footer .footer-copy {
+      font-size: 11px;
+      color: rgba(191, 175, 128, 0.5);
+      margin-top: 0.75rem;
+    }
+
+    /* ─────────────── RESPONSIVE ─────────────── */
+    @media (max-width: 720px) {
+      .hero h1 { font-size: 40px; }
+      .hero-subtitle { font-size: 19px; }
+      .section h2 { font-size: 30px; }
+      .showcase-caption h2 { font-size: 26px; }
+      .journey-grid { grid-template-columns: 1fr; }
+      .walkaway-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .pricing-card .price { font-size: 50px; }
+
+      /* Scale devices down */
+      .laptop { width: 90%; }
+      .phone { width: 110px; right: 0; bottom: -30px; }
+    }
+
+    @media (max-width: 480px) {
+      .phone { display: none; }
+      .devices { padding-bottom: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Kiana Prema Consulting</div>
+    <h1>The Brand Becoming<br>Blueprint</h1>
+    <div class="hero-subtitle">See exactly where your brand stands today... and what's ready to evolve next.</div>
+    <div class="hero-rule"></div>
+    <!-- Stripe checkout link wired 2026-04-19 -->
+    <a href="https://buy.stripe.com/5kQeVdgIt3JaaJOdzA5kk0l" class="hero-cta">Get Your Blueprint — $37</a>
+    <div class="hero-price">Instant access. Yours to keep.</div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRODUCT SHOWCASE ═══════════════ -->
+<section class="showcase">
+  <div class="showcase-inner">
+    <div class="showcase-caption">
+      <div class="eyebrow">The Product</div>
+      <h2>A beautifully-built diagnostic, designed to meet you where you are.</h2>
+    </div>
+
+    <div class="devices">
+      <!-- Laptop mockup -->
+      <div class="laptop">
+        <div class="laptop-bezel">
+          <div class="laptop-screen">
+            <div class="mini-eyebrow">Kiana Prema Consulting</div>
+            <div class="mini-title">The Brand<br>Becoming Blueprint</div>
+            <div class="mini-subtitle">A Self-Guided Diagnostic</div>
+            <div class="mini-rule"></div>
+            <div class="mini-layers">
+              <div class="mini-layer l1"></div>
+              <div class="mini-layer l2"></div>
+              <div class="mini-layer l3"></div>
+              <div class="mini-layer l4"></div>
+            </div>
+            <div class="mini-cta">Begin →</div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="phone">
+        <div class="phone-bezel">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="mini-phone-nav">Layer 02 / 04</div>
+            <div class="mini-phone-label">Strategy</div>
+            <div class="mini-phone-q-tag">Question 06</div>
+            <div class="mini-phone-question">What do you see in your field that almost nobody else does?</div>
+            <div class="mini-phone-input"></div>
+            <div class="mini-phone-progress-wrap">
+              <div class="mini-phone-progress-label">
+                <span>Progress</span>
+                <span>35%</span>
+              </div>
+              <div class="mini-phone-progress">
+                <div class="mini-phone-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EMPATHY ═══════════════ -->
+<section class="empathy-section">
+  <div class="section">
+    <div class="eyebrow">You Already Know Something Has Shifted</div>
+    <h2>The outside looks polished.<br>But underneath, something is stirring.</h2>
+    <p>You've built something real. Clients. Revenue. A reputation. But lately something feels off... not broken, just outgrown. Your brand was shaped by who you were three years ago — not who you're becoming.</p>
+    <p class="empathy-close">This isn't a crisis. It's a threshold.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ LAYER JOURNEY ═══════════════ -->
+<section class="journey-section">
+  <div class="section-wide">
+    <div class="journey-intro">
+      <div class="eyebrow">The Journey Inside</div>
+      <h2>Four layers. One honest pass.</h2>
+      <p>The Blueprint walks you through every layer of your brand, in order — so by the time you finish, you can see the whole picture clearly.</p>
+    </div>
+
+    <div class="journey-grid">
+      <div class="journey-card l1">
+        <div class="card-num">Layer 01 — Identity</div>
+        <h3>Where your foundation is steady, and where it's drifted.</h3>
+        <p>Who you are. What you believe. Who you're becoming. The truest version of you — and how close your brand is to it right now.</p>
+      </div>
+      <div class="journey-card l2">
+        <div class="card-num">Layer 02 — Strategy</div>
+        <h3>What makes you unmistakable... and what's still hiding.</h3>
+        <p>The thing you see that nobody else does. Your positioning, your edge, the clarity that turns you from an option into <em>the</em> option.</p>
+      </div>
+      <div class="journey-card l3">
+        <div class="card-num">Layer 03 — Messaging</div>
+        <h3>Whether your words are keeping pace with your work.</h3>
+        <p>The voice people hear when you're not in the room. When messaging lands, people trust you before they ever speak to you.</p>
+      </div>
+      <div class="journey-card l4">
+        <div class="card-num">Layer 04 — Design</div>
+        <h3>What your visual identity is ready to express.</h3>
+        <p>Design is the last word, not the first. You'll see whether yours is expressing the three layers beneath it... or contradicting them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHAT YOU'LL WALK AWAY WITH ═══════════════ -->
+<section class="walkaway-section">
+  <div class="section-wide">
+    <div class="eyebrow">What You'll Walk Away With</div>
+    <h2>Not a template. Not a checklist.<br>Real clarity about your brand.</h2>
+
+    <div class="walkaway-grid">
+      <div class="walkaway-item">
+        <div class="walkaway-num">01</div>
+        <h3>You'll see it clearly.</h3>
+        <p>Exactly where your brand lives today. Layer by layer. No more guessing.</p>
+      </div>
+      <div class="walkaway-item">
+        <div class="walkaway-num">02</div>
+        <h3>You'll know what's next.</h3>
+        <p>Which piece of your brand is most ready to evolve... and which pieces are fine exactly as they are.</p>
+      </div>
+      <div class="walkaway-item">
+        <div class="walkaway-num">03</div>
+        <h3>You'll move again.</h3>
+        <p>A clear path forward, grounded in what's actually true — not what a trend or template says.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section class="pricing-section" id="pricing">
+  <div class="section">
+    <div class="eyebrow">Your Investment</div>
+    <h2>Know exactly where you stand.</h2>
+
+    <div class="pricing-card">
+      <div class="price">$37</div>
+      <div class="price-note">One-time · Instant access · Yours to keep</div>
+      <div class="pricing-promise">See where you stand today. Name what's ready to evolve next.</div>
+      <!-- Stripe checkout link wired 2026-04-19 -->
+      <a href="https://buy.stripe.com/5kQeVdgIt3JaaJOdzA5kk0l" class="buy-btn">Get Your Blueprint</a>
+      <div class="pricing-guarantee">No subscriptions. No upsells. Just clarity.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="faq-section">
+  <div class="section">
+    <div class="eyebrow">Before You Decide</div>
+    <h2>A few common questions.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is this for me?</div>
+        <div class="faq-a">If you've built a real business, have real clients, and feel your brand no longer reflects the depth of what you actually do — yes. The Blueprint is built for founders, coaches, consultants, and creatives standing at a threshold. If you're looking for a quick logo or a template, this isn't that.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does it take?</div>
+        <div class="faq-a">About thirty minutes at a steady pace. Some people take longer because the questions prompt real reflection — and that's the point. There's no timer. Move at your own rhythm.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What happens after I buy?</div>
+        <div class="faq-a">A welcome page opens immediately with access to your Blueprint, and a copy lands in your inbox so you can return to it whenever. The Blueprint is yours to keep. After you finish, if you want to go deeper, a free Brand Clarity Conversation is there when you're ready.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FINAL CTA ═══════════════ -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="eyebrow">Step Into Clarity</div>
+    <h2>Your brand is ready to become<br>what you've already outgrown.</h2>
+    <p>Thirty minutes of honest reflection. Total clarity about what's next.</p>
+    <!-- Stripe checkout link wired 2026-04-19 -->
+    <a href="https://buy.stripe.com/5kQeVdgIt3JaaJOdzA5kk0l" class="hero-cta">Get Your Blueprint — $37</a>
+    <div class="alt-link">
+      Not ready yet? <a href="https://kianaprema.com/threshold">Start with The Threshold (free)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-brand">Kiana Prema Consulting</div>
+  <div class="footer-tagline">Intuitive Brand Strategy for Visionary Entrepreneurs</div>
+  <div class="footer-copy">&copy; 2026 Kiana Prema Consulting. All rights reserved.</div>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    const isOpen = el.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('visible'));
+
+    // Toggle clicked
+    if (!isOpen) {
+      el.classList.add('open');
+      answer.classList.add('visible');
+    }
+  }
+</script>
+
+</body>
+</html>
