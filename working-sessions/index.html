@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working Sessions — Kiana Prema Consulting</title>
+<meta name="description" content="A thinking partner for the work you've been putting off. 90-minute 1:1 working session with Kiana Prema.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brick: #BF5454;
+    --berry: #8C0343;
+    --amber: #D98859;
+    --sand: #BFAF80;
+    --patina: #4E7B72;
+    --patina-deep: #3A5D57;
+    --blush: #F2AB9B;
+    --cream: #F2DCC9;
+    --canvas: #FAF6F1;
+    --paper: #F6F1E7;
+    --dark: #2C1810;
+    --ink: #1F1108;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    background: var(--canvas);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Hero · fits in fold, single-column centered card ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, var(--dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.93  0 0 0 0 0.88  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+  }
+  .hero-card {
+    background: var(--paper);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.17  0 0 0 0 0.09  0 0 0 0 0.05  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    max-width: 540px;
+    width: 100%;
+    padding: 48px 44px 44px;
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-wordmark {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  .hero-wordmark em {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--patina);
+    margin-bottom: 36px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: clamp(44px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .hero h1 .line-2 {
+    display: block;
+    font-style: italic;
+    color: var(--patina-deep);
+  }
+  .hero-rule {
+    width: 56px;
+    height: 1px;
+    background: var(--amber);
+    margin: 28px auto;
+  }
+  .hero-sub {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--patina-deep);
+    color: var(--paper);
+    padding: 16px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+    margin-bottom: 24px;
+  }
+  .hero-cta:hover { background: var(--ink); }
+  .hero-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--patina-deep);
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+  }
+  .scroll-cue {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  /* ─── Below-the-fold sections · single column, clean reading flow ─── */
+  section.body-block {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 96px 24px;
+  }
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--patina);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--amber);
+  }
+  section.body-block h2 {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  section.body-block h2 em {
+    font-style: italic;
+    color: var(--patina-deep);
+  }
+  section.body-block p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  section.body-block p strong {
+    color: var(--patina-deep);
+    font-weight: 600;
+  }
+
+  /* ─── Bring list ─── */
+  .bring-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+  }
+  .bring-list li {
+    padding: 22px 0 22px 0;
+    border-top: 1px solid rgba(78, 123, 114, 0.18);
+  }
+  .bring-list li:first-child { border-top: none; padding-top: 0; }
+  .bring-list .li-tag {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .bring-list .li-text {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  /* ─── Avatar callouts · plain paragraph treatment ─── */
+  .avatar-callouts p {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .avatar-callouts p::before {
+    content: '✦';
+    color: var(--amber);
+    margin-right: 14px;
+    font-style: normal;
+  }
+  .avatar-callouts p:last-child { margin-bottom: 0; }
+
+  /* ─── Pricing section ─── */
+  .pricing-display {
+    text-align: center;
+    padding: 36px 0 8px;
+    border-top: 1px solid rgba(78, 123, 114, 0.18);
+    border-bottom: 1px solid rgba(78, 123, 114, 0.18);
+    margin: 16px 0 32px;
+  }
+  .pricing-amount {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .pricing-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--patina);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+  .pricing-includes-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--patina);
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  .pricing-includes {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+  }
+  .pricing-includes li {
+    font-size: 16px;
+    line-height: 1.55;
+    padding: 10px 0 10px 24px;
+    position: relative;
+    color: var(--ink);
+  }
+  .pricing-includes li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    color: var(--amber);
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  /* ─── Closing CTA · full-bleed patina ─── */
+  .closing-cta {
+    background: linear-gradient(160deg, var(--patina) 0%, var(--patina-deep) 100%);
+    color: var(--paper);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.93  0 0 0 0 0.88  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+  }
+  .closing-cta-inner {
+    max-width: 540px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .closing-cta h2 {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--paper);
+    margin-bottom: 18px;
+  }
+  .closing-cta h2 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .closing-cta p {
+    font-size: 15px;
+    color: var(--paper);
+    opacity: 0.85;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .closing-cta-button {
+    display: inline-block;
+    background: var(--paper);
+    color: var(--patina-deep);
+    padding: 16px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .closing-cta-button:hover {
+    background: var(--amber);
+    color: var(--ink);
+  }
+
+  /* ─── Footer ─── */
+  .site-footer {
+    padding: 40px 24px 56px;
+    text-align: center;
+    background: var(--canvas);
+  }
+  .footer-wordmark {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .footer-wordmark em {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--amber);
+  }
+  .footer-tagline {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--patina);
+    margin-top: 6px;
+  }
+
+  /* ─── Mobile ─── */
+  @media (max-width: 600px) {
+    .hero-card { padding: 36px 28px; }
+    .hero-eyebrow { margin-bottom: 28px; }
+    .hero-sub { font-size: 19px; }
+    section.body-block { padding: 64px 24px; }
+    section.body-block h2 { font-size: 30px; }
+    .pricing-amount { font-size: 52px; }
+    .closing-cta { padding: 64px 24px; }
+    .closing-cta h2 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── Hero · fits in fold ─── -->
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-wordmark">Kiana Prema <em>Consulting</em></div>
+    <div class="hero-eyebrow">Working Sessions</div>
+    <h1>
+      Stop spinning.
+      <span class="line-2">Get the thing done.</span>
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">A thinking partner for the work you've been putting off.</p>
+    <!-- BOOK NOW: live Stripe checkout for Working Sessions.
+         Configure Stripe success_url → https://kianaprema.com/working-sessions/welcome
+         (the welcome page has the direct TidyCal booking link).
+         Optional: add a price-filtered branch inside the existing Blueprint Make.com scenario
+         to fire a Working Sessions confirmation email without spinning up a new scenario. -->
+    <a href="https://buy.stripe.com/9B66oH77TbbC6tyeDE5kk0m" class="hero-cta">Book Now</a>
+    <div class="hero-meta">$497 · 90 minutes · 1:1 with Kiana Prema<br><strong style="color: var(--amber); letter-spacing: 0.12em; font-weight: 700; text-transform: uppercase; font-size: 11px;">4 spots in May</strong></div>
+  </div>
+  <div class="scroll-cue">More Below ↓</div>
+</section>
+
+<!-- ─── What it is ─── -->
+<section class="body-block">
+  <div class="section-label">What it is</div>
+  <h2>Ninety minutes. One-on-one. <em>The thinking partner</em> for the work you've been putting off.</h2>
+  <p>You bring what you've been unsure how to move. We think it through together. Live.</p>
+  <p><strong>Go from "I'm not sure yet" &rarr; "Done"</strong></p>
+  <p>For practitioners running on AI tools, we work inside your environment so what we build stays with you in your tools.</p>
+</section>
+
+<!-- ─── Bring ─── -->
+<section class="body-block">
+  <div class="section-label">Bring</div>
+  <ul class="bring-list">
+    <li>
+      <span class="li-tag">The architecture question</span>
+      <span class="li-text">Scoping a program. Designing the offer ladder. Mapping the launch.</span>
+    </li>
+    <li>
+      <span class="li-tag">The piece you keep starting</span>
+      <span class="li-text">The page you've redrafted four times. The naming you can't quite land.</span>
+    </li>
+    <li>
+      <span class="li-tag">The decision you've been unsure about</span>
+      <span class="li-text">The yes-or-no you can't make alone. The path you've been postponing.</span>
+    </li>
+    <li>
+      <span class="li-tag">The work that needs a thinking partner</span>
+      <span class="li-text">You know what you're building. You shouldn't have to figure out the next move alone.</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ─── Investment ─── -->
+<section class="body-block">
+  <div class="section-label">Investment</div>
+  <div class="pricing-display">
+    <div class="pricing-amount">$497</div>
+    <div class="pricing-meta">Per session · 90 minutes via Zoom · <strong style="color: var(--amber);">4 spots in May</strong></div>
+  </div>
+  <div class="pricing-includes-label">Included</div>
+  <ul class="pricing-includes">
+    <li>Ninety minutes 1:1 with Kiana Prema</li>
+    <li>Recording of the session, yours to keep</li>
+    <li>Work happens inside your AI environment so the build stays with you</li>
+  </ul>
+</section>
+
+<!-- ─── Closing CTA ─── -->
+<section class="closing-cta">
+  <div class="closing-cta-inner">
+    <h2>Bring the thing. <em>We move it together.</em></h2>
+    <p>Book your session. Pick your time on the next page.</p>
+    <a href="https://buy.stripe.com/9B66oH77TbbC6tyeDE5kk0m" class="closing-cta-button">Book Now</a>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="site-footer">
+  <div class="footer-wordmark">Kiana Prema <em>Consulting</em></div>
+  <div class="footer-tagline">Brand is ceremony.</div>
+</footer>
+
+</body>
+</html>

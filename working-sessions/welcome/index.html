@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pick Your Time — Working Sessions · Kiana Prema Consulting</title>
+<meta name="description" content="Your Working Session is booked. Pick your time on the calendar.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --berry: #8C0343;
+    --amber: #D98859;
+    --patina: #4E7B72;
+    --patina-deep: #3A5D57;
+    --cream: #F2DCC9;
+    --canvas: #FAF6F1;
+    --paper: #F6F1E7;
+    --dark: #2C1810;
+    --ink: #1F1108;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--canvas);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .page {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, var(--dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.93  0 0 0 0 0.88  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+  }
+
+  .card {
+    background: var(--paper);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.17  0 0 0 0 0.09  0 0 0 0 0.05  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    max-width: 540px;
+    width: 100%;
+    padding: 56px 44px 44px;
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .wordmark {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  .wordmark em {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--amber);
+  }
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--patina);
+    margin-bottom: 36px;
+  }
+  .check-mark {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 56px;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--patina-deep);
+  }
+  .rule {
+    width: 56px;
+    height: 1px;
+    background: var(--amber);
+    margin: 28px auto;
+  }
+  .sub {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 36px;
+  }
+  .cta {
+    display: inline-block;
+    background: var(--patina-deep);
+    color: var(--paper);
+    padding: 18px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+    margin-bottom: 32px;
+  }
+  .cta:hover { background: var(--ink); }
+
+  .next-up {
+    text-align: left;
+    border-top: 1px solid rgba(78, 123, 114, 0.18);
+    padding-top: 28px;
+    margin-top: 12px;
+  }
+  .next-up-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--patina);
+    margin-bottom: 16px;
+  }
+  .next-up ul {
+    list-style: none;
+    padding: 0;
+  }
+  .next-up li {
+    font-size: 14px;
+    line-height: 1.55;
+    padding: 8px 0 8px 22px;
+    position: relative;
+    color: var(--ink);
+  }
+  .next-up li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    color: var(--amber);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .card-footer {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(78, 123, 114, 0.18);
+  }
+  .footer-wordmark {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .footer-wordmark em {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--amber);
+  }
+  .footer-tagline {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--patina);
+    margin-top: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .card { padding: 40px 28px; }
+    h1 { font-size: 38px; }
+    .sub { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="card">
+    <div class="wordmark">Kiana Prema <em>Consulting</em></div>
+    <div class="eyebrow">Working Sessions</div>
+    <div class="check-mark">✦</div>
+    <h1>Pick your <em>time</em>.</h1>
+    <div class="rule"></div>
+    <p class="sub">Your booking is in. Choose a window that works for you.</p>
+    <!-- TIDYCAL: live booking URL for Working Sessions. -->
+    <a href="https://tidycal.com/kianaprema/working-session" class="cta">Open the Calendar</a>
+
+    <div class="next-up">
+      <div class="next-up-label">What happens next</div>
+      <ul>
+        <li>Pick your time on the calendar above</li>
+        <li>You'll get a confirmation email with the Zoom link</li>
+        <li>Bring the thing you've been putting off and we'll move it together</li>
+      </ul>
+    </div>
+
+    <div class="card-footer">
+      <div class="footer-wordmark">Kiana Prema <em>Consulting</em></div>
+      <div class="footer-tagline">Brand is ceremony.</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
