@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Before our grounding call</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brick: #BF5454;
+      --berry: #8C0343;
+      --amber: #D98859;
+      --sand: #BFAF80;
+      --patina: #4E7B72;
+      --blush: #F2AB9B;
+      --cream: #F2DCC9;
+      --canvas: #FAF6F1;
+      --dark: #2C1810;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--canvas);
+      color: var(--dark);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .doc-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .amber-rule {
+      width: 90px;
+      height: 2px;
+      background: var(--amber);
+      margin: 2rem 0 2rem;
+    }
+    /* Markdown content styling */
+    .content h1 {
+      font-family: 'Cormorant', serif;
+      font-size: 2.75rem;
+      line-height: 1.1;
+      color: var(--berry);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .content h1 em, .content h2 em, .content h3 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+    .content h2 {
+      font-family: 'Cormorant', serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      color: var(--berry);
+      margin: 3rem 0 1.25rem;
+      font-weight: 500;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(140, 3, 67, 0.12);
+    }
+    .content h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .content h3 {
+      font-family: 'Cormorant', serif;
+      font-size: 1.5rem;
+      color: var(--brick);
+      margin: 2.25rem 0 0.85rem;
+      font-weight: 600;
+    }
+    .content h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--patina);
+      margin: 1.75rem 0 0.6rem;
+      font-weight: 700;
+    }
+    .content p {
+      margin-bottom: 1.1rem;
+      max-width: 72ch;
+    }
+    .content p strong {
+      color: var(--berry);
+      font-weight: 700;
+    }
+    .content em {
+      font-style: italic;
+    }
+    .content a {
+      color: var(--brick);
+      text-decoration: underline;
+      text-decoration-color: rgba(191, 84, 84, 0.35);
+      text-underline-offset: 3px;
+    }
+    .content a:hover {
+      color: var(--berry);
+    }
+    .content ul, .content ol {
+      margin: 0.5rem 0 1.25rem 0;
+      padding-left: 1.5rem;
+    }
+    .content li {
+      margin-bottom: 0.45rem;
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+    .content li::marker {
+      color: var(--amber);
+    }
+    .content blockquote {
+      margin: 1.5rem 0;
+      padding: 1.1rem 1.5rem;
+      background: var(--cream);
+      border-left: 3px solid var(--amber);
+      font-family: 'Cormorant', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.5;
+      border-radius: 0 3px 3px 0;
+    }
+    .content blockquote p {
+      margin-bottom: 0.6rem;
+    }
+    .content blockquote p:last-child {
+      margin-bottom: 0;
+    }
+    .content code {
+      background: rgba(217, 136, 89, 0.12);
+      color: var(--berry);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      font-size: 0.88em;
+      font-family: 'SF Mono', Menlo, Consolas, monospace;
+    }
+    .content pre {
+      background: linear-gradient(160deg, #8C0343 0%, #6b0536 60%, #2C1810 100%);
+      color: var(--cream);
+      padding: 1.25rem 1.5rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+    .content pre code {
+      background: transparent;
+      color: var(--cream);
+      padding: 0;
+    }
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.93rem;
+    }
+    .content thead th {
+      background: var(--berry);
+      color: var(--cream);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .content tbody td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(140, 3, 67, 0.1);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .content tbody tr:last-child td { border-bottom: none; }
+    .content tbody tr:nth-child(even) { background: rgba(217, 136, 89, 0.04); }
+    .content tbody td strong {
+      color: var(--berry);
+    }
+    .content hr {
+      border: none;
+      width: 90px;
+      height: 2px;
+      background: var(--amber);
+      margin: 2.5rem auto;
+    }
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(140, 3, 67, 0.15);
+      font-size: 0.82rem;
+      color: var(--dark);
+      opacity: 0.65;
+      line-height: 1.6;
+    }
+    .footer em { font-style: italic; }
+    @media print {
+      body { background: white; }
+      .container { padding: 1rem; }
+      .content h2 { page-break-after: avoid; }
+      .content table, .content pre, .content blockquote { page-break-inside: avoid; }
+    }
+    /* ═══ FOOTER ═══ */
+    .kpc-footer {
+      padding: 72px 64px 88px;
+      margin-top: 4rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(217, 136, 89, 0.16) 0%, transparent 55%),
+        radial-gradient(circle at 18% 80%, rgba(242, 171, 155, 0.10) 0%, transparent 55%),
+        linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, var(--dark) 100%);
+      color: var(--cream);
+      text-align: center;
+    }
+    .kpc-footer-tagline {
+      font-family: 'Cormorant', serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--cream);
+      max-width: 560px;
+      margin: 0 auto 30px;
+      line-height: 1.5;
+    }
+    .kpc-footer-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--amber);
+      margin: 0 auto 28px;
+    }
+    .kpc-footer-brand {
+      font-family: 'Cormorant', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+    }
+    .kpc-footer-brand em {
+      font-style: italic;
+      color: var(--amber);
+    }
+    .kpc-footer-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      opacity: 0.85;
+    }
+    @media (max-width: 600px) {
+      .kpc-footer { padding: 56px 24px 72px; }
+      .kpc-footer-tagline { font-size: 17px; }
+      .kpc-footer-brand { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="doc-eyebrow">KPC · Pre-Call Setup Guide</div>
+    <div class="amber-rule"></div>
+    <div class="content">
+<h1>Before our grounding call</h1>
+<p><em>A pre-call setup checklist. About 45 minutes of solo work, sent the day before our session, so we walk in already grounded.</em></p>
+<hr />
+<h2>Why this matters</h2>
+<p>Your Creative Brief is live. Before our grounding call, there are a few things that put you in the best position to walk away from that call with a brand actually living in your AI and a clear first move you are committed to.</p>
+<p>This is not homework. It is preparation for a transmission. The brief is built. Your job between now and our call is to let it land in your body and in your tools, so when we meet we can spend our time on direction lock and first move, not on logistics.</p>
+<h2>A note on timing</h2>
+<p>Setup is preparation, not building. Your engine loads all three Creative Directions because we lock one together at our Grounding Call. Until then, please don't ask the engine to generate content for your brand. No captions, no emails, no sales pages, no posts, no descriptions.</p>
+<p>Reading and orienting is fine. Generating content is not.</p>
+<p>The engine is loaded and waiting. The build begins after we lock your direction together at the call.</p>
+<p><em>Why this matters: training your brand on the wrong direction, or blending the three before they should be blended, is the exact mess the Grounding Call is designed to prevent. Setup gets the engine ready. The call gets the engine pointed.</em></p>
+<hr />
+<h2>1. Two tools you will want</h2>
+<p><strong>Claude Pro ($20 / month).</strong> The Claude desktop application has three modes: chat, cowork, and code. Cowork is what makes Claude a working partner with memory of your brand: it can read your files, write to a folder, and remember context across conversations. The browser version (claude.ai) is chat-only; it works for single conversations but forgets you the moment the tab closes. The engine we build below uses Cowork mode.</p>
+<blockquote>
+<p>A free week of Cowork is available <a href="https://claude.ai/referral/QPclkvUs5A?s=cowork&amp;v=apps">here</a>.</p>
+</blockquote>
+<p><strong>Wispr Flow (recommended companion).</strong> Voice-first dictation that works inside Cowork and across your computer. Not strictly required, but vastly better than typing once you start using AI as a working partner. Voice keeps your real register on the page; typing tends to flatten it.</p>
+<blockquote>
+<p>A free month of Wispr Flow Pro is available <a href="https://wisprflow.ai/r?KIANA51">here</a>.</p>
+</blockquote>
+<p>If you already have Cowork and Wispr Flow, skip the links. If you are new to either, set them up before continuing. The rest of the steps assume Cowork is installed and ready.</p>
+<h2>2. Download the Brand Engine Starter</h2>
+<p>The Starter is a folder of files that gives Claude a place to live. It includes:</p>
+<ul>
+<li>A <code>CLAUDE.md</code> operating document Claude reads at the start of every conversation</li>
+<li>A folder hierarchy (<code>01_BRAND/</code>, <code>02_CONTENT/</code>, <code>03_REFERENCE/</code>, <code>99_ARCHIVE/</code>, <code>handoff-reports/</code>)</li>
+<li>A short README in each folder so you know what goes where</li>
+</ul>
+<blockquote>
+<p>Download the Brand Engine Starter: <a href="brand-engine-starter.zip">brand-engine-starter.zip</a></p>
+</blockquote>
+<p>Unzip the file. The unzipped folder needs to live at the <strong>top level of your home folder</strong>, not nested inside Documents, Downloads, or iCloud Drive. Two reasons: Cowork can only connect to folders at the top level (not folders buried inside other folders), and iCloud syncing causes problems with Cowork's read/write to the folder.</p>
+<p><strong>On Mac:</strong> Open Finder. In the menu bar, click <strong>Go</strong>, then <strong>Home</strong> (or press ⌘⇧H). The window that opens is your home folder, named after your username, with a house icon. Drop the unzipped folder here.</p>
+<p><strong>On Windows:</strong> Open File Explorer and navigate to <strong>This PC → C: → Users → [your username]</strong>. Drop the unzipped folder here.</p>
+<p>Rename the unzipped folder to <strong>Claude</strong>.</p>
+<h2>3. Open Cowork and connect it to the Claude folder</h2>
+<p>Open Claude Cowork. The first time it opens it will ask you to choose a folder. Click <strong>Choose Folder</strong> and select the Claude folder you just created.</p>
+<p>The folder name should now appear at the top of the Cowork window. That confirms Cowork is "in" the folder, with permission to read and write files there.</p>
+<p>If Cowork is already open and connected to a different folder, you can switch by clicking the folder name at the top and choosing a new one.</p>
+<h2>4. Drop your brief into the engine</h2>
+<p>Open your Creative Brief in your browser. Scroll near the bottom to the section <em>"Take this with you"</em> and click <strong>Download Markdown</strong>.</p>
+<p>The file (named something like <code>[your-brand]-brand-brief.md</code>) lands in your Downloads folder. Drag it into the <code>01_BRAND/</code> subfolder inside your Claude folder.</p>
+<p>That single file is your brand's source of truth. From this point forward, every conversation in this folder has access to it.</p>
+<h2>5. Activate the engine</h2>
+<p>In Cowork, copy and paste the following prompt:</p>
+<blockquote>
+<p><em>Read CLAUDE.md and run the startup protocol. Fill in any [[ TOKENS ]] in CLAUDE.md from the brief MD in 01_BRAND. Then save to memory that this engine is loaded.</em></p>
+</blockquote>
+<p>Claude will read CLAUDE.md, read the brief, fill in your brand name and other details where the template has placeholders, and confirm the engine is ready. From this point, every new conversation in this folder will start with that same orientation: read CLAUDE.md, read the brief, ready.</p>
+<h2>6. Read the brief once (15 to 20 minutes)</h2>
+<p>Read your brief end to end. Do not take notes. Do not try to optimize anything. Let it land. Pay attention to:</p>
+<ul>
+<li>Which words in your Brand Identity Statement feel like you</li>
+<li>Which avatar feels most alive (not most lucrative, most alive)</li>
+<li>Which of the three Creative Directions your body responds to first</li>
+</ul>
+<p>You do not have to decide on a direction yet. Just notice which one you keep returning to.</p>
+<hr />
+<h2>What you bring to the call</h2>
+<ul>
+<li>Claude Cowork open, folder connected, brief loaded in its memory</li>
+<li>A Creative Direction you are leaning toward (or the awareness that you are torn)</li>
+<li>A real first move you would like to make in the next 14 days, even if vague</li>
+</ul>
+<p>That is it. Forty-five minutes, give or take. Everything else lives on the call.</p>
+    </div>
+  </div>
+  <footer class="kpc-footer">
+    <div class="kpc-footer-tagline">Brand is ceremony. The grounding is what makes the ceremony real.</div>
+    <div class="kpc-footer-rule"></div>
+    <div class="kpc-footer-brand">Kiana Prema <em>Consulting</em></div>
+    <div class="kpc-footer-sub">Pre-Call Setup Guide</div>
+  </footer>
+</body>
+</html>
