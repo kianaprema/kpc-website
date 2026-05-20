@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services — Kiana Prema Consulting</title>
+<title>How We Work Together — Kiana Prema Consulting</title>
+<meta name="description" content="Build your Brand Operating System. Two paths to the same artifact, plus three sibling ways to keep going. Kiana Prema Consulting, architects of Coherent Brand AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -239,8 +240,10 @@ body {
 .card-patina .service-info h2 em { color: var(--patina); }
 .card-patina .service-tier { color: var(--patina); }
 .card-patina .service-info p { color: var(--mid); }
-.card-patina .service-includes h4 { color: var(--patina); }
-.card-patina .service-includes li::before { background: var(--patina); }
+.card-patina .service-includes h4,
+.card-patina .hook-list-label { color: var(--patina); }
+.card-patina .service-includes li::before,
+.card-patina .hook-list li::before { background: var(--patina); }
 .card-patina .service-price { color: var(--patina); }
 .card-patina .service-visual {
   background: linear-gradient(170deg, var(--patina) 0%, #3a5f58 100%);
@@ -256,8 +259,10 @@ body {
 .card-brick .service-info h2 em { color: var(--brick); }
 .card-brick .service-tier { color: var(--brick); }
 .card-brick .service-info p { color: var(--mid); }
-.card-brick .service-includes h4 { color: var(--brick); }
-.card-brick .service-includes li::before { background: var(--brick); }
+.card-brick .service-includes h4,
+.card-brick .hook-list-label { color: var(--brick); }
+.card-brick .service-includes li::before,
+.card-brick .hook-list li::before { background: var(--brick); }
 .card-brick .service-price { color: var(--brick); }
 .card-brick .service-visual {
   background: linear-gradient(170deg, var(--brick) 0%, #8a3838 50%, var(--berry) 100%);
@@ -269,18 +274,152 @@ body {
 .card-berry .service-info {
   background: var(--bg);
 }
-.card-berry .service-info h2 { color: var(--dark); }
-.card-berry .service-info h2 em { color: var(--berry); }
+.card-berry .service-info h2,
+.card-berry .service-info h3 { color: var(--dark); }
+.card-berry .service-info h2 em,
+.card-berry .service-info h3 em { color: var(--berry); }
 .card-berry .service-tier { color: var(--berry); }
 .card-berry .service-info p { color: var(--mid); }
-.card-berry .service-includes h4 { color: var(--berry); }
-.card-berry .service-includes li::before { background: var(--berry); }
+.card-berry .service-includes h4,
+.card-berry .hook-list-label { color: var(--berry); }
+.card-berry .service-includes li::before,
+.card-berry .hook-list li::before { background: var(--berry); }
 .card-berry .service-price { color: var(--berry); }
+.card-berry .card-cta { background: var(--berry); color: var(--cream); }
+.card-berry .card-cta:hover { background: #5c0230; }
 .card-berry .service-visual {
   background: linear-gradient(170deg, var(--berry) 0%, #5c0230 50%, var(--dark) 100%);
 }
 .card-berry .service-visual-icon { color: rgba(242,220,201,0.15); }
 .card-berry .service-visual-label { color: var(--amber); }
+
+/* Card 4 — Amber (Custom Brand Build) */
+.card-amber .service-info {
+  background: var(--cream);
+}
+.card-amber .service-info h2,
+.card-amber .service-info h3 { color: var(--dark); }
+.card-amber .service-info h2 em,
+.card-amber .service-info h3 em { color: var(--amber); }
+.card-amber .service-tier { color: var(--amber); }
+.card-amber .service-info p { color: var(--mid); }
+.card-amber .service-includes h4,
+.card-amber .hook-list-label { color: var(--amber); }
+.card-amber .service-includes li::before,
+.card-amber .hook-list li::before { background: var(--amber); }
+.card-amber .card-cta { background: var(--amber); color: var(--cream); }
+.card-amber .card-cta:hover { background: #b06840; }
+.card-amber .service-visual {
+  background: linear-gradient(170deg, var(--amber) 0%, #b06840 100%);
+}
+.card-amber .service-visual-icon { color: rgba(242,220,201,0.25); }
+.card-amber .service-visual-label { color: var(--cream); }
+
+/* Card 5 — Sand (Mastermind) */
+.card-sand .service-info {
+  background: var(--bg);
+}
+.card-sand .service-info h2,
+.card-sand .service-info h3 { color: var(--dark); }
+.card-sand .service-info h2 em,
+.card-sand .service-info h3 em { color: #8a7e5c; }
+.card-sand .service-tier { color: #8a7e5c; }
+.card-sand .service-info p { color: var(--mid); }
+.card-sand .service-includes h4,
+.card-sand .hook-list-label { color: #8a7e5c; }
+.card-sand .service-includes li::before,
+.card-sand .hook-list li::before { background: var(--sand); }
+.card-sand .card-cta-text { color: #8a7e5c; }
+.card-sand .service-visual {
+  background: linear-gradient(170deg, var(--sand) 0%, #8a7e5c 100%);
+}
+.card-sand .service-visual-icon { color: rgba(242,220,201,0.3); }
+.card-sand .service-visual-label { color: var(--cream); }
+
+/* Card 1/2 h3 fallback (cards now use h3 for offer names since section uses h2) */
+.service-info h3 {
+  font-family: var(--font-display);
+  font-size: 30px; font-weight: 400;
+  margin-bottom: 8px; line-height: 1.2;
+}
+.service-info h3 em { font-style: italic; }
+
+/* Hook list — "For founders ready to:" sections */
+.hook-list-label {
+  display: block;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 16px;
+}
+.hook-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 8px;
+}
+.hook-list li {
+  font-size: 13px; line-height: 1.7;
+  padding: 3px 0 3px 16px;
+  position: relative;
+}
+.hook-list li::before {
+  content: '';
+  position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+
+/* Section sub (italic line below section title) */
+.section-sub {
+  font-family: var(--font-display);
+  font-size: 19px; font-style: italic;
+  color: var(--mid); text-align: center;
+  margin-top: -32px; margin-bottom: 48px;
+}
+
+/* In-card CTAs — solid filled, matching .hero-cta brand pattern */
+.card-cta {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+  align-self: flex-start;
+  color: var(--cream);
+}
+
+/* Per-card solid CTA backgrounds — Section 1 cards (patina + brick) */
+.card-patina .card-cta { background: var(--patina); color: var(--cream); }
+.card-patina .card-cta:hover { background: #3a5f58; }
+.card-brick .card-cta { background: var(--brick); color: var(--cream); }
+.card-brick .card-cta:hover { background: var(--berry); }
+.card-cta-text {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 12px 0;
+  align-self: flex-start;
+}
+.card-cta-sub {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Section divider between Section 1 and Section 2 */
+.section-divider {
+  margin: 100px auto 60px;
+  max-width: 80px;
+  height: 2px;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.section-divider + .section-eyebrow { text-align: center; }
 
 /* ══════════ NOTE STRIP ══════════ */
 .note-strip {
@@ -410,7 +549,7 @@ body {
 
 /* ══════════ FOOTER ══════════ */
 .site-footer {
-  background: var(--dark);
+  background: linear-gradient(160deg, var(--berry) 0%, #6b0536 60%, var(--dark) 100%);
   color: rgba(242,220,201,0.4);
   padding: 48px; text-align: center;
   font-size: 12px; letter-spacing: 0.04em;
@@ -470,7 +609,7 @@ body {
 <section class="page-hero">
   <div class="section-eyebrow">Services</div>
   <h1>Every engagement is <em>bespoke.</em></h1>
-  <p>No templates. No cookie-cutter packages. Every brand I build is custom — because your identity isn't generic, and your strategy shouldn't be either.</p>
+  <p>Shaped to who you are, who you serve, and what you're becoming.</p>
 </section>
 
 <!-- ── Color strip ── -->
@@ -486,92 +625,182 @@ body {
 
 <!-- ══════════ PHILOSOPHY STRIP ══════════ -->
 <section class="philosophy-strip">
-  <p>I work with a <strong>small number of clients at a time</strong> — intentionally. This is a partnership, not a transaction. The depth of attention this work requires can't be rushed or diluted. If we work together, you'll have my full focus.</p>
+  <p>I intentionally work with a <strong>small number of clients at a time</strong>. This is partnership work, held with depth and full focus. When we work together, you have my attention end to end.</p>
 </section>
 
-<!-- ══════════ SERVICE TIERS ══════════ -->
+<!-- ══════════ SERVICE TIERS — Section 1: Two paths to your Brand Operating System ══════════ -->
 <section class="services-section">
   <div class="services-inner">
     <div class="section-eyebrow" style="text-align: center;">The Work</div>
-    <h2 class="section-title">Three ways to <em>work together.</em></h2>
+    <h2 class="section-title">Build your Brand Operating <em>System.</em></h2>
+    <p class="section-sub">Two paths. Same artifact.</p>
 
-    <!-- CARD 1 — The Brand Operating System (formerly CORE Strategy Session) -->
+    <!-- CARD A — The Brand Operating System (bespoke, primary) -->
     <div class="service-card card-patina">
       <div class="service-info">
-        <div class="service-tier">The Foundation</div>
-        <h2>The Brand Operating <em>System</em></h2>
-        <p>A focused, facilitated deep-dive into your brand's foundation. We excavate your identity, sharpen your positioning, and create the strategic architecture that everything else will be built on — a shared artifact that founders, partners, and teams can all see themselves in.</p>
-        <p>You walk away with a complete brand operating system — a Brand Identity Statement, a web-native Creative Brief at your own subdomain, three Creative Directions, and an installable export your AI can finally speak from. Not a mood board. Not a PDF. A strategic map clear enough to build from, sacred enough to believe in.</p>
+        <div class="service-tier">Bespoke · Built for you</div>
+        <h3>The Brand Operating <em>System</em></h3>
+        <span class="hook-list-label">For founders ready to:</span>
+        <ul class="hook-list">
+          <li>Stop being the best-kept secret in your field</li>
+          <li>Hold multi-stakeholder vision in one shared brand</li>
+          <li>Scale beyond 1:1 with the foundation to do it</li>
+          <li>Run your team and your AI tools from the same coherent foundation</li>
+        </ul>
         <div class="service-includes">
-          <h4>What's Included</h4>
+          <h4>What's included</h4>
           <ul>
-            <li>Live 4-hour brand foundation session</li>
+            <li>Live four-hour CORE foundation session</li>
             <li>Brand Identity Statement</li>
-            <li>Web-native Creative Brief at your named subdomain</li>
+            <li>Ideal Client Avatars</li>
+            <li>Strategic Direction</li>
             <li>Three Creative Directions</li>
-            <li>Installable Markdown export — the Coherent Brand AI your tools can speak from</li>
-            <li>Follow-up implementation call</li>
+            <li>Your own Coherent Brand AI, installable into your AI workspace</li>
           </ul>
         </div>
-        <div class="service-price">$10,000</div>
+        <a href="https://tidycal.com/kianaprema/brand-clarity-conversation" class="card-cta">Book a Brand Clarity Conversation</a>
+        <p class="card-cta-sub">Free 30-minute discovery call.</p>
       </div>
       <div class="service-visual">
         <div class="service-visual-content">
           <div class="service-visual-icon">I</div>
-          <div class="service-visual-label">Identity Excavation</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 2 — Custom Brand Build (Post-Brand Operating System, Bespoke) -->
-    <div class="service-card card-brick reverse">
-      <div class="service-info">
-        <div class="service-tier">Bespoke Engagement</div>
-        <h2>Custom Brand <em>Build</em></h2>
-        <p>What comes after The Brand Operating System is yours to shape. Every engagement is bespoke... scoped from what surfaces in your foundation work — the gaps you named, the vision that clarified, the elements your brand is ready to step into.</p>
-        <p>This isn't a rebrand. It's a becoming. And because scope emerges from the room we sit in together, no two engagements look exactly alike.</p>
-        <div class="service-includes">
-          <h4>Potential Pathways</h4>
-          <ul>
-            <li>Brand Book — visual identity, messaging architecture, brand governance</li>
-            <li>Program & Product Launch — strategy, funnel, and campaign development</li>
-            <li>Offer Ladder Design — tier mapping and client ascension pathways</li>
-            <li>Content Strategy — pillar framework and topic architecture</li>
-            <li>Proprietary Framework Design — custom methodology or journey map</li>
-          </ul>
-        </div>
-        <div class="service-price">Custom <span>· scoped from The Brand Operating System</span></div>
-      </div>
-      <div class="service-visual">
-        <div class="service-visual-content">
-          <div class="service-visual-icon">II</div>
           <div class="service-visual-label">Bespoke Build</div>
         </div>
       </div>
     </div>
 
-    <!-- CARD 3 — Strategic Business Partner -->
-    <div class="service-card card-berry">
+    <!-- CARD B — Build Your Brand Operating System (cohort) -->
+    <div class="service-card card-brick reverse">
       <div class="service-info">
-        <div class="service-tier">Ongoing Partnership</div>
-        <h2>Strategic Business <em>Partner</em></h2>
-        <p>For founders who need a strategic mind — and sometimes strategic hands — embedded in their world. Not a freelancer you have to brief every time. A partner who holds your vision across brand, operations, marketing, and team.</p>
-        <p>The shape of the partnership is custom. Some clients need the altitude of a Chief Brand Officer. Some need operational weight. Some need all of it. The agreement names the mode and the scope.</p>
+        <div class="service-tier">Cohort · Built with you</div>
+        <h3>Build Your Brand Operating <em>System</em></h3>
+        <span class="hook-list-label">For founders ready to:</span>
+        <ul class="hook-list">
+          <li>Stop second-guessing every font, color, and tagline</li>
+          <li>Build the foundation your AI tools can finally act from in your voice</li>
+          <li>Get strategic clarity on what to focus on with the time you have</li>
+          <li>Be in a small room with other founders doing the same work</li>
+        </ul>
         <div class="service-includes">
-          <h4>What Could Be Included</h4>
+          <h4>What's included</h4>
           <ul>
-            <li>Strategic brand direction and governance (Chief Brand Officer)</li>
-            <li>Operations, systems, and backend workflow (Chief Operations Officer)</li>
-            <li>Marketing strategy, campaigns, and launch oversight</li>
-            <li>Team, contractor, and project coordination</li>
-            <li>Executive advisory and decision-making partnership</li>
+            <li>Week 1 · Brand Identity Statement</li>
+            <li>Week 2 · Ideal Client Avatars</li>
+            <li>Week 3 · Strategic Direction</li>
+            <li>Week 4 · Three Creative Directions (generated with AI from the stacked foundation)</li>
+            <li>Week 5 · Your own Coherent Brand AI, ready to install</li>
           </ul>
         </div>
-        <div class="service-price">Custom <span>· by application</span></div>
+        <a href="/cohort" class="card-cta">Get on the waitlist</a>
+        <p class="card-cta-sub">Twice a year. Ten to fifteen founders per cohort.</p>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-content">
+          <div class="service-visual-icon">II</div>
+          <div class="service-visual-label">Cohort Build</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ Section divider ══════════ -->
+    <div class="section-divider"></div>
+
+    <!-- ══════════ SECTION 2 — The path forward ══════════ -->
+    <div class="section-eyebrow" style="text-align: center;">After</div>
+    <h2 class="section-title">The path <em>forward.</em></h2>
+    <p class="section-sub">Three ways to keep going, after your Brand Operating System is built.</p>
+
+    <!-- CARD C — Custom Brand Build -->
+    <div class="service-card card-amber">
+      <div class="service-info">
+        <div class="service-tier">Project · Scoped</div>
+        <h3>Custom Brand <em>Build</em></h3>
+        <span class="hook-list-label">For founders with a Brand Operating System, ready to:</span>
+        <ul class="hook-list">
+          <li>Build something specific, scoped from your existing foundation</li>
+          <li>Get a Brand Book, a program launch, or a framework built next</li>
+          <li>Bring Kiana back for a defined project when the next chapter lands</li>
+          <li>Work bespoke without ongoing commitment</li>
+        </ul>
+        <div class="service-includes">
+          <h4>What this might be</h4>
+          <ul>
+            <li>Brand Book</li>
+            <li>Program launch</li>
+            <li>Offer ladder design</li>
+            <li>Content strategy</li>
+            <li>Framework design</li>
+          </ul>
+        </div>
+        <a href="https://tidycal.com/kianaprema/brand-clarity-conversation" class="card-cta">Book a Brand Clarity Conversation</a>
+        <p class="card-cta-sub">Custom, by scope.</p>
       </div>
       <div class="service-visual">
         <div class="service-visual-content">
           <div class="service-visual-icon">III</div>
+          <div class="service-visual-label">Project Scope</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD D — Coherent Brand AI Mastermind -->
+    <div class="service-card card-sand reverse">
+      <div class="service-info">
+        <div class="service-tier">Group · Ongoing</div>
+        <h3>Coherent Brand AI <em>Mastermind</em></h3>
+        <span class="hook-list-label">For founders with a Brand Operating System, ready to:</span>
+        <ul class="hook-list">
+          <li>Have Kiana's strategic eye on what you're building each month</li>
+          <li>Learn alongside a small circle of fellow founders</li>
+          <li>Bring real questions to your monthly hot seat</li>
+          <li>Tap into a library of how-to videos whenever you need to</li>
+        </ul>
+        <div class="service-includes">
+          <h4>What's inside</h4>
+          <ul>
+            <li>Bi-weekly mastermind sessions with Kiana</li>
+            <li>A monthly hot seat for every member</li>
+            <li>Library of how-to videos</li>
+            <li>Peer community of fellow founders</li>
+          </ul>
+        </div>
+        <span class="card-cta-text">Available at completion</span>
+        <p class="card-cta-sub">Invitation extended at the close of your Brand Operating System engagement.</p>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-content">
+          <div class="service-visual-icon">IV</div>
+          <div class="service-visual-label">Ongoing Container</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD E — Strategic Business Partner -->
+    <div class="service-card card-berry">
+      <div class="service-info">
+        <div class="service-tier">Bespoke · Ongoing</div>
+        <h3>Strategic Business <em>Partner</em></h3>
+        <span class="hook-list-label">For founders with a Brand Operating System, ready to:</span>
+        <ul class="hook-list">
+          <li>Move from one-time engagement to ongoing partnership</li>
+          <li>Have Kiana embedded across brand, operations, marketing, and team</li>
+          <li>Scale into the next phase with a senior strategic mind beside you</li>
+          <li>Build at the level that needs a true partner</li>
+        </ul>
+        <div class="service-includes">
+          <h4>The shape</h4>
+          <ul>
+            <li>Kiana embedded across brand, operations, marketing, and team</li>
+            <li>Custom scope, custom mode</li>
+            <li>Three to four active partnerships at a time</li>
+          </ul>
+        </div>
+        <span class="card-cta-text">By application</span>
+        <p class="card-cta-sub">For founders with a Brand Operating System.</p>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-content">
+          <div class="service-visual-icon">V</div>
           <div class="service-visual-label">Embedded Partnership</div>
         </div>
       </div>
@@ -584,7 +813,7 @@ body {
 <section class="note-strip">
   <div class="note-inner">
     <h2>Not sure which is <em>right for you?</em></h2>
-    <p>That's what the Brand Clarity Conversation is for. In 30 minutes, we'll talk about where you are, where you're going, and I'll tell you honestly which engagement — if any — makes sense. No pressure. No pitch.</p>
+    <p>That's what the Brand Clarity Conversation is for. In 30 minutes, we talk about where you are, where you're going, and I'll tell you honestly which engagement makes sense for you. Just clarity.</p>
   </div>
 </section>
 
@@ -610,9 +839,9 @@ body {
         <p>Visual identity, brand book, design systems. Because the strategy is airtight, the design choices practically make themselves.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">04 — LAUNCH</div>
+        <div class="step-num">04 — INSTALL</div>
         <h3>Activate</h3>
-        <p>Implementation support, creative direction, and the confidence that comes from a brand that finally matches the caliber of your work.</p>
+        <p>Your Coherent Brand AI installed. Your team and your tools speaking the same language. The confidence that comes from a brand that finally matches the caliber of your work.</p>
       </div>
     </div>
   </div>
@@ -623,13 +852,13 @@ body {
   <div class="cta-left">
     <div class="cta-left-content">
       <h2>The old is burning away. What's emerging <em>deserves a vessel worthy of it.</em></h2>
-      <p>It starts with a conversation. 30 minutes. No pitch. No pressure. Just real talk about who you are and what you're becoming.</p>
+      <p>It starts with a conversation. 30 minutes. Real talk about who you are and what you're becoming.</p>
     </div>
   </div>
   <div class="cta-right">
     <div class="cta-right-content">
       <div class="section-eyebrow" style="color: var(--brick);">Let's Talk</div>
-      <p>Book a Brand Clarity Conversation — a complimentary call to explore whether we're the right fit. I'll tell you honestly what I see and what I'd recommend.</p>
+      <p>Book a Brand Clarity Conversation. A complimentary call to explore whether we're the right fit. I'll tell you honestly what I see and what I'd recommend.</p>
       <a href="https://tidycal.com/kianaprema/brand-clarity-conversation" class="hero-cta">Schedule a Conversation</a>
       <p class="cta-sub">30 minutes · Complimentary · By application</p>
     </div>
